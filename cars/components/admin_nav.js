@@ -7,18 +7,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-
+import {AntDesign } from '@expo/vector-icons';
 
 export default function Admin_Nav(props) {
   return(
     <View style={styles.container}>
       <TouchableOpacity>
-        <View>
-          <Image
-              style={{width: 100, height: 100}}
-              source={require('../assets/randomface.png')}
-            />
-        </View>
+        <AntDesign name="leftsquare" size={96} color="gold" />
       </TouchableOpacity>
       <View style={[styles.navItems, styles.centerAlignTitle]}>
           <Text style={styles.titleColor}>
