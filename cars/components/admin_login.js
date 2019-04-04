@@ -45,6 +45,8 @@ const styles = StyleSheet.create({
   },
   textColor: {
     color: "lightgrey",
+    fontSize: 24,
+    fontWeight: 'bold',      
   },
   inputBoxContainer: {
     borderColor: "lightgrey",
