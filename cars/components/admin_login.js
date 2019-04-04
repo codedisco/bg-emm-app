@@ -19,7 +19,10 @@ export default function Admin_Login(props) {
             </Text>
         </View>
         <View style={styles.inputBoxContainer}>
-            <TextInput style={styles.inputStyle}
+            <TextInput
+                autofocus = {true}
+                secureTextEntry={true}      
+                style={styles.inputStyle}
               //onChangeText={(text) => {this.updateFullName(text)}}
             /> 
         </View>    
