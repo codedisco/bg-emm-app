@@ -40,15 +40,17 @@ const styles = StyleSheet.create({
   },
   //evenly distribute items in the nav left, center, and right    
   navItems: {
-      flex: 1,
+    flex: 1,
   },
   //Move the Brand logo to the far right in the nav    
   rightAlignNavItem :{
-      textAlign: "right",
+    textAlign: "right",
   },
   //color of the title
   titleColor: {
-      color: "lightgrey",
+    color: "lightgrey",
+    fontSize: 24,
+    fontWeight: 'bold',       
   },
     
   //center align title

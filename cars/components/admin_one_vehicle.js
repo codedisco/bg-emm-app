@@ -19,8 +19,8 @@ function Car_option(props) {
   return(
     <View>
       <TouchableOpacity style={styles.carOptionContainer}>
-          <View></View>
-          <Text>{props.id}</Text>
+          <View style={styles.radioButtonStyle}></View>
+          <Text style={styles.instructionStyle}>{props.id}</Text>
       </TouchableOpacity>
     </View>
   );    
@@ -34,7 +34,7 @@ export default function Admin_One_Vehicle(props) {
         <Text style={styles.instructionStyle}>
             SELECT A VEHICLE 
         </Text>
-        <View style={styles.radioBoxStyle}>
+        <View style={styles.selectionContainerStyle}>
             <FlatList
                 data={carList}
                 renderItem={({item}) =>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',      
   },
-  radioBoxStyle: {
+  selectionContainerStyle: {
     backgroundColor: '#505050',
     padding: 10, //white-space between the border and the button's text
     borderColor:'lightgrey',
@@ -78,5 +78,16 @@ const styles = StyleSheet.create({
   carOptionContainer: {
     display:"flex",
     flexDirection: "row", //format the elemecnts to be side by side  
+    alignItems: "baseline",
   },
+  radioButtonStyle: {
+    height: 25,
+    width: 25,
+    borderColor:'lightgrey',
+    borderStyle: 'solid',
+    borderWidth: 5,
+    borderRadius: 30,
+    backgroundColor: '#505050',
+    marginRight: 10,
+  }
 });
