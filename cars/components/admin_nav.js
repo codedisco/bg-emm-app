@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "stretch",
+    //alignItems: "stretch",
+    alignItems: "center",
     width:"100%", 
     backgroundColor:"#505050",
   },
@@ -56,7 +57,9 @@ const styles = StyleSheet.create({
   //center align title
   centerAlignTitle: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    //justifyContent: "center",
+    //alignItems: "center",
+    textAlign: "left",
+    marginLeft: 50,
   }
 });
