@@ -30,7 +30,10 @@ export default function Admin_Two_Vehicle(props) {
   return(
     <View style={styles.container}>
       <Admin_Nav navTitle = "Vehicle Choice" />
+      
+      {/*All main Views are vertically stacked and centerd while the selection container are horizontally aligned*/}
       <View style={styles.vehicleContainer}>
+        {/*Left selection container*/}
         <View style={styles.carOptionContainer}>
             <View style={styles.whiteSpaceBetweenSelections}>
                 <Text style={styles.instructionStyle}>SELECT LEFT VEHICLE</Text>
@@ -45,6 +48,7 @@ export default function Admin_Two_Vehicle(props) {
                     />      
                 </View>
             </View>
+            
             <View>
                 <Text style={styles.instructionStyle}>SELECT RIGHT VEHICLE</Text>
                 <View style={styles.selectionContainerStyle}>
@@ -58,6 +62,11 @@ export default function Admin_Two_Vehicle(props) {
                     />      
                 </View>
             </View>
+        </View>
+        <View style={styles.submitButtonContainer}>
+            <TouchableOpacity>
+                <Text style={styles.buttonTextStyle}>Confirm</Text>
+            </TouchableOpacity>        
         </View>
       </View>
     </View>
@@ -107,5 +116,16 @@ const styles = StyleSheet.create({
   },
   whiteSpaceBetweenSelections: {
     marginRight: 20,
+  },
+  submitButtonContainer: {
+    marginTop: 20,
+    backgroundColor: 'gold',
+    padding: 10, //white-space between the border and the button's text     
+  }, 
+  buttonTextStyle:{
+    color:"#505050",
+    fontSize: 24,
+    fontWeight: 'bold',       
   }
+    
 });
