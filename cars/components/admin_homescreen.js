@@ -11,11 +11,18 @@ import Admin_Nav from './admin_nav.js';
 export default function Admin_Homescreen(props) {
   return(
     <View style={styles.container}>
+      {/*Nav component*/}
       <Admin_Nav navTitle = "Home Screen" />
+      
+      {/*The body of the screen showing the three choices for the user*/}
       <View style={styles.homesceenContainer}>
+      
+        {/*Instructions for the user*/}
         <Text style={styles.instructionStyle}>
             SELECT ONE STYLE 
         </Text>
+      
+        {/*Bottom view containing the three choices*/}
         <View style={styles.horizontalButtons}>
             <TouchableOpacity
               style={styles.buttonStyle}>

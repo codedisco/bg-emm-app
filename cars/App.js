@@ -12,7 +12,9 @@ export default class App extends React.Component {
     super();
     this.state = {
       pwd:"1111",//password for the admin_Login component's input
-      userEnterPassword:"",
+      userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
+      openAdminLogin:true,//When true, show the login screen
+      openAdminHomescreen:false, //When true, show the admin home screen
       }
   }
 
@@ -26,29 +28,49 @@ export default class App extends React.Component {
     //if four numbers is entered, check if the password is correct with passwordChecker()
     if(userPwd.length == 4){
         this.passwordChecker(userPwd);
-    }     
+    }      
   }
   
   //Used in the playerLogin() to check the password. If correct continue to the Admin_homescreen. If incorrect, clear the input in the Admin_login to start over
   passwordChecker = (userPwd) => {
     if(userPwd == this.state.pwd){
-        //if correct, move to the Admin_homescreen component
-console.log("Password Passes");
+        this.openHomescreen();
     }else {
-    //clears the userEnterPassword state, therefore clearing the value of the input box in the Admin_login component
     this.setState(previousState => (
         { userEnterPassword:"" }
+      ))        
+    }      
+  }
+  
+  //Used in the passwordChecker() to change screen to the Admin_Homescreen view
+  openHomescreen = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminLogin:!previousState.openAdminLogin}
       ))
-    }
+    
+  
+    //Show this component
+    this.setState(previousState => (
+        { openAdminHomescreen:!previousState.openAdminHomescreen }
+      ))
+      
   }
   
   
   render() {
     return (
       <View style={styles.container}>
-        <Admin_Login 
-            userEnterPwd = {this.state.userEnterPassword}
-            login={this.playerLogin} />
+        {/*First screen in the app, show the login page*/}
+        { this.state.openAdminLogin &&
+            <Admin_Login 
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin} />      
+        }
+        {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
+        {this.state.openAdminHomescreen &&
+            <Admin_Homescreen />
+        }
       </View>
     );
   }
