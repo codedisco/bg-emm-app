@@ -8,45 +8,30 @@ import {
 
 import Admin_Nav from './admin_nav.js';
 
-export default class Admin_Login extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {
-     playerInput: ''
-   };
- }
-    
- checkPassword = (text) =>{
-    this.setState(previousState => (
-        { playerInput: text}
-      ))
-     
-     this.props.login(text);
- }
-  render(){
-      return(
-        <View style={styles.container}>
-          <Admin_Nav navTitle = "Admin Setting" />
-          <View style={styles.loginInputBox}>
-            <View>
-                <Text style={styles.textColor}>
-                    ENTER PASSWORD 
-                </Text>
-            </View>
-            <View style={styles.inputBoxContainer}>
-                <TextInput
-                    value={this.state.playerInput}
-                    maxLength={4}
-                    autofocus = {true}
-                    secureTextEntry={true}      
-                    style={styles.inputStyle}
-                    onChangeText={(text) => {this.checkPassword(text)}}
-                /> 
-            </View>    
-          </View>
+//first screen shown on the app. Use by the administrator to login
+export default function Admin_Login(props) {
+  return(
+    <View style={styles.container}>
+      <Admin_Nav navTitle = "Admin Setting" />
+      <View style={styles.loginInputBox}>
+        <View>
+            <Text style={styles.textColor}>
+                ENTER PASSWORD 
+            </Text>
         </View>
-      );      
-  }
+        <View style={styles.inputBoxContainer}>
+            <TextInput
+                value={props.userEnterPwd}
+                maxLength={4}
+                autofocus = {true}
+                secureTextEntry={true}      
+                style={styles.inputStyle}
+                onChangeText={(text) => {props.login(text)}}
+            /> 
+        </View>    
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

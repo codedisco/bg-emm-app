@@ -16,27 +16,29 @@ export default class App extends React.Component {
       }
   }
 
-  //check if the player enter password is correct after four digits. This method is passed as a prop into the Admin_login component and used in its input button
-  playerLogin = (data) => {
-    //add each number entered by the user into the userEnterPassword state
-    let playerPwdLength = data.length;
+  //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
+  playerLogin = (userPwd) => {
+    //add each number entered by the user into the userEnterPassword state. For some reason the first entered charter isn't saved. This is mainly use to clear the login input after a failed attempt.
+    this.setState(previousState => (
+        { userEnterPassword:userPwd }
+      )) 
     
     //if four numbers is entered, check if the password is correct with passwordChecker()
-    if(playerPwdLength == 4){
-        this.passwordChecker(data);
-    }
-      
-    //If incorrect, clear the input and start over
-      
-    //if correct, move to the Admin_homescreen component
-//console.log("It works " + playerPwdLength);      
+    if(userPwd.length == 4){
+        this.passwordChecker(userPwd);
+    }     
   }
   
-  passwordChecker = (pwd) => {
-    if(pwd == this.state.pwd){
+  //Used in the playerLogin() to check the password. If correct continue to the Admin_homescreen. If incorrect, clear the input in the Admin_login to start over
+  passwordChecker = (userPwd) => {
+    if(userPwd == this.state.pwd){
+        //if correct, move to the Admin_homescreen component
 console.log("Password Passes");
     }else {
-console.log("Password Fail");
+    //clears the userEnterPassword state, therefore clearing the value of the input box in the Admin_login component
+    this.setState(previousState => (
+        { userEnterPassword:"" }
+      ))
     }
   }
   
@@ -44,7 +46,9 @@ console.log("Password Fail");
   render() {
     return (
       <View style={styles.container}>
-        <Admin_Login login={this.playerLogin} />
+        <Admin_Login 
+            userEnterPwd = {this.state.userEnterPassword}
+            login={this.playerLogin} />
       </View>
     );
   }
