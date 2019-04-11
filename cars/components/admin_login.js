@@ -8,6 +8,7 @@ import {
 
 import Admin_Nav from './admin_nav.js';
 
+//first screen shown on the app. Use by the administrator to login
 export default function Admin_Login(props) {
   return(
     <View style={styles.container}>
@@ -20,10 +21,12 @@ export default function Admin_Login(props) {
         </View>
         <View style={styles.inputBoxContainer}>
             <TextInput
+                value={props.userEnterPwd}
+                maxLength={4}
                 autofocus = {true}
                 secureTextEntry={true}      
                 style={styles.inputStyle}
-              //onChangeText={(text) => {this.updateFullName(text)}}
+                onChangeText={(text) => {props.login(text)}}
             /> 
         </View>    
       </View>
