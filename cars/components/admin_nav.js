@@ -9,17 +9,23 @@ import {
 
 import {AntDesign } from '@expo/vector-icons';
 
+//Nav component used in the admin pages
 export default function Admin_Nav(props) {
   return(
     <View style={styles.container}>
+      {/*Left side, Back button*/}
       <TouchableOpacity>
         <AntDesign name="leftsquare" size={96} color="gold" />
       </TouchableOpacity>
+      
+      {/*Center, Dynamic Instructions that change with each admin page*/}
       <View style={[styles.navItems, styles.centerAlignTitle]}>
           <Text style={styles.titleColor}>
             {props.navTitle}
           </Text>
       </View>
+      
+      {/*Right side, Brand logo*/}
       <Image
           style={{width: 100, height: 100}}
           source={require('../assets/randomface.png')}

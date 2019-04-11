@@ -15,6 +15,7 @@ carList = [{"id":"VEHICLE SELECTION 1"},
            {"id":"VEHICLE SELECTION 4"},
           ];
 
+//Component shaped like a radio option that the user can select
 function Car_option(props) {
   return(
     <View>
@@ -26,9 +27,11 @@ function Car_option(props) {
   );    
 }
 
+//Display two list of vehicles, from carList, as radio options
 export default function Admin_Two_Vehicle(props) {
   return(
     <View style={styles.container}>
+      {/*Nav component*/}
       <Admin_Nav navTitle = "Vehicle Choice" />
       
       {/*All main Views are vertically stacked and centerd while the selection container are horizontally aligned*/}
@@ -49,6 +52,7 @@ export default function Admin_Two_Vehicle(props) {
                 </View>
             </View>
             
+            {/*Right selection container*/}
             <View>
                 <Text style={styles.instructionStyle}>SELECT RIGHT VEHICLE</Text>
                 <View style={styles.selectionContainerStyle}>
@@ -63,6 +67,8 @@ export default function Admin_Two_Vehicle(props) {
                 </View>
             </View>
         </View>
+
+        {/*Submit Button*/}
         <View style={styles.submitButtonContainer}>
             <TouchableOpacity>
                 <Text style={styles.buttonTextStyle}>Confirm</Text>

@@ -11,23 +11,37 @@ import Admin_Nav from './admin_nav.js';
 export default function Admin_Homescreen(props) {
   return(
     <View style={styles.container}>
+      {/*Nav component*/}
       <Admin_Nav navTitle = "Home Screen" />
+      
+      {/*The body of the screen showing the three choices for the user*/}
       <View style={styles.homesceenContainer}>
+      
+        {/*Instructions for the user*/}
         <Text style={styles.instructionStyle}>
             SELECT ONE STYLE 
         </Text>
+      
+        {/*Bottom view containing the three choices*/}
         <View style={styles.horizontalButtons}>
+            {/*Choice leads to One vehicle selection screen*/}
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>1 VEHICLE</Text>      
+                onPress={props.openOne}
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>1 VEHICLE</Text>      
             </TouchableOpacity>
+      
+            {/*Choice leads to Two vehicle selection screen*/}
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>2 VEHICLES</Text>      
+                onPress={props.openTwo}
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>2 VEHICLES</Text>      
             </TouchableOpacity>
+      
+            {/*Choice leads to guest screen and showing all vehicle selections*/}
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>ALL VEHICLES</Text>      
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>ALL VEHICLES</Text>      
             </TouchableOpacity>      
         </View>            
       </View>

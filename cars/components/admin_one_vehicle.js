@@ -15,6 +15,7 @@ carList = [{"id":"VEHICLE SELECTION 1"},
            {"id":"VEHICLE SELECTION 4"},
           ];
 
+//Component shaped like a radio option that the user can select
 function Car_option(props) {
   return(
     <View>
@@ -26,14 +27,22 @@ function Car_option(props) {
   );    
 }
 
+//Display a list of vehicles, from carList, as radio options
 export default function Admin_One_Vehicle(props) {
   return(
     <View style={styles.container}>
+      {/*Nav component*/}
       <Admin_Nav navTitle = "Vehicle Choice" />
+      
+      {/*Body of the page*/}
       <View style={styles.vehicleContainer}>
+      
+        {/*Instructions*/}
         <Text style={styles.instructionStyle}>
             SELECT A VEHICLE 
         </Text>
+      
+        {/*Show a list of radio options of Car_options*/}
         <View style={styles.selectionContainerStyle}>
             <FlatList
                 data={carList}

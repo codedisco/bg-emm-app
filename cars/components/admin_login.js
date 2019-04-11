@@ -12,13 +12,20 @@ import Admin_Nav from './admin_nav.js';
 export default function Admin_Login(props) {
   return(
     <View style={styles.container}>
+      {/*Nav component*/}
       <Admin_Nav navTitle = "Admin Setting" />
+      
+      {/*Body of the page*/}
       <View style={styles.loginInputBox}>
+      
+        {/*Instructions for the user*/}
         <View>
             <Text style={styles.textColor}>
                 ENTER PASSWORD 
             </Text>
         </View>
+      
+        {/*Login input box for the password*/}
         <View style={styles.inputBoxContainer}>
             <TextInput
                 value={props.userEnterPwd}
