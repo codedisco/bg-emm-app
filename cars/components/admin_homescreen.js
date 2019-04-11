@@ -25,16 +25,18 @@ export default function Admin_Homescreen(props) {
         {/*Bottom view containing the three choices*/}
         <View style={styles.horizontalButtons}>
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>1 VEHICLE</Text>      
+                onPress={props.openOne}
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>1 VEHICLE</Text>      
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>2 VEHICLES</Text>      
+                onPress={props.openTwo}
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>2 VEHICLES</Text>      
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>ALL VEHICLES</Text>      
+                style={styles.buttonStyle}>
+                <Text style={styles.buttonText}>ALL VEHICLES</Text>      
             </TouchableOpacity>      
         </View>            
       </View>

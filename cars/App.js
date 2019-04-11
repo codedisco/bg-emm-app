@@ -15,6 +15,8 @@ export default class App extends React.Component {
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
       openAdminLogin:true,//When true, show the login screen
       openAdminHomescreen:false, //When true, show the admin home screen
+      openAdminOneVehicle:false, //When true, show the admin one vehicle screen 
+      openAdminTwoVehicle:false, //When true, show the admin two vehicle screen         
       }
   }
 
@@ -53,9 +55,36 @@ export default class App extends React.Component {
     //Show this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
-      ))
-      
+      ))      
   }
+  
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  openOneVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminHomescreen:!previousState.openAdminHomescreen }
+      )) 
+    
+  
+    //Show this component
+    this.setState(previousState => (
+        { openAdminOneVehicle:!previousState.openAdminOneVehicle }
+      ))      
+  }
+  
+  //Used in the Admin_homescreen component to switch to the two vehicle selection screen
+  openTwoVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminHomescreen:!previousState.openAdminHomescreen }
+      )) 
+    
+  
+    //Show this component
+    this.setState(previousState => (
+        { openAdminTwoVehicle:!previousState.openAdminTwoVehicle }
+      ))      
+  }   
   
   
   render() {
@@ -69,8 +98,18 @@ export default class App extends React.Component {
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
-            <Admin_Homescreen />
+            <Admin_Homescreen
+                openOne = {this.openOneVehicle}
+                openTwo = {this.openTwoVehicle}/>
         }
+        {/*allow the user to choose one car to be displayed*/}
+        {this.state.openAdminOneVehicle &&
+            <Admin_One_Vehicle />
+        }
+        {/*allow the user to choose two car to be displayed*/}
+        {this.state.openAdminTwoVehicle &&
+            <Admin_Two_Vehicle />
+        }          
       </View>
     );
   }
