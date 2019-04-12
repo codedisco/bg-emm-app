@@ -7,6 +7,12 @@ import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 
+carList = [{"id":"VEHICLE SELECTION 1"},
+           {"id":"VEHICLE SELECTION 2"},
+           {"id":"VEHICLE SELECTION 3"},
+           {"id":"VEHICLE SELECTION 4"},
+          ];
+
 export default class App extends React.Component {
   constructor(props){
     super();
@@ -113,6 +119,7 @@ console.log("This works " + this.state.oneVehicleSelection);
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
         {/*allow the user to choose two car to be displayed*/}

@@ -9,12 +9,6 @@ import {
 
 import Admin_Nav from './admin_nav.js';
 
-carList = [{"id":"VEHICLE SELECTION 1"},
-           {"id":"VEHICLE SELECTION 2"},
-           {"id":"VEHICLE SELECTION 3"},
-           {"id":"VEHICLE SELECTION 4"},
-          ];
-
 //Component shaped like a radio option that the user can select
 function Car_option(props) {
   return(
@@ -47,7 +41,7 @@ export default function Admin_One_Vehicle(props) {
         {/*Show a list of radio options of Car_options*/}
         <View style={styles.selectionContainerStyle}>
             <FlatList
-                data={carList}
+                data={props.cars}
                 renderItem={({item}) =>
                     <Car_option
                         oneCarChoice = {props.oneCarChoice}
