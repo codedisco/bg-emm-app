@@ -15,9 +15,17 @@ export default class App extends React.Component {
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
       openAdminLogin:true,//When true, show the login screen
       openAdminHomescreen:false, //When true, show the admin home screen
-      openAdminOneVehicle:false, //When true, show the admin one vehicle screen 
+      openAdminOneVehicle:false, //When true, show the admin one vehicle screen
+      oneVehicleSelection:[],//vehicle chosen by by the user in the admin_onevehicle component
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen         
       }
+  }
+    
+  oneVehicleChoice = (id) => {
+    this.setState(previousState => (
+        { oneVehicleSelection:id }
+      ))       
+console.log("This works " + this.state.oneVehicleSelection);      
   }
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
@@ -104,7 +112,8 @@ export default class App extends React.Component {
         }
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
-            <Admin_One_Vehicle />
+            <Admin_One_Vehicle
+                oneCarChoice = {this.oneVehicleChoice}/>
         }
         {/*allow the user to choose two car to be displayed*/}
         {this.state.openAdminTwoVehicle &&

@@ -19,7 +19,9 @@ carList = [{"id":"VEHICLE SELECTION 1"},
 function Car_option(props) {
   return(
     <View>
-      <TouchableOpacity style={styles.carOptionContainer}>
+      <TouchableOpacity
+            onPress = {() =>{props.oneCarChoice(props.id)}}
+            style={styles.carOptionContainer}>
           <View style={styles.radioButtonStyle}></View>
           <Text style={styles.instructionStyle}>{props.id}</Text>
       </TouchableOpacity>
@@ -47,7 +49,8 @@ export default function Admin_One_Vehicle(props) {
             <FlatList
                 data={carList}
                 renderItem={({item}) =>
-                    <Car_option 
+                    <Car_option
+                        oneCarChoice = {props.oneCarChoice}
                         id={item.id} />
                 }
                 keyExtractor={item => item.id}
