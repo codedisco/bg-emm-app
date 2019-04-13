@@ -22,17 +22,25 @@ export default class App extends React.Component {
       openAdminLogin:true,//When true, show the login screen
       openAdminHomescreen:false, //When true, show the admin home screen
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
-      oneVehicleSelection:[],//vehicle chosen by by the user in the admin_onevehicle component
+      oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
+      twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen         
       }
   }
-    
+     
+  //method used in the car selection process to save car one's id of the selected car    
   oneVehicleChoice = (id) => {
     this.setState(previousState => (
         { oneVehicleSelection:id }
-      ))       
-console.log("This works " + this.state.oneVehicleSelection);      
+      ))      
   }
+  
+  //method used in the car selection process to save car two's id of the selected car 
+  twoVehicleChoice = (id) => {
+    this.setState(previousState => (
+        { twoVehicleSelection:id }
+      ))       
+  }  
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
   playerLogin = (userPwd) => {
@@ -124,7 +132,10 @@ console.log("This works " + this.state.oneVehicleSelection);
         }
         {/*allow the user to choose two car to be displayed*/}
         {this.state.openAdminTwoVehicle &&
-            <Admin_Two_Vehicle />
+            <Admin_Two_Vehicle
+                cars = {carList}
+                twoCarChoice = {this.twoVehicleChoice}
+                oneCarChoice = {this.oneVehicleChoice}/>
         }          
       </View>
     );

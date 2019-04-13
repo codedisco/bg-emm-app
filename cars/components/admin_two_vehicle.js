@@ -9,17 +9,14 @@ import {
 
 import Admin_Nav from './admin_nav.js';
 
-carList = [{"id":"VEHICLE SELECTION 1"},
-           {"id":"VEHICLE SELECTION 2"},
-           {"id":"VEHICLE SELECTION 3"},
-           {"id":"VEHICLE SELECTION 4"},
-          ];
-
 //Component shaped like a radio option that the user can select
 function Car_option(props) {
   return(
     <View>
-      <TouchableOpacity style={styles.carOptionContainer}>
+      <TouchableOpacity
+            {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
+            onPress = {props.carChoice}
+            style={styles.carOptionContainer}>
           <View style={styles.radioButtonStyle}></View>
           <Text style={styles.instructionStyle}>{props.id}</Text>
       </TouchableOpacity>
@@ -42,9 +39,12 @@ export default function Admin_Two_Vehicle(props) {
                 <Text style={styles.instructionStyle}>SELECT LEFT VEHICLE</Text>
                 <View style={styles.selectionContainerStyle}>
                     <FlatList
-                        data={carList}
+                        data={props.cars}
                         renderItem={({item}) =>
-                            <Car_option 
+                            <Car_option
+                                {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
+                                carChoice = {() =>{props.oneCarChoice(item.id)}}
+                                
                                 id={item.id} />
                         }
                         keyExtractor={item => item.id}
@@ -59,7 +59,9 @@ export default function Admin_Two_Vehicle(props) {
                     <FlatList
                         data={carList}
                         renderItem={({item}) =>
-                            <Car_option 
+                            <Car_option
+                                {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
+                                carChoice = {() =>{props.twoCarChoice(item.id)}}
                                 id={item.id} />
                         }
                         keyExtractor={item => item.id}
