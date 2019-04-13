@@ -7,6 +7,12 @@ import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 
+carList = [{"id":"VEHICLE SELECTION 1"},
+           {"id":"VEHICLE SELECTION 2"},
+           {"id":"VEHICLE SELECTION 3"},
+           {"id":"VEHICLE SELECTION 4"},
+          ];
+
 export default class App extends React.Component {
   constructor(props){
     super();
@@ -15,10 +21,26 @@ export default class App extends React.Component {
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
       openAdminLogin:true,//When true, show the login screen
       openAdminHomescreen:false, //When true, show the admin home screen
-      openAdminOneVehicle:false, //When true, show the admin one vehicle screen 
+      openAdminOneVehicle:false, //When true, show the admin one vehicle screen
+      oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
+      twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen         
       }
   }
+     
+  //method used in the car selection process to save car one's id of the selected car    
+  oneVehicleChoice = (id) => {
+    this.setState(previousState => (
+        { oneVehicleSelection:id }
+      ))      
+  }
+  
+  //method used in the car selection process to save car two's id of the selected car 
+  twoVehicleChoice = (id) => {
+    this.setState(previousState => (
+        { twoVehicleSelection:id }
+      ))       
+  }  
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
   playerLogin = (userPwd) => {
@@ -104,11 +126,16 @@ export default class App extends React.Component {
         }
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
-            <Admin_One_Vehicle />
+            <Admin_One_Vehicle
+                cars = {carList}
+                oneCarChoice = {this.oneVehicleChoice}/>
         }
         {/*allow the user to choose two car to be displayed*/}
         {this.state.openAdminTwoVehicle &&
-            <Admin_Two_Vehicle />
+            <Admin_Two_Vehicle
+                cars = {carList}
+                twoCarChoice = {this.twoVehicleChoice}
+                oneCarChoice = {this.oneVehicleChoice}/>
         }          
       </View>
     );
