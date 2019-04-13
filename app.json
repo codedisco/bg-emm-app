@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Edge Motor Museum",
-    "slug": "edge-motor-museum",
+    "name": "cars",
+    "slug": "cars",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -9,7 +9,7 @@
       "android"
     ],
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
