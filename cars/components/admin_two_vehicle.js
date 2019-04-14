@@ -14,7 +14,6 @@ function Car_option(props) {
   return(
     <View>
       <TouchableOpacity
-            {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
             onPress = {props.carChoice}
             style={styles.carOptionContainer}>
           <View style={styles.radioButtonStyle}></View>
@@ -42,7 +41,6 @@ export default function Admin_Two_Vehicle(props) {
                         data={props.cars}
                         renderItem={({item}) =>
                             <Car_option
-                                {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
                                 carChoice = {() =>{props.oneCarChoice(item.id)}}
                                 
                                 id={item.id} />
@@ -60,7 +58,6 @@ export default function Admin_Two_Vehicle(props) {
                         data={carList}
                         renderItem={({item}) =>
                             <Car_option
-                                {/*This method saves the selected car id and is linked to the oneVehicleChoice() in App.js*/}
                                 carChoice = {() =>{props.twoCarChoice(item.id)}}
                                 id={item.id} />
                         }
