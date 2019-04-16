@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { Constants } from 'expo';
 import {AntDesign } from '@expo/vector-icons';
 
 //Nav component used in the admin pages
@@ -37,12 +38,14 @@ export default function Admin_Nav(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight + 15,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     //alignItems: "stretch",
     alignItems: "center",
-    width:"100%", 
+    paddingBottom: 30,
+    width:"100%",
     backgroundColor:"#505050",
   },
   //evenly distribute items in the nav left, center, and right    
