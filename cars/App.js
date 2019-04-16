@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Constants } from 'expo';
 
 import Admin_Login from './components/admin_login.js';
 import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
+import Home_View_1 from './components/home_view_1.js';
 
 carList = [{"id":"VEHICLE SELECTION 1"},
            {"id":"VEHICLE SELECTION 2"},
@@ -24,7 +24,8 @@ export default class App extends React.Component {
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
       oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
-      openAdminTwoVehicle:false, //When true, show the admin two vehicle screen         
+      openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
+      openHomeOneVehicle:false, //When true, show the admin two vehicle screen 
       }
   }
      
@@ -32,7 +33,9 @@ export default class App extends React.Component {
   oneVehicleChoice = (id) => {
     this.setState(previousState => (
         { oneVehicleSelection:id }
-      ))      
+      )) 
+      
+    this.openHomeOneVehicle();  
   }
   
   //method used in the car selection process to save car two's id of the selected car 
@@ -106,7 +109,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openAdminTwoVehicle:!previousState.openAdminTwoVehicle }
       ))      
-  }   
+  } 
+  
+  //Used in the Admin_OneVehicle component to switch to the home one vehicle presentation screen. Call in the oneVehicleChoice()
+  openHomeOneVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminOneVehicle:!previousState.openAdminOneVehicle }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  }  
   
   
   render() {
@@ -136,16 +152,19 @@ export default class App extends React.Component {
                 cars = {carList}
                 twoCarChoice = {this.twoVehicleChoice}
                 oneCarChoice = {this.oneVehicleChoice}/>
-        }          
+        }
+        {/*allow the user to choose two car to be displayed*/}
+        {this.state.openHomeOneVehicle &&
+            <Home_View_1 />
+        }         
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     flex: 1,
-    paddingTop: Constants.statusBarHeight,
     alignItems: 'center',
     justifyContent: 'center',
   }
