@@ -6,6 +6,7 @@ import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
+import Home_View_2 from './components/home_view_2.js';
 
 carList = [{"id":"VEHICLE SELECTION 1"},
            {"id":"VEHICLE SELECTION 2"},
@@ -130,9 +131,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
-            <Admin_Login 
-                userEnterPwd = {this.state.userEnterPassword}
-                login={this.playerLogin} />      
+            <Home_View_2 />      
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
