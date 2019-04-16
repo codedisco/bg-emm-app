@@ -6,6 +6,7 @@ import Admin_Login from './components/admin_login.js';
 import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
+import Home_View_1 from './components/home_view_1.js';
 
 carList = [{"id":"VEHICLE SELECTION 1"},
            {"id":"VEHICLE SELECTION 2"},
