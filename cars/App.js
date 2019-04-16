@@ -26,11 +26,12 @@ export default class App extends React.Component {
       oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
-      openHomeOneVehicle:false, //When true, show the admin two vehicle screen 
+      openHomeOneVehicle:false, //When true, show single car and its details for the user
+      openHomeTwoVehicle:false, //When true, show two cars and their details for the user    
       }
   }
      
-  //method used in the car selection process to save car one's id of the selected car    
+  //method used in the car selection process to save car one's id of the selected car and switch to the user view of Home 1    
   oneVehicleChoice = (id) => {
     this.setState(previousState => (
         { oneVehicleSelection:id }
@@ -39,11 +40,13 @@ export default class App extends React.Component {
     this.openHomeOneVehicle();  
   }
   
-  //method used in the car selection process to save car two's id of the selected car 
+  //method used in the car selection process to save car two's id of the selected car and switch to the user view of Home 2 
   twoVehicleChoice = (id) => {
     this.setState(previousState => (
         { twoVehicleSelection:id }
-      ))       
+      ))
+      
+    this.openHomeTwoVehicle();
   }  
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
@@ -123,7 +126,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeOneVehicle:!previousState.openHomeOneVehicle }
       ))      
-  }  
+  }
+  
+  //Used in the Admin_TwoVehicle component to switch to the home two vehicle presentation screen. Call in the twoVehicleChoice()
+  openHomeTwoVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminTwoVehicle:!previousState.openAdminTwoVehicle }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
+      ))      
+  }   
   
   
   render() {
@@ -131,7 +147,9 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
-            <Home_View_2 />      
+            <Admin_Login 
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin} />      
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
@@ -152,10 +170,14 @@ export default class App extends React.Component {
                 twoCarChoice = {this.twoVehicleChoice}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
-        {/*allow the user to choose two car to be displayed*/}
+        {/*allow the user view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1 />
-        }         
+        }  
+        {/*allow the user view two car and their details*/}
+        {this.state.openHomeTwoVehicle &&
+            <Home_View_2 />
+        }        
       </View>
     );
   }
