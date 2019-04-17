@@ -40,14 +40,20 @@ export default class App extends React.Component {
     this.openHomeOneVehicle();  
   }
   
-  //method used in the car selection process to save car two's id of the selected car and switch to the user view of Home 2 
-  twoVehicleChoice = (id) => {
+  //method used in the car selection process to save car two's id of the selected car 
+  saveTwoVehicle = (id) => {
     this.setState(previousState => (
         { twoVehicleSelection:id }
       ))
-      
-    this.openHomeTwoVehicle();
-  }  
+  }
+  
+  //method used in the car selection process to save car one's id of the selected car    
+  saveOneVehicle = (id) => {
+    this.setState(previousState => (
+        { oneVehicleSelection:id }
+      ))  
+  }
+
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
   playerLogin = (userPwd) => {
@@ -167,8 +173,9 @@ export default class App extends React.Component {
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
                 cars = {carList}
-                twoCarChoice = {this.twoVehicleChoice}
-                oneCarChoice = {this.oneVehicleChoice}/>
+                submit = {this.openHomeTwoVehicle}
+                twoCarChoice = {this.saveTwoVehicle}
+                oneCarChoice = {this.saveOneVehicle}/>
         }
         {/*allow the user view one car and its details*/}
         {this.state.openHomeOneVehicle &&

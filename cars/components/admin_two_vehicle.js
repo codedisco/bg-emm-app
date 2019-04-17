@@ -69,7 +69,7 @@ export default function Admin_Two_Vehicle(props) {
 
         {/*Submit Button*/}
         <View style={styles.submitButtonContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress = {props.submit}>
                 <Text style={styles.buttonTextStyle}>Confirm</Text>
             </TouchableOpacity>        
         </View>
