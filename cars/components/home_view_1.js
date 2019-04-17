@@ -19,17 +19,17 @@ export default function Home_View_1(props) {
       
       {/*Body of the page*/}
       <View style={styles.homeViewContainer}>
-        <View style={styles.one}>
+        <View style={styles.row}>
             <View style={styles.carDetails}>
                 <Text style={styles.details}>Year </Text>
                 <Text style={styles.details}>Make </Text>
                 <Text style={styles.details}>Modal </Text>      
             </View> 
             <View style={styles.carImage}>
-                <Image source={require('../assets/chevy-impala.jpg')} />
+                <Image source={props.onePhoto} />
             </View>       
         </View>
-        <View style={styles.one}>
+        <View style={styles.row}>
             <View style={styles.carDetails}>
                 <Text style={styles.dataDetails}>Detail: data </Text>
                 <Text style={styles.dataDetails}>Detail: data  </Text>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
       backgroundColor:"#505050", //similar to the black color
       color: "lightgrey",      
   }, 
-  one: {
+  row: {
       display: "flex",
       flexDirection:"row",
       justifyContent: "space-around",
