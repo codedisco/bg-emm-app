@@ -8,10 +8,10 @@ import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
 import Home_View_2 from './components/home_view_2.js';
 
-carList = [{"id":"VEHICLE SELECTION 1"},
-           {"id":"VEHICLE SELECTION 2"},
-           {"id":"VEHICLE SELECTION 3"},
-           {"id":"VEHICLE SELECTION 4"},
+carList = [{"id":"VEHICLE SELECTION 1","photo":require('./assets/chevy-avalanche.png')},
+           {"id":"VEHICLE SELECTION 2","photo":require('./assets/chevy-impala.jpg')},
+           {"id":"VEHICLE SELECTION 3","photo":require('./assets/ford-mustang.jpg')},
+           {"id":"VEHICLE SELECTION 4","photo":require('./assets/nissan-maxima.jpg')},
           ];
 
 export default class App extends React.Component {
@@ -30,27 +30,39 @@ export default class App extends React.Component {
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user    
       }
   }
+    
+  //method to get the photo of the selected car
+  getCarPhoto = (id) => {
+    let carIndex = carList.findIndex(cars => cars.id == id);
+    return carList[carIndex].photo
+  }
      
   //method used in the car selection process to save car one's id of the selected car and switch to the user view of Home 1    
   oneVehicleChoice = (id) => {
+      
+    let selection = this.getCarPhoto(id); //method to get the photo of the selected car
     this.setState(previousState => (
-        { oneVehicleSelection:id }
+        { oneVehicleSelection:selection }
       )) 
       
-    this.openHomeOneVehicle();  
+    this.openHomeOneVehicle();
+
   }
   
   //method used in the car selection process to save car two's id of the selected car 
   saveTwoVehicle = (id) => {
+      
+    let selection = this.getCarPhoto(id); //method to get the photo of the selected car  
     this.setState(previousState => (
-        { twoVehicleSelection:id }
+        { twoVehicleSelection:selection }
       ))
   }
   
   //method used in the car selection process to save car one's id of the selected car    
   saveOneVehicle = (id) => {
+    let selection = this.getCarPhoto(id); //method to get the photo of the selected car
     this.setState(previousState => (
-        { oneVehicleSelection:id }
+        { oneVehicleSelection:selection }
       ))  
   }
 
@@ -179,11 +191,14 @@ export default class App extends React.Component {
         }
         {/*allow the user view one car and its details*/}
         {this.state.openHomeOneVehicle &&
-            <Home_View_1 />
+            <Home_View_1
+                onePhoto = {this.state.oneVehicleSelection}/>
         }  
         {/*allow the user view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
-            <Home_View_2 />
+            <Home_View_2 
+                twoPhoto = {this.state.twoVehicleSelection}
+                onePhoto = {this.state.oneVehicleSelection}/>
         }        
       </View>
     );

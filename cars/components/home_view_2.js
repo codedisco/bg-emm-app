@@ -32,8 +32,8 @@ export default function Home_View_2(props) {
             </View>             
         </View>
         <View style={styles.row}>
-            <View><Image source={require('../assets/chevy-impala.jpg')} /></View>
-            <View><Image source={require('../assets/chevy-impala.jpg')} /></View>
+            <View><Image source={props.onePhoto} /></View>
+            <View><Image source={props.twoPhoto} /></View>
         </View>
       </View>
     </View>

@@ -26,7 +26,7 @@ export default function Home_View_1(props) {
                 <Text style={styles.details}>Modal </Text>      
             </View> 
             <View style={styles.carImage}>
-                <Image source={require('../assets/chevy-impala.jpg')} />
+                <Image source={props.onePhoto} />
             </View>       
         </View>
         <View style={styles.row}>
