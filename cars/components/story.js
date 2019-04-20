@@ -31,6 +31,7 @@ export default function Story(props) {
             /> 
             </ScrollView>
             <View>
+                <Text>Full Specs</Text>
                 <Text style={styles.specDetails}>Year:{props.selectedCar.year}</Text>
                 <Text style={styles.specDetails}>Make:{props.selectedCar.make}</Text>
                 <Text style={styles.specDetails}>Engine:{props.selectedCar.model}</Text>

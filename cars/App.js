@@ -113,11 +113,12 @@ export default class App extends React.Component {
   passwordChecker = (userPwd) => {
     if(userPwd == this.state.pwd){
         this.openHomescreen();
-    }else {
+    }
+    //no matter what the pasword should be cleared  
     this.setState(previousState => (
         { userEnterPassword:"" }
       ))        
-    }      
+         
   }
   
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view and in the back button on Admin_Homescreen
@@ -239,7 +240,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeAll:false }
       ))       
-  }   
+  }
+  
+  //Used in the Story component to switch to the home one vehicle presentation screen.
+  goBackHomeOneVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  }  
   
   
   render() {
@@ -298,7 +312,9 @@ export default class App extends React.Component {
         }
         {/*allow the user to view details of a selected car*/}
         {this.state.openStory &&
-            <Story selectedCar={this.state.oneVehicleSelection} />
+            <Story
+                goBack = {this.goBackHomeOneVehicle}
+                selectedCar={this.state.oneVehicleSelection} />
         }          
       </View>
     );
