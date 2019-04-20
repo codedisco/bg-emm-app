@@ -1,6 +1,7 @@
-
-.idea/modules.xml
-.idea/vcs.xml
-.idea/codeStyles/Project.xml
-.idea/workspace.xml
-.idea/bg-emm-app.iml
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
