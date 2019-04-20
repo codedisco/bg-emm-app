@@ -15,7 +15,7 @@ export default function Home_View_1(props) {
   return(
     <View style={styles.container}>
       {/*Nav component*/}
-      <Admin_Nav navTitle = "" />
+      <Admin_Nav navTitle = "" goBack = {props.goBack} />
       
       {/*Body of the page*/}
       <View style={styles.homeViewContainer}>

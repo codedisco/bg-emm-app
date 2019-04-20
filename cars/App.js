@@ -201,6 +201,29 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
       ))      
+  }
+  
+  //Navigate user to the login screen from any home view
+  goBackToLogin = () => {
+    //Show this component
+    this.setState(previousState => (
+        { openAdminLogin:!previousState.openAdminLogin}
+      ))
+      
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:false }
+      )) 
+      
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeTwoVehicle:false }
+      ))
+
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeAll:false }
+      ))       
   }   
   
   
@@ -240,17 +263,20 @@ export default class App extends React.Component {
         {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
+                goBack = {this.goBackToLogin}
                 onePhoto = {this.state.oneVehicleSelection}/>
         }  
         {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
+                goBack = {this.goBackToLogin}        
                 twoPhoto = {this.state.twoVehicleSelection}
                 onePhoto = {this.state.oneVehicleSelection}/>
         }
         {/*allow the user to view all cars and their details*/}
         {this.state.openHomeAll &&
             <Home_View_All 
+                goBack = {this.goBackToLogin}        
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
         }         
