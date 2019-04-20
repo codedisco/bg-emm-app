@@ -231,6 +231,7 @@ export default class App extends React.Component {
         {/*allow the user to choose two car to be displayed*/}
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
+                goBack = {this.openTwoVehicle}
                 cars = {carList}
                 submit = {this.openHomeTwoVehicle}
                 twoCarChoice = {this.saveTwoVehicle}

@@ -28,7 +28,7 @@ export default function Admin_Two_Vehicle(props) {
   return(
     <View style={styles.container}>
       {/*Nav component*/}
-      <Admin_Nav navTitle = "Vehicle Choice" />
+      <Admin_Nav navTitle = "Vehicle Choice" goBack = {props.goBack} />
       
       {/*All main Views are vertically stacked and centerd while the selection container are horizontally aligned*/}
       <View style={styles.vehicleContainer}>
