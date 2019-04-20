@@ -11,26 +11,6 @@ import {
 
 import Admin_Nav from './admin_nav.js';
 
-//show a list of cars in a horizontal plane
-function Car_show(props){
-  return(
-    <View style={styles.row}>
-        <FlatList
-                horizontal={true}
-                data={props.displayOfCars}
-                renderItem={({item}) =>
-                    <Car
-                        year = {item.year}
-                        make = {item.make}
-                        model = {item.model}    
-                        photo = {item.photo} />
-                }
-                keyExtractor={item => item.id}
-            />  
-    </View>
-  );
-}
-
 //
 export default function Story(props) {
   return(
@@ -47,19 +27,19 @@ export default function Story(props) {
                 <Text>Engine:</Text>                
             </ScrollView>
             <View>
-                <Text>Year:</Text>
-                <Text>Make:</Text>
-                <Text>Engine:</Text>
-                <Text>Horsepower:</Text>
-                <Text>Fuel Delivery:</Text>
-                <Text>Transmission:</Text>
-                <Text>Brakes:</Text>
-                <Text>Color:</Text>
-                <Text>Interior:</Text>
-                <Text>Options:</Text>
-                <Text>Production:</Text>
-                <Text>Price New:</Text>
-                <Text>Owner:</Text>
+                <Text style={styles.specDetails}>Year:</Text>
+                <Text style={styles.specDetails}>Make:</Text>
+                <Text style={styles.specDetails}>Engine:</Text>
+                <Text style={styles.specDetails}>Horsepower:</Text>
+                <Text style={styles.specDetails}>Fuel Delivery:</Text>
+                <Text style={styles.specDetails}>Transmission:</Text>
+                <Text style={styles.specDetails}>Brakes:</Text>
+                <Text style={styles.specDetails}>Color:</Text>
+                <Text style={styles.specDetails}>Interior:</Text>
+                <Text style={styles.specDetails}>Options:</Text>
+                <Text style={styles.specDetails}>Production:</Text>
+                <Text style={styles.specDetails}>Price New:</Text>
+                <Text style={styles.specDetails}>Owner:</Text>
       
                 {/*Gallery Button*/}
                 <TouchableOpacity
@@ -95,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 10, //white-space between the border and the button's text
     borderColor:'lightgrey',
     borderStyle: 'solid',
-    borderWidth: 10,
+    borderWidth: 5,
     paddingLeft: 20,
     paddingRight: 20,
     marginRight: 30, //white-space between buttons
@@ -105,5 +85,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  specDetails: {
+      color: "lightgrey",
+      fontSize: 14,
+      fontWeight: 'bold'
   }  
 });

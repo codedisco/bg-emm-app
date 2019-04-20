@@ -233,7 +233,9 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
-            <Story />      
+            <Admin_Login 
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin} />      
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
