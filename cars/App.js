@@ -28,8 +28,34 @@ export default class App extends React.Component {
       twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
-      openHomeTwoVehicle:false, //When true, show two cars and their details for the user    
+      openHomeTwoVehicle:false, //When true, show two cars and their details for the user
+      openHomeAll:false, //When true, show all the cars and their details for the user    
+      topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
+      bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
       }
+  }
+    
+  //method to create two list of cars to be displayed in the Home_View_All component. This is called in when the user choose to present all cars in the admin_homescreen component    
+  getDisplayOfCars = () => {
+      let topList =[];
+      let bottomList = [];
+      carList.forEach(function (item,index){
+          if(index%2 == 0){
+            bottomList.push(item);//all odd index car objects is saved here
+          }else {
+            topList.push(item);//all even index car objects is saved here              
+          }
+      });
+    
+    //save the top list of the car list to the state  
+    this.setState(previousState => (
+        { topdisplayOfCars:topList }
+      ))
+      
+    //save the bottom index of the car list to the state  
+    this.setState(previousState => (
+        { bottomdisplayOfCars:bottomList }
+      ))       
   }
     
   //method to get the photo of the selected car
@@ -134,6 +160,23 @@ export default class App extends React.Component {
       ))      
   } 
   
+  //Used in the Admin_homescreen component to switch to the show all car Home screen
+  openShowAll = () => {
+    //create to list of cars to be displayed  
+    this.getDisplayOfCars();  
+      
+    //Hide this component
+    this.setState(previousState => (
+        { openAdminHomescreen:!previousState.openAdminHomescreen }
+      )) 
+    
+  
+    //Show this component
+    this.setState(previousState => (
+        { openHomeAll:!previousState.openHomeAll }
+      ))      
+  }  
+  
   //Used in the Admin_OneVehicle component to switch to the home one vehicle presentation screen. Call in the oneVehicleChoice()
   openHomeOneVehicle = () => {
     //Hide this component
@@ -166,11 +209,14 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
-            <Home_View_All photo={carList[1].photo} />      
+            <Admin_Login 
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin} />      
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
+                openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
         }
@@ -188,17 +234,23 @@ export default class App extends React.Component {
                 twoCarChoice = {this.saveTwoVehicle}
                 oneCarChoice = {this.saveOneVehicle}/>
         }
-        {/*allow the user view one car and its details*/}
+        {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
                 onePhoto = {this.state.oneVehicleSelection}/>
         }  
-        {/*allow the user view two car and their details*/}
+        {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
                 twoPhoto = {this.state.twoVehicleSelection}
                 onePhoto = {this.state.oneVehicleSelection}/>
-        }        
+        }
+        {/*allow the user to view all cars and their details*/}
+        {this.state.openHomeAll &&
+            <Home_View_All 
+                topDisplayOfCars = {this.state.topdisplayOfCars}
+                bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
+        }         
       </View>
     );
   }

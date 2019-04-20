@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  FlatList,
 } from 'react-native';
 
 import Admin_Nav from './admin_nav.js';
@@ -15,7 +16,7 @@ function Car(props) {
   return(
     <View style={styles.row}>
         <View>
-            <View><Image source={props.photo} /></View>
+            <View><Image style={styles.imageStyle} source={props.photo} /></View>
         </View>
         <View>
             <Text style={styles.details}>Year </Text>
@@ -26,7 +27,23 @@ function Car(props) {
   );    
 }
 
-//Show all the cars to the guests in a horizontal swiping view
+//show a list of cars in a horizontal plane
+function Car_show(props){
+  return(
+    <View style={styles.row}>
+        <FlatList
+                horizontal={true}
+                data={props.displayOfCars}
+                renderItem={({item}) =>
+                    <Car photo = {item.photo} />
+                }
+                keyExtractor={item => item.id}
+            />  
+    </View>
+  );
+}
+
+//Show all the cars to the guests in a horizontal swiping view. Two lists of cars based on the even or odd index is used.
 export default function Home_View_All(props) {
   return(
     <View style={styles.container}>
@@ -37,13 +54,13 @@ export default function Home_View_All(props) {
       <View style={styles.homeViewContainer}>
         <ScrollView horizontal= {true}>
             <View style={styles.twoRows}>
-                <View style={styles.row}>
-                    <Car photo={props.photo} />
+                <View>
+                    <Car_show displayOfCars={props.topDisplayOfCars}/>
                 </View>
                 <View style={styles.yellowLine}></View>
                 <View style={styles.yellowLine}></View>
                 <View style={styles.row}>
-                    <Car photo={props.photo} />
+                    <Car_show displayOfCars={props.bottomDisplayOfCars}/>
                 </View>
             </View>
         </ScrollView>
@@ -84,5 +101,9 @@ const styles = StyleSheet.create({
       width: "100%",
       marginTop:5,
       marginBottom: 5,
+  },
+  imageStyle: {
+      width: 150,
+      height: 150,
   }
 });
