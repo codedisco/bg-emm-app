@@ -7,6 +7,7 @@ import Admin_One_Vehicle from './components/admin_one_vehicle.js';
 import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
 import Home_View_2 from './components/home_view_2.js';
+import Home_View_All from './components/home_view_all.js';
 
 carList = [{"id":"VEHICLE SELECTION 1","photo":require('./assets/chevy-avalanche.png')},
            {"id":"VEHICLE SELECTION 2","photo":require('./assets/chevy-impala.jpg')},
@@ -165,9 +166,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
-            <Admin_Login 
-                userEnterPwd = {this.state.userEnterPassword}
-                login={this.playerLogin} />      
+            <Home_View_All photo={carList[1].photo} />      
         }
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
