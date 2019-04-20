@@ -8,11 +8,12 @@ import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
 import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
+import Story from './components/story.js';
 
-carList = [{"id":"1","photo":require('./assets/chevy-avalanche.png'),"year":"2000", "make":"CHEVY", "model":"AVALANCHE"},
-           {"id":"2","photo":require('./assets/chevy-impala.jpg'),"year":"2001", "make":"CHEVY", "model":"IMPALA"},
-           {"id":"3","photo":require('./assets/ford-mustang.jpg'),"year":"2002", "make":"FORD", "model":"MUSTANG"},
-           {"id":"4","photo":require('./assets/nissan-maxima.jpg'),"year":"2003", "make":"NISSAN", "model":"MAXIMA"},
+carList = [{"id":"1","photo":require('./assets/chevy-avalanche.png'),"year":"2000", "make":"CHEVY", "model":"AVALANCHE","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"2","photo":require('./assets/chevy-impala.jpg'),"year":"2001", "make":"CHEVY", "model":"IMPALA","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"3","photo":require('./assets/ford-mustang.jpg'),"year":"2002", "make":"FORD", "model":"MUSTANG","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"4","photo":require('./assets/nissan-maxima.jpg'),"year":"2003", "make":"NISSAN", "model":"MAXIMA","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
           ];
 
 export default class App extends React.Component {
@@ -29,7 +30,8 @@ export default class App extends React.Component {
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
-      openHomeAll:false, //When true, show all the cars and their details for the user    
+      openHomeAll:false, //When true, show all the cars and their details for the user
+      openStory:false, //When true, show story component tailer to selected vehicle 
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
       }
@@ -111,36 +113,37 @@ export default class App extends React.Component {
   passwordChecker = (userPwd) => {
     if(userPwd == this.state.pwd){
         this.openHomescreen();
-    }else {
+    }
+    //no matter what the pasword should be cleared  
     this.setState(previousState => (
         { userEnterPassword:"" }
       ))        
-    }      
+         
   }
   
-  //Used in the passwordChecker() to change screen to the Admin_Homescreen view
+  //Used in the passwordChecker() to change screen to the Admin_Homescreen view and in the back button on Admin_Homescreen
   openHomescreen = () => {
-    //Hide this component
+    //Hide or show this component
     this.setState(previousState => (
         { openAdminLogin:!previousState.openAdminLogin}
       ))
     
   
-    //Show this component
+    //Show or hide this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
       ))      
   }
   
-  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen or to switch back to Admin_homescreen via the back button.
   openOneVehicle = () => {
-    //Hide this component
+    //Hide or show this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
       )) 
     
   
-    //Show this component
+    //Show or hide this component
     this.setState(previousState => (
         { openAdminOneVehicle:!previousState.openAdminOneVehicle }
       ))      
@@ -201,7 +204,56 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
       ))      
-  }   
+  }
+  
+  //Used in the Home View 1 to open a Story component for a selected car
+  openOneVehicleStory = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      ))       
+  }  
+  
+  //Navigate user to the login screen from any home view
+  goBackToLogin = () => {
+    //Show this component
+    this.setState(previousState => (
+        { openAdminLogin:!previousState.openAdminLogin}
+      ))
+      
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:false }
+      )) 
+      
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeTwoVehicle:false }
+      ))
+
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeAll:false }
+      ))       
+  }
+  
+  //Used in the Story component to switch to the home one vehicle presentation screen.
+  goBackHomeOneVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  }  
   
   
   render() {
@@ -216,6 +268,7 @@ export default class App extends React.Component {
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
+                goBack = {this.openHomescreen}
                 openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
@@ -223,12 +276,14 @@ export default class App extends React.Component {
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                goBack = {this.openOneVehicle}
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
         {/*allow the user to choose two car to be displayed*/}
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
+                goBack = {this.openTwoVehicle}
                 cars = {carList}
                 submit = {this.openHomeTwoVehicle}
                 twoCarChoice = {this.saveTwoVehicle}
@@ -237,20 +292,30 @@ export default class App extends React.Component {
         {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
+                goToStory = {this.openOneVehicleStory}
+                goBack = {this.goBackToLogin}
                 onePhoto = {this.state.oneVehicleSelection}/>
         }  
         {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
+                goBack = {this.goBackToLogin}        
                 twoPhoto = {this.state.twoVehicleSelection}
                 onePhoto = {this.state.oneVehicleSelection}/>
         }
         {/*allow the user to view all cars and their details*/}
         {this.state.openHomeAll &&
             <Home_View_All 
+                goBack = {this.goBackToLogin}        
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
-        }         
+        }
+        {/*allow the user to view details of a selected car*/}
+        {this.state.openStory &&
+            <Story
+                goBack = {this.goBackHomeOneVehicle}
+                selectedCar={this.state.oneVehicleSelection} />
+        }          
       </View>
     );
   }

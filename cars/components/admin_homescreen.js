@@ -12,7 +12,7 @@ export default function Admin_Homescreen(props) {
   return(
     <View style={styles.container}>
       {/*Nav component*/}
-      <Admin_Nav navTitle = "Home Screen" />
+      <Admin_Nav navTitle = "Home Screen" goBack = {props.goBack} />
       
       {/*The body of the screen showing the three choices for the user*/}
       <View style={styles.homesceenContainer}>

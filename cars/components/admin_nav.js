@@ -15,7 +15,7 @@ export default function Admin_Nav(props) {
   return(
     <View style={styles.container}>
       {/*Left side, Back button*/}
-      <TouchableOpacity>
+      <TouchableOpacity onPress = {() =>{props.goBack()}}>
         <AntDesign name="leftsquare" size={96} color="gold" />
       </TouchableOpacity>
       
