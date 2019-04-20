@@ -79,7 +79,7 @@ export default class App extends React.Component {
   //method used in the car selection process to save car two's id of the selected car 
   saveTwoVehicle = (id) => {
       
-    let selection = this.getCarPhoto(id); //method to get the photo of the selected car  
+    let selection = this.getCar(id); //method to get the photo of the selected car  
     this.setState(previousState => (
         { twoVehicleSelection:selection }
       ))
@@ -87,7 +87,7 @@ export default class App extends React.Component {
   
   //method used in the car selection process to save car one's id of the selected car    
   saveOneVehicle = (id) => {
-    let selection = this.getCarPhoto(id); //method to get the photo of the selected car
+    let selection = this.getCar(id); //method to get the photo of the selected car
     this.setState(previousState => (
         { oneVehicleSelection:selection }
       ))  
