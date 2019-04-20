@@ -40,6 +40,7 @@ export default function Admin_Homescreen(props) {
       
             {/*Choice leads to guest screen and showing all vehicle selections*/}
             <TouchableOpacity
+                onPress={props.openAll}
                 style={styles.buttonStyle}>
                 <Text style={styles.buttonText}>ALL VEHICLES</Text>      
             </TouchableOpacity>      
