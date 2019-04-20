@@ -11,7 +11,7 @@ import { Constants } from 'expo';
 import {AntDesign } from '@expo/vector-icons';
 
 //Nav component used in the admin pages
-export default function Admin_Nav(props) {
+export default function Admin_Initial_Nav(props) {
   return(
     <View style={styles.container}>
       {/*Left side, Back button*/}
@@ -31,8 +31,8 @@ export default function Admin_Nav(props) {
       
       {/*Right side, Brand logo*/}
       <Image
-        style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
-        source={require('../assets/emm-logo-large.png')}
+          style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
+          source={require('../assets/emm-logo-large.png')}
       />
     </View>
   );

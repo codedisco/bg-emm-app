@@ -4,6 +4,7 @@ import {
   Text,
   View,
   Image,
+  Button,
   TouchableOpacity,
 } from 'react-native';
 
@@ -15,11 +16,8 @@ export default function Admin_Nav(props) {
   return(
     <View style={styles.container}>
       {/*Left side, Back button*/}
-      <TouchableOpacity style={{backgroundColor: '#E5C035',}}>
-        <Image
-          style={{width: 60, height: 60, margin: 15, resizeMode: 'contain',}}
-          source={require('../assets/arrow-left.png')}
-        />
+      <TouchableOpacity>
+        <AntDesign name="" size={96} />
       </TouchableOpacity>
       
       {/*Center, Dynamic Instructions that change with each admin page*/}
@@ -31,8 +29,8 @@ export default function Admin_Nav(props) {
       
       {/*Right side, Brand logo*/}
       <Image
-        style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
-        source={require('../assets/emm-logo-large.png')}
+          style={{width: 100, height: 100}}
+          source={require('../assets/randomface.png')}
       />
     </View>
   );
@@ -41,6 +39,7 @@ export default function Admin_Nav(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight + 15,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import Admin_Login from './components/admin_login.js';
 import Admin_Homescreen from './components/admin_homescreen.js';
@@ -207,6 +207,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar hidden/>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
             <Admin_Login 

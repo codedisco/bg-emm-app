@@ -96,20 +96,25 @@ const styles = StyleSheet.create({
   //style for the instructions    
   instructionStyle: {
     color: "lightgrey",
-    fontSize: 24,
-    fontWeight: 'bold', 
-    textAlign:"left",
+    fontSize: 20,
+    fontWeight: 'bold',
+    letterSpacing: 3, 
+    textAlign:"center",
+    paddingBottom: 20,
   },
   selectionContainerStyle: {
     backgroundColor: '#505050',
-    padding: 10, //white-space between the border and the button's text
+    paddingLeft: 30,
+    paddingRight: 30,
+    paddingTop: 30,
     borderColor:'lightgrey',
     borderStyle: 'solid',
-    borderWidth: 10,
+    borderWidth: 5,
   },
   carOptionContainer: {
     display:"flex",
-    flexDirection: "row", //format the elemecnts to be side by side  
+    flexDirection: "row", //format the elemecnts to be side by side
+    paddingBottom: 30,  
     alignItems: "baseline",
     justifyContent: "space-between",
   },
@@ -128,12 +133,13 @@ const styles = StyleSheet.create({
   },
   submitButtonContainer: {
     marginTop: 20,
-    backgroundColor: 'gold',
-    padding: 10, //white-space between the border and the button's text     
+    backgroundColor: '#E5C035',
+    padding: 20, //white-space between the border and the button's text     
   }, 
   buttonTextStyle:{
     color:"#505050",
-    fontSize: 24,
+    fontSize: 20,
+    letterSpacing: 3,
     fontWeight: 'bold',       
   }
     

@@ -35,11 +35,12 @@ function Car_show(props){
                 horizontal={true}
                 data={props.displayOfCars}
                 renderItem={({item}) =>
-                    <Car
-                        year = {item.year}
-                        make = {item.make}
-                        model = {item.model}    
-                        photo = {item.photo} />
+                  <Car
+                    year = {item.year}
+                    make = {item.make}
+                    model = {item.model}    
+                    photo = {item.photo}
+                  />
                 }
                 keyExtractor={item => item.id}
             />  

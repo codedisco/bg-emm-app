@@ -4,8 +4,8 @@ import {
   Text,
   View,
   TextInput,
+  StatusBar
 } from 'react-native';
-
 import Admin_Nav from './admin_nav.js';
 
 //first screen shown on the app. Use by the administrator to login
@@ -43,7 +43,8 @@ export default function Admin_Login(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,   
+    flex: 1,
+    flexDirection: 'column',
   },
   loginInputBox: {
     flex: 7,
@@ -55,17 +56,20 @@ const styles = StyleSheet.create({
   },
   textColor: {
     color: "lightgrey",
-    fontSize: 24,
+    fontSize: 20,
+    letterSpacing: 3,
     fontWeight: 'bold',      
   },
   inputBoxContainer: {
     borderColor: "lightgrey",
     borderStyle: 'solid',
-    borderWidth: 10,
-    marginTop:15,
-    width: 200,
+    borderWidth: 5,
+    marginTop: 15,
+    padding: 10,
+    width: 300,
   },
   inputStyle: {
     fontSize: 32,
+    color: "lightgrey",
   },    
 });

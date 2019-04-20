@@ -12,7 +12,7 @@ export default function Admin_Homescreen(props) {
   return(
     <View style={styles.container}>
       {/*Nav component*/}
-      <Admin_Nav navTitle = "Home Screen" />
+      <Admin_Nav navTitle = "Home screen selection" />
       
       {/*The body of the screen showing the three choices for the user*/}
       <View style={styles.homesceenContainer}>
@@ -65,13 +65,14 @@ const styles = StyleSheet.create({
   },
   instructionStyle: {
     color: "lightgrey",
-    fontSize: 24,
+    fontSize: 20,
+    letterSpacing: 3,
     fontWeight: 'bold',      
   },
   horizontalButtons: {
     display:"flex",
     flexDirection: "row", //format the buttons to be side by side
-    marginTop:10, //white-space between instructions and buttons
+    marginTop: 15, //white-space between instructions and buttons
     
   },
   buttonStyle: {
@@ -79,14 +80,15 @@ const styles = StyleSheet.create({
     padding: 10, //white-space between the border and the button's text
     borderColor:'lightgrey',
     borderStyle: 'solid',
-    borderWidth: 10,
+    borderWidth: 5,
     paddingLeft: 20,
     paddingRight: 20,
     marginRight: 30, //white-space between buttons
   },
   buttonText: {
     color: 'lightgrey',
-    fontSize: 24,
+    fontSize: 20,
+    letterSpacing: 3,
     fontWeight: 'bold',
     textAlign: 'center',
   }    
