@@ -21,12 +21,12 @@ export default function Home_View_1(props) {
       <View style={styles.homeViewContainer}>
         <View style={styles.row}>
             <View style={styles.carDetails}>
-                <Text style={styles.details}>Year </Text>
-                <Text style={styles.details}>Make </Text>
-                <Text style={styles.details}>Modal </Text>      
+                <Text style={styles.details}>{props.onePhoto.year} </Text>
+                <Text style={styles.details}>{props.onePhoto.make} </Text>
+                <Text style={styles.details}>{props.onePhoto.model} </Text>      
             </View> 
             <View style={styles.carImage}>
-                <Image source={props.onePhoto} />
+                <Image source={props.onePhoto.photo} />
             </View>       
         </View>
         <View style={styles.row}>

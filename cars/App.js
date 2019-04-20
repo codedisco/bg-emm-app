@@ -58,16 +58,16 @@ export default class App extends React.Component {
       ))       
   }
     
-  //method to get the photo of the selected car
-  getCarPhoto = (id) => {
+  //method to get selected car object
+  getCar = (id) => {
     let carIndex = carList.findIndex(cars => cars.id == id);
-    return carList[carIndex].photo
+    return carList[carIndex]
   }
      
   //method used in the car selection process to save car one's id of the selected car and switch to the user view of Home 1    
   oneVehicleChoice = (id) => {
       
-    let selection = this.getCarPhoto(id); //method to get the photo of the selected car
+    let selection = this.getCar(id); //method to get the photo of the selected car
     this.setState(previousState => (
         { oneVehicleSelection:selection }
       )) 
