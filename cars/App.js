@@ -10,10 +10,10 @@ import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
 import Story from './components/story.js';
 
-carList = [{"id":"1","photo":require('./assets/chevy-avalanche.png'),"year":"2000", "make":"CHEVY", "model":"AVALANCHE"},
-           {"id":"2","photo":require('./assets/chevy-impala.jpg'),"year":"2001", "make":"CHEVY", "model":"IMPALA"},
-           {"id":"3","photo":require('./assets/ford-mustang.jpg'),"year":"2002", "make":"FORD", "model":"MUSTANG"},
-           {"id":"4","photo":require('./assets/nissan-maxima.jpg'),"year":"2003", "make":"NISSAN", "model":"MAXIMA"},
+carList = [{"id":"1","photo":require('./assets/chevy-avalanche.png'),"year":"2000", "make":"CHEVY", "model":"AVALANCHE","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"2","photo":require('./assets/chevy-impala.jpg'),"year":"2001", "make":"CHEVY", "model":"IMPALA","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"3","photo":require('./assets/ford-mustang.jpg'),"year":"2002", "make":"FORD", "model":"MUSTANG","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
+           {"id":"4","photo":require('./assets/nissan-maxima.jpg'),"year":"2003", "make":"NISSAN", "model":"MAXIMA","story":[{"para_id":"1","para":"fjaf jksdjfkal fjkdjfkajfkdjkf jakfjdkljfkajkfljfds kfjljfkljfklsjfk sjafkjf"},{"para_id":"2","para":"fkdfjkal ajdk akldj a fdfs kjl fdklaj dk akfdlja  fkdl kdlfjakl  akldjkl"}, {"para_id":"3","para":"jfkdaljf a d akd kd d afla f akdla da;dl ek kl ckdlcx,n  eklack,kel"}]},
           ];
 
 export default class App extends React.Component {

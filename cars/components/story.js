@@ -22,14 +22,18 @@ export default function Story(props) {
       <View style={styles.homeViewContainer}>
         <View style={styles.row}>
             <ScrollView>
-                <Text>Year:</Text>
-                <Text>Make:</Text>
-                <Text>Engine:</Text>                
+                <FlatList
+                data={props.selectedCar.story}
+                renderItem={({item, index}) =>
+                    <Text>{item.para}</Text>
+                }
+                keyExtractor={item => item.para_id}
+            /> 
             </ScrollView>
             <View>
-                <Text style={styles.specDetails}>Year:</Text>
-                <Text style={styles.specDetails}>Make:</Text>
-                <Text style={styles.specDetails}>Engine:</Text>
+                <Text style={styles.specDetails}>Year:{props.selectedCar.year}</Text>
+                <Text style={styles.specDetails}>Make:{props.selectedCar.make}</Text>
+                <Text style={styles.specDetails}>Engine:{props.selectedCar.model}</Text>
                 <Text style={styles.specDetails}>Horsepower:</Text>
                 <Text style={styles.specDetails}>Fuel Delivery:</Text>
                 <Text style={styles.specDetails}>Transmission:</Text>
