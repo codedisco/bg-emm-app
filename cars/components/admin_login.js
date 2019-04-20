@@ -30,8 +30,8 @@ export default function Admin_Login(props) {
             <TextInput
                 value={props.userEnterPwd}
                 maxLength={4}
-                autofocus = {true}
-                secureTextEntry={true}      
+                autoFocus = {true}
+                secureTextEntry={true}
                 style={styles.inputStyle}
                 onChangeText={(text) => {props.login(text)}}
             /> 
