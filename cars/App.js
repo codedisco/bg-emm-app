@@ -30,7 +30,8 @@ export default class App extends React.Component {
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
-      openHomeAll:false, //When true, show all the cars and their details for the user    
+      openHomeAll:false, //When true, show all the cars and their details for the user
+      openStory:false, //When true, show story component tailer to selected vehicle 
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
       }
@@ -204,6 +205,19 @@ export default class App extends React.Component {
       ))      
   }
   
+  //Used in the Home View 1 to open a Story component for a selected car
+  openOneVehicleStory = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      ))       
+  }  
+  
   //Navigate user to the login screen from any home view
   goBackToLogin = () => {
     //Show this component
@@ -264,6 +278,7 @@ export default class App extends React.Component {
         {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
+                goToStory = {this.openOneVehicleStory}
                 goBack = {this.goBackToLogin}
                 onePhoto = {this.state.oneVehicleSelection}/>
         }  
@@ -280,7 +295,11 @@ export default class App extends React.Component {
                 goBack = {this.goBackToLogin}        
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
-        }         
+        }
+        {/*allow the user to view details of a selected car*/}
+        {this.state.openStory &&
+            <Story selectedCar={this.state.oneVehicleSelection} />
+        }          
       </View>
     );
   }

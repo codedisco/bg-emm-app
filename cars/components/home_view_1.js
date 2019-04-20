@@ -43,7 +43,7 @@ export default function Home_View_1(props) {
             </View> 
             <View style={styles.carImage}>
                 <TouchableOpacity
-                    onPress={props.openOne}
+                    onPress={props.goToStory}
                     style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>STORY</Text>      
                 </TouchableOpacity>
