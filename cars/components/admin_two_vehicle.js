@@ -17,7 +17,7 @@ function Car_option(props) {
             onPress = {props.carChoice}
             style={styles.carOptionContainer}>
           <View style={styles.radioButtonStyle}></View>
-          <Text style={styles.instructionStyle}>{props.id}</Text>
+          <Text style={styles.instructionStyle}>{props.make} {props.model}</Text>
       </TouchableOpacity>
     </View>
   );    
@@ -42,7 +42,8 @@ export default function Admin_Two_Vehicle(props) {
                         renderItem={({item}) =>
                             <Car_option
                                 carChoice = {() =>{props.oneCarChoice(item.id)}}
-                                
+                                make = {item.make}
+                                model={item.model}
                                 id={item.id} />
                         }
                         keyExtractor={item => item.id}
@@ -59,6 +60,8 @@ export default function Admin_Two_Vehicle(props) {
                         renderItem={({item}) =>
                             <Car_option
                                 carChoice = {() =>{props.twoCarChoice(item.id)}}
+                                make = {item.make}
+                                model={item.model}
                                 id={item.id} />
                         }
                         keyExtractor={item => item.id}
@@ -94,7 +97,8 @@ const styles = StyleSheet.create({
   instructionStyle: {
     color: "lightgrey",
     fontSize: 24,
-    fontWeight: 'bold',      
+    fontWeight: 'bold', 
+    textAlign:"left",
   },
   selectionContainerStyle: {
     backgroundColor: '#505050',

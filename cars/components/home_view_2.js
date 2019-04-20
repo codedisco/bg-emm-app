@@ -21,19 +21,19 @@ export default function Home_View_2(props) {
       <View style={styles.homeViewContainer}>
         <View style={styles.row}>
             <View styles={styles.leftDetail}>
-                <Text style={styles.details}>Year </Text>
-                <Text style={styles.details}>Make </Text>
-                <Text style={styles.details}>Modal </Text>        
+                <Text style={styles.details}>{props.onePhoto.year}</Text>
+                <Text style={styles.details}>{props.onePhoto.make}</Text>
+                <Text style={styles.details}>{props.onePhoto.model}</Text>        
             </View>
             <View styles={styles.rightDetail}>
-                <Text style={styles.details}>Year </Text>
-                <Text style={styles.details}>Make </Text>
-                <Text style={styles.details}>Modal </Text>        
+                <Text style={styles.details}>{props.twoPhoto.year}</Text>
+                <Text style={styles.details}>{props.twoPhoto.make}</Text>
+                <Text style={styles.details}>{props.twoPhoto.model}</Text>       
             </View>             
         </View>
         <View style={styles.row}>
-            <View><Image source={props.onePhoto} /></View>
-            <View><Image source={props.twoPhoto} /></View>
+            <View><Image source={props.onePhoto.photo} /></View>
+            <View><Image source={props.twoPhoto.photo} /></View>
         </View>
       </View>
     </View>

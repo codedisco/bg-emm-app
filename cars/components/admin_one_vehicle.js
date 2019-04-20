@@ -18,7 +18,7 @@ function Car_option(props) {
             onPress = {() =>{props.oneCarChoice(props.id)}}
             style={styles.carOptionContainer}>
           <View style={styles.radioButtonStyle}></View>
-          <Text style={styles.instructionStyle}>{props.id}</Text>
+          <Text style={styles.instructionStyle}>{props.make} {props.model}</Text>
       </TouchableOpacity>
     </View>
   );    
@@ -46,7 +46,9 @@ export default function Admin_One_Vehicle(props) {
                 renderItem={({item}) =>
                     <Car_option
                         oneCarChoice = {props.oneCarChoice}
-                        id={item.id} />
+                        id = {item.id}
+                        make = {item.make}
+                        model={item.model} />
                 }
                 keyExtractor={item => item.id}
             />      
