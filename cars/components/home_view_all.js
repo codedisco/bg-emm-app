@@ -19,9 +19,9 @@ function Car(props) {
             <View><Image style={styles.imageStyle} source={props.photo} /></View>
         </View>
         <View>
-            <Text style={styles.details}>Year </Text>
-            <Text style={styles.details}>Make </Text>
-            <Text style={styles.details}>Modal </Text>      
+            <Text style={styles.details}>{props.year} </Text>
+            <Text style={styles.details}>{props.make} </Text>
+            <Text style={styles.details}>{props.model} </Text>      
         </View>
     </View>
   );    
@@ -35,7 +35,11 @@ function Car_show(props){
                 horizontal={true}
                 data={props.displayOfCars}
                 renderItem={({item}) =>
-                    <Car photo = {item.photo} />
+                    <Car
+                        year = {item.year}
+                        make = {item.make}
+                        model = {item.model}    
+                        photo = {item.photo} />
                 }
                 keyExtractor={item => item.id}
             />  
