@@ -118,7 +118,7 @@ export default class App extends React.Component {
     }      
   }
   
-  //Used in the passwordChecker() to change screen to the Admin_Homescreen view
+  //Used in the passwordChecker() to change screen to the Admin_Homescreen view and in the back button on Admin_Homescreen
   openHomescreen = () => {
     //Hide this component
     this.setState(previousState => (
@@ -216,6 +216,7 @@ export default class App extends React.Component {
         {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
+                goBack = {this.openHomescreen}
                 openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
