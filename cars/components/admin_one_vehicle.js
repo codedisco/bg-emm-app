@@ -29,7 +29,7 @@ export default function Admin_One_Vehicle(props) {
   return(
     <View style={styles.container}>
       {/*Nav component*/}
-      <Admin_Nav navTitle = "Vehicle Choice" />
+      <Admin_Nav navTitle = "Vehicle Choice" goBack = {props.goBack} />
       
       {/*Body of the page*/}
       <View style={styles.vehicleContainer}>

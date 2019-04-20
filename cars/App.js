@@ -120,27 +120,27 @@ export default class App extends React.Component {
   
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view and in the back button on Admin_Homescreen
   openHomescreen = () => {
-    //Hide this component
+    //Hide or show this component
     this.setState(previousState => (
         { openAdminLogin:!previousState.openAdminLogin}
       ))
     
   
-    //Show this component
+    //Show or hide this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
       ))      
   }
   
-  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen or to switch back to Admin_homescreen via the back button.
   openOneVehicle = () => {
-    //Hide this component
+    //Hide or show this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
       )) 
     
   
-    //Show this component
+    //Show or hide this component
     this.setState(previousState => (
         { openAdminOneVehicle:!previousState.openAdminOneVehicle }
       ))      
@@ -224,6 +224,7 @@ export default class App extends React.Component {
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                goBack = {this.openOneVehicle}
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
