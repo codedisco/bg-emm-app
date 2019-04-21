@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, StatusBar } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import Admin_Login from './components/admin_login.js';
 import Admin_Homescreen from './components/admin_homescreen.js';
@@ -32,8 +34,17 @@ export default class App extends React.Component {
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
-      }
+      isReady: false  
+    }
   }
+
+  async componentWillMount() {
+  await Expo.Font.loadAsync({
+    'Roboto': require('native-base/Fonts/Roboto.ttf'),
+    'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+  });
+  this.setState({isReady:true})
+}
     
   //method to create two list of cars to be displayed in the Home_View_All component. This is called in when the user choose to present all cars in the admin_homescreen component    
   getDisplayOfCars = () => {
@@ -201,12 +212,14 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
       ))      
-  }   
-  
+  }
   
   render() {
+    if (!this.state.isReady) {
+      return <Expo.AppLoading />;
+    }
     return (
-      <View style={styles.container}>
+      <Container>
         <StatusBar hidden/>
         {/*First screen in the app, show the login page*/}
         { this.state.openAdminLogin &&
@@ -252,15 +265,7 @@ export default class App extends React.Component {
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
         }         
-      </View>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: { 
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
