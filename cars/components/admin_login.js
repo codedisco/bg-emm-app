@@ -28,6 +28,8 @@ export default function Admin_Login(props) {
         {/*Login input box for the password*/}
         <View style={styles.inputBoxContainer}>
             <TextInput
+                keyboardType ="numeric"
+                disableFullscreenUI={true}
                 value={props.userEnterPwd}
                 maxLength={4}
                 autoFocus = {true}
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
   loginInputBox: {
     flex: 7,
     display: "flex",
-    justifyContent: "center",
+    //justifyContent: "center",
     alignItems: "center",
     backgroundColor:"#505050",
     color: "lightgrey",      
