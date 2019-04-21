@@ -6,8 +6,8 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 //
 export default function Home_View_1(props) {
   return(
-    <Container>
-      <Header style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
+    <Container style={{backgroundColor: '#505050'}}>
+      <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
         <Left>
           <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
             <Image
@@ -20,17 +20,22 @@ export default function Home_View_1(props) {
           <Title>Header</Title>
         </Body>
         <Right>
-          <Button transparent>
-            <Icon name='menu' />
-          </Button>
+          <Image
+            style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
+            source={require('../assets/emm-logo-large.png')}
+          />
         </Right>
       </Header>
       <Grid>
-        <Col style={{ backgroundColor: 'blue', padding: 20}}>
-          <Text>Hello</Text>
-        </Col>
-        <Col style={{ backgroundColor: 'green'}}>
-        </Col>
+        <Row style={{height: '70%'}}>
+          <Col style={{padding: 20}}>
+            <Text>Hello</Text>
+          </Col>
+          <Col>
+          </Col>
+        </Row>
+        <Row style={{height: '30%'}}>
+        </Row>
       </Grid>
     </Container>
   );
