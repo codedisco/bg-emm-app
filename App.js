@@ -129,6 +129,7 @@ export default class App extends React.Component {
     }      
   }
   
+  //IS DEPRECIATED, no more admin_login//
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view
   openHomescreen = () => {
     //Hide this component
