@@ -129,6 +129,7 @@ export default class App extends React.Component {
     }      
   }
   
+  //IS DEPRECIATED, no more admin_login//
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view
   openHomescreen = () => {
     //Hide this component
@@ -143,7 +144,7 @@ export default class App extends React.Component {
       ))      
   }
   
-  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen or back
   openOneVehicle = () => {
     //Hide this component
     this.setState(previousState => (
@@ -154,7 +155,7 @@ export default class App extends React.Component {
     //Show this component
     this.setState(previousState => (
         { openAdminOneVehicle:!previousState.openAdminOneVehicle }
-      ))      
+      )) 
   }
   
   //Used in the Admin_homescreen component to switch to the two vehicle selection screen
@@ -228,9 +229,10 @@ export default class App extends React.Component {
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
         }
-        {/*allow the user to choose one car to be displayed*/}
+        {/*allow the user to choose one car to be displayed. The "goBack" prop navigate the user to the admin_homescreen. The cars prop gives the component the array of cars to be use. The oneCarChoice prop saves the user car selection to the state(oneVehicleSelection)*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                goBack = {this.openOneVehicle}
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
