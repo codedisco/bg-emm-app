@@ -144,7 +144,7 @@ export default class App extends React.Component {
       ))      
   }
   
-  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen or back
   openOneVehicle = () => {
     //Hide this component
     this.setState(previousState => (
@@ -155,7 +155,7 @@ export default class App extends React.Component {
     //Show this component
     this.setState(previousState => (
         { openAdminOneVehicle:!previousState.openAdminOneVehicle }
-      ))      
+      )) 
   }
   
   //Used in the Admin_homescreen component to switch to the two vehicle selection screen
@@ -232,6 +232,7 @@ export default class App extends React.Component {
         {/*allow the user to choose one car to be displayed*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                goBack = {this.openOneVehicle}
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
