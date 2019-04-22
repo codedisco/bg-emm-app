@@ -34,41 +34,50 @@ export default function Admin_Two_Vehicle(props) {
         <Content>
             <Grid>
                 <Row>                
-                <Col>
-                    <Form>
-                        <Picker
-                          note
-                          mode="dropdown"
-                          style={{ width: 200 }}
-                          selectedValue= {props.onePhoto}
-                          onValueChange={props.oneCarChoice}
-                        >
-                            <Picker.Item label="SELECT VEHICLE" value="100" />
-                            <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
-                            <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
-                            <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
-                            <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
-                        </Picker>
-                    </Form>
-                    <Text>{props.onePhoto.model}</Text>
-                </Col>
-                <Col>
-                    <Form>
-                        <Picker
-                          note
-                          mode="dropdown"
-                          style={{ width: 200 }}
-                          selectedValue= {props.twoPhoto}
-                          onValueChange={props.twoCarChoice}
-                        >
-                            <Picker.Item label="SELECT VEHICLE" value="100" />
-                            <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
-                            <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
-                            <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
-                            <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
-                        </Picker>
-                    </Form>
-                </Col>
+                    <Col>
+                        <Form>
+                            <Picker
+                              note
+                              mode="dropdown"
+                              style={{ width: 200 }}
+                              onValueChange={props.oneCarChoice}
+                            >
+                                <Picker.Item label="SELECT VEHICLE" value="100" />
+                                <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
+                                <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
+                                <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
+                                <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
+                            </Picker>
+                        </Form>
+                        <Text>You selcted {props.onePhoto.model}</Text>
+                    </Col>
+                    <Col>
+                        <Form>
+                            <Picker
+                              note
+                              mode="dropdown"
+                              style={{ width: 200 }}
+                              onValueChange={props.twoCarChoice}
+                            >
+                                <Picker.Item label="SELECT VEHICLE" value="100" />
+                                <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
+                                <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
+                                <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
+                                <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
+                            </Picker>
+                        </Form>
+                        <Text>You selected {props.twoPhoto.model}</Text>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        
+                        <TouchableOpacity 
+                            onPress = {() =>{props.submit()}}
+                            style={{backgroundColor: '#E5C035', margin: 0, width:200}}>
+                                <Text>Confirm</Text>
+                        </TouchableOpacity>   
+                    </Col>            
                 </Row>
             </Grid>
         </Content>
