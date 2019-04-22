@@ -240,6 +240,8 @@ export default class App extends React.Component {
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
                 cars = {carList}
+                twoPhoto = {this.state.twoVehicleSelection}
+                onePhoto = {this.state.oneVehicleSelection}
                 submit = {this.openHomeTwoVehicle}
                 twoCarChoice = {this.saveTwoVehicle}
                 oneCarChoice = {this.saveOneVehicle}/>

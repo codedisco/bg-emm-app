@@ -8,10 +8,6 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 //Display a list of vehicles, from carList, as radio options
 export default function Admin_One_Vehicle(props) {
 
-  const selectCars = props.cars.map((car) =>{
-      <Picker.Item label={car.model} value={car.id} />
-  });   
-
   return(
     <Container>
         <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
