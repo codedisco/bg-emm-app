@@ -49,7 +49,7 @@ export default function Admin_Two_Vehicle(props) {
                                 <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
                             </Picker>
                         </Form>
-                        <Text>You selcted {props.onePhoto.model}</Text>
+                        <Text>You selcted {props.selectedCar1.model}</Text>
                     </Col>
                     <Col>
                         <Form>
@@ -66,7 +66,7 @@ export default function Admin_Two_Vehicle(props) {
                                 <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
                             </Picker>
                         </Form>
-                        <Text>You selected {props.twoPhoto.model}</Text>
+                        <Text>You selected {props.selectedCar2.model}</Text>
                     </Col>
                 </Row>
                 <Row>
