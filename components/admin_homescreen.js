@@ -1,95 +1,53 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import Admin_Nav from './admin_nav.js';
 
 export default function Admin_Homescreen(props) {
   return(
-    <View style={styles.container}>
-      {/*Nav component*/}
-      <Admin_Nav navTitle = "Home screen selection" />
-      
-      {/*The body of the screen showing the three choices for the user*/}
-      <View style={styles.homesceenContainer}>
-      
-        {/*Instructions for the user*/}
-        <Text style={styles.instructionStyle}>
-            SELECT ONE STYLE 
-        </Text>
-      
-        {/*Bottom view containing the three choices*/}
-        <View style={styles.horizontalButtons}>
-            {/*Choice leads to One vehicle selection screen*/}
-            <TouchableOpacity
-                onPress={props.openOne}
-                style={styles.buttonStyle}>
-                <Text style={styles.buttonText}>1 VEHICLE</Text>      
-            </TouchableOpacity>
-      
-            {/*Choice leads to Two vehicle selection screen*/}
-            <TouchableOpacity
-                onPress={props.openTwo}
-                style={styles.buttonStyle}>
-                <Text style={styles.buttonText}>2 VEHICLES</Text>      
-            </TouchableOpacity>
-      
-            {/*Choice leads to guest screen and showing all vehicle selections*/}
-            <TouchableOpacity
-                onPress={props.openAll}
-                style={styles.buttonStyle}>
-                <Text style={styles.buttonText}>ALL VEHICLES</Text>      
-            </TouchableOpacity>      
-        </View>            
-      </View>
-    </View>
+    <Container>
+        <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
+            <Left>
+                <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
+                    <Image
+                        style={{width: 60, height: 60, margin: 20, resizeMode: 'contain',}}
+                        source={require('../assets/arrow-left.png')}
+                    />
+                </TouchableOpacity>
+            </Left>
+            <Body>
+                <Title>Header</Title>
+            </Body>
+            <Right>
+                <Image
+                    style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
+                    source={require('../assets/emm-logo-large.png')}
+                />
+            </Right>
+        </Header>
+        <Grid>
+            <Row><Text>SELECT ONE STYLE</Text></Row>                    
+            <Row>
+                <Col>
+                    <Button onPress={props.openOne}>
+                        <Text>1 Vehicle</Text>
+                    </Button>
+                </Col>
+                <Col>
+                    <Button onPress={props.openTwo}>
+                        <Text>2 Vehicle</Text>
+                    </Button>
+                </Col>
+                <Col>
+                    <Button onPress={props.openAll}>
+                        <Text>All Vehicle</Text>
+                    </Button>
+                </Col>
+            </Row>
+        </Grid>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-      
-  container: {
-    flex: 1,   
-  },
-  homesceenContainer: {
-    flex: 7,    
-    display: "flex",
-    justifyContent: "center", //Center the instructions and button in the middle of the page
-    alignItems: "center", //Center the instructions and button in the middle of the page
-    backgroundColor:"#505050", //similar to the black color
-    color: "lightgrey",      
-  },
-  instructionStyle: {
-    color: "lightgrey",
-    fontSize: 20,
-    letterSpacing: 3,
-    fontWeight: 'bold',      
-  },
-  horizontalButtons: {
-    display:"flex",
-    flexDirection: "row", //format the buttons to be side by side
-    marginTop: 15, //white-space between instructions and buttons
-    
-  },
-  buttonStyle: {
-    backgroundColor: '#505050',
-    padding: 10, //white-space between the border and the button's text
-    borderColor:'lightgrey',
-    borderStyle: 'solid',
-    borderWidth: 5,
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginRight: 30, //white-space between buttons
-  },
-  buttonText: {
-    color: 'lightgrey',
-    fontSize: 20,
-    letterSpacing: 3,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  }    
-});

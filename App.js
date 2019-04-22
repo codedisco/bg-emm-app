@@ -23,8 +23,8 @@ export default class App extends React.Component {
     this.state = {
       pwd:"1111",//password for the admin_Login component's input
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
-      openAdminLogin:true,//When true, show the login screen
-      openAdminHomescreen:false, //When true, show the admin home screen
+      openAdminLogin:false,//When true, show the login screen
+      openAdminHomescreen:true, //When true, show the admin home screen
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
       oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
@@ -221,13 +221,7 @@ export default class App extends React.Component {
     return (
       <Container>
         <StatusBar hidden/>
-        {/*First screen in the app, show the login page*/}
-        { this.state.openAdminLogin &&
-            <Admin_Login 
-                userEnterPwd = {this.state.userEnterPassword}
-                login={this.playerLogin} />      
-        }
-        {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
+        {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
                 openAll = {this.openShowAll}
