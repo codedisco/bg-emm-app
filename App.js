@@ -236,9 +236,10 @@ export default class App extends React.Component {
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
-        {/*allow the user to choose two car to be displayed*/}
+        {/*allow the user to choose two car to be displayed. The "goBack" prop navigate the user back to the admin_homescreen page. The cars prop gives the component the array of cars to be use. The oneCarChoice and twoCarChoice prop saves the user car selections to the state(oneVehicleSelection). The one and two Photo props allows the user to see what they choose.*/}
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
+                goBack = {this.openTwoVehicle}
                 cars = {carList}
                 twoPhoto = {this.state.twoVehicleSelection}
                 onePhoto = {this.state.oneVehicleSelection}
