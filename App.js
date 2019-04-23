@@ -23,8 +23,8 @@ export default class App extends React.Component {
     this.state = {
       pwd:"1111",//password for the admin_Login component's input
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
-      openAdminLogin:true,//When true, show the login screen
-      openAdminHomescreen:false, //When true, show the admin home screen
+      openAdminLogin:false,//When true, show the login screen
+      openAdminHomescreen:true, //When true, show the admin home screen
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
       oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
       twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
@@ -129,6 +129,7 @@ export default class App extends React.Component {
     }      
   }
   
+  //IS DEPRECIATED, no more admin_login//
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view
   openHomescreen = () => {
     //Hide this component
@@ -143,7 +144,7 @@ export default class App extends React.Component {
       ))      
   }
   
-  //Used in the Admin_homescreen component to switch to the one vehicle selection screen
+  //Used in the Admin_homescreen component to switch to the one vehicle selection screen or back
   openOneVehicle = () => {
     //Hide this component
     this.setState(previousState => (
@@ -154,7 +155,7 @@ export default class App extends React.Component {
     //Show this component
     this.setState(previousState => (
         { openAdminOneVehicle:!previousState.openAdminOneVehicle }
-      ))      
+      )) 
   }
   
   //Used in the Admin_homescreen component to switch to the two vehicle selection screen
@@ -221,29 +222,27 @@ export default class App extends React.Component {
     return (
       <Container>
         <StatusBar hidden/>
-        {/*First screen in the app, show the login page*/}
-        { this.state.openAdminLogin &&
-            <Admin_Login 
-                userEnterPwd = {this.state.userEnterPassword}
-                login={this.playerLogin} />      
-        }
-        {/*Second page of the app, allow the user to choose how many cars to be displayed*/}
+        {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
                 openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
         }
-        {/*allow the user to choose one car to be displayed*/}
+        {/*allow the user to choose one car to be displayed. The "goBack" prop navigate the user to the admin_homescreen. The cars prop gives the component the array of cars to be use. The oneCarChoice prop saves the user car selection to the state(oneVehicleSelection)*/}
         {this.state.openAdminOneVehicle &&
             <Admin_One_Vehicle
+                goBack = {this.openOneVehicle}
                 cars = {carList}
                 oneCarChoice = {this.oneVehicleChoice}/>
         }
-        {/*allow the user to choose two car to be displayed*/}
+        {/*allow the user to choose two car to be displayed. The "goBack" prop navigate the user back to the admin_homescreen page. The cars prop gives the component the array of cars to be use. The oneCarChoice and twoCarChoice prop saves the user car selections to the state(oneVehicleSelection). The one and two selectedCar props allows the user to see what they choose.*/}
         {this.state.openAdminTwoVehicle &&
             <Admin_Two_Vehicle
+                goBack = {this.openTwoVehicle}
                 cars = {carList}
+                selectedCar2 = {this.state.twoVehicleSelection}
+                selectedCar1 = {this.state.oneVehicleSelection}
                 submit = {this.openHomeTwoVehicle}
                 twoCarChoice = {this.saveTwoVehicle}
                 oneCarChoice = {this.saveOneVehicle}/>
