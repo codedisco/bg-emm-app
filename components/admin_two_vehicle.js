@@ -49,6 +49,30 @@ export default function Admin_Two_Vehicle(props) {
                                 <Picker.Item 
                                     label={props.cars[3].year + " " + props.cars[3].make + " " + props.cars[3].model} 
                                     value={props.cars[3].id} />
+                                <Picker.Item 
+                                    label={props.cars[4].year + " " + props.cars[4].make + " " + props.cars[4].model} 
+                                    value={props.cars[4].id} />
+                                <Picker.Item 
+                                    label={props.cars[5].year + " " + props.cars[5].make + " " + props.cars[5].model} 
+                                    value={props.cars[5].id} />
+                                <Picker.Item 
+                                    label={props.cars[6].year + " " + props.cars[6].make + " " + props.cars[6].model} 
+                                    value={props.cars[6].id} />
+                                <Picker.Item 
+                                    label={props.cars[7].year + " " + props.cars[7].make + " " + props.cars[7].model} 
+                                    value={props.cars[7].id} />
+                                <Picker.Item 
+                                    label={props.cars[8].year + " " + props.cars[8].make + " " + props.cars[8].model} 
+                                    value={props.cars[8].id} />
+                                <Picker.Item 
+                                    label={props.cars[9].year + " " + props.cars[9].make + " " + props.cars[9].model} 
+                                    value={props.cars[9].id} />
+                                <Picker.Item 
+                                    label={props.cars[10].year + " " + props.cars[10].make + " " + props.cars[10].model} 
+                                    value={props.cars[10].id} />
+                                <Picker.Item 
+                                    label={props.cars[11].year + " " + props.cars[11].make + " " + props.cars[11].model} 
+                                    value={props.cars[11].id} />
                             </Picker>
                         </Button>
                         <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
@@ -73,6 +97,30 @@ export default function Admin_Two_Vehicle(props) {
                                 <Picker.Item 
                                     label={props.cars[3].year + " " + props.cars[3].make + " " + props.cars[3].model} 
                                     value={props.cars[3].id} />
+                                <Picker.Item 
+                                    label={props.cars[4].year + " " + props.cars[4].make + " " + props.cars[4].model} 
+                                    value={props.cars[4].id} />
+                                <Picker.Item 
+                                    label={props.cars[5].year + " " + props.cars[5].make + " " + props.cars[5].model} 
+                                    value={props.cars[5].id} />
+                                <Picker.Item 
+                                    label={props.cars[6].year + " " + props.cars[6].make + " " + props.cars[6].model} 
+                                    value={props.cars[6].id} />
+                                <Picker.Item 
+                                    label={props.cars[7].year + " " + props.cars[7].make + " " + props.cars[7].model} 
+                                    value={props.cars[7].id} />
+                                <Picker.Item 
+                                    label={props.cars[8].year + " " + props.cars[8].make + " " + props.cars[8].model} 
+                                    value={props.cars[8].id} />
+                                <Picker.Item 
+                                    label={props.cars[9].year + " " + props.cars[9].make + " " + props.cars[9].model} 
+                                    value={props.cars[9].id} />
+                                <Picker.Item 
+                                    label={props.cars[10].year + " " + props.cars[10].make + " " + props.cars[10].model} 
+                                    value={props.cars[10].id} />
+                                <Picker.Item 
+                                    label={props.cars[11].year + " " + props.cars[11].make + " " + props.cars[11].model} 
+                                    value={props.cars[11].id} />
                             </Picker>
                         </Button>
                         <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
