@@ -37,10 +37,18 @@ export default function Admin_Two_Vehicle(props) {
                               onValueChange={props.oneCarChoice}
                             >
                                 <Picker.Item label="SELECT LEFT VEHICLE" value="100" />
-                                <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
-                                <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
-                                <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
-                                <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
+                                <Picker.Item 
+                                    label={props.cars[0].year + " " + props.cars[0].make + " " + props.cars[0].model} 
+                                    value={props.cars[0].id} />
+                                <Picker.Item 
+                                    label={props.cars[1].year + " " + props.cars[1].make + " " + props.cars[1].model} 
+                                    value={props.cars[1].id} />
+                                <Picker.Item 
+                                    label={props.cars[2].year + " " + props.cars[2].make + " " + props.cars[2].model} 
+                                    value={props.cars[2].id} />
+                                <Picker.Item 
+                                    label={props.cars[3].year + " " + props.cars[3].make + " " + props.cars[3].model} 
+                                    value={props.cars[3].id} />
                             </Picker>
                         </Button>
                         <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar1.model}</Text>
@@ -50,11 +58,19 @@ export default function Admin_Two_Vehicle(props) {
                             <Picker
                               onValueChange={props.twoCarChoice}
                             >
-                                <Picker.Item label="SELECT RIGHT VEHICLE" value="100" />
-                                <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
-                                <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
-                                <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
-                                <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
+                                <Picker.Item label="SELECT LEFT VEHICLE" value="100" />
+                                <Picker.Item 
+                                    label={props.cars[0].year + " " + props.cars[0].make + " " + props.cars[0].model} 
+                                    value={props.cars[0].id} />
+                                <Picker.Item 
+                                    label={props.cars[1].year + " " + props.cars[1].make + " " + props.cars[1].model} 
+                                    value={props.cars[1].id} />
+                                <Picker.Item 
+                                    label={props.cars[2].year + " " + props.cars[2].make + " " + props.cars[2].model} 
+                                    value={props.cars[2].id} />
+                                <Picker.Item 
+                                    label={props.cars[3].year + " " + props.cars[3].make + " " + props.cars[3].model} 
+                                    value={props.cars[3].id} />
                             </Picker>
                         </Button>
                         <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar2.model}</Text>
