@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, StyleSheet, ImageBackground } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
 export default function Admin_Homescreen(props) {
@@ -9,8 +9,48 @@ export default function Admin_Homescreen(props) {
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
           {/*This is the button that triggers the admin nav popup*/}
-          <TouchableOpacity style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
+          <TouchableOpacity 
+            onPress = {() =>{props.openCloseSecurityModal()}}
+            style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
           </TouchableOpacity>
+            <Modal
+                animationType="slide"
+                transparent={false}
+                visible={props.isVisibleModal}
+                onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+            }}>
+                <Container style={{backgroundColor: 'lightgrey'}}>
+                    <Grid>
+                        <Row>
+                            <Col style={{alignItems: 'center', justifyContent: 'flex-end'}}>
+                                <Text style={{fontSize: 30, color: '#4F5961'}}>
+                                    ENTER PASSWORD
+                                </Text>
+                                <TextInput
+                                    keyboardType ="numeric"
+                                    disableFullscreenUI={true}
+                                    value={props.userEnterPwd}
+                                    maxLength={4}
+                                    autoFocus = {true}
+                                    secureTextEntry={true}
+                                    style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center', color: '#ffffff'}}
+                                    onChangeText={(text) => {props.login(text)}}
+                                />
+                            </Col>
+                        </Row>
+                        <Row style={{marginTop: 40}}>
+                            <Col style={{alignItems: 'flex-end', marginRight: 40, textAlign:"center"}}>
+                                <TouchableOpacity 
+                                    onPress = {() =>{props.openCloseSecurityModal()}} 
+                                    style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center'}}>
+                                    <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>B A C K</Text>
+                                </TouchableOpacity>                                    
+                            </Col>
+                        </Row>
+                    </Grid>
+                </Container>
+            </Modal>
         </Left>
         <Right>
           <Image
@@ -33,13 +73,13 @@ export default function Admin_Homescreen(props) {
               </Col>
               <Col style={{width: '80%',}}>
                 <Text style={styles.titleLeft}>
-                  1965
+                  {props.selectedCar1.year}
                 </Text>
                 <Text style={styles.titleLeft}>
-                  Chevrolet
+                  {props.selectedCar1.make}
                 </Text>
                 <Text style={styles.titleLeft}>
-                  Corvette Stingray
+                  {props.selectedCar1.model}
                 </Text>
               </Col> 
             </Row>
@@ -47,7 +87,7 @@ export default function Admin_Homescreen(props) {
               <TouchableOpacity>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
-                  source={require('../assets/cars-clipped/63-avanti.png')}
+                  source={props.selectedCar1.photo}
                 />
               </TouchableOpacity>
             </Row>
@@ -56,13 +96,13 @@ export default function Admin_Homescreen(props) {
             <Row style={{alignItems: 'center'}}>
               <Col style={{width: '80%',}}>
                 <Text style={styles.titleRight}>
-                  1965
+                  {props.selectedCar2.year}
                 </Text>
                 <Text style={styles.titleRight}>
-                  Chevrolet
+                  {props.selectedCar2.make}
                 </Text>
                 <Text style={styles.titleRight}>
-                  Corvette Stingray
+                  {props.selectedCar2.model}
                 </Text>
               </Col>
               <Col style={{width: '20%',}}>
@@ -70,6 +110,7 @@ export default function Admin_Homescreen(props) {
                   <Image
                     style={{width: 100, height: 70, resizeMode: 'contain'}}
                     source={require('../assets/arrow-right-yellow.png')}
+                    
                   />
                 </TouchableOpacity>
               </Col>
@@ -78,7 +119,7 @@ export default function Admin_Homescreen(props) {
               <TouchableOpacity>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
-                  source={require('../assets/cars-clipped/69-corvette.png')}
+                  source={props.selectedCar2.photo}
                 />
               </TouchableOpacity>
             </Row>
