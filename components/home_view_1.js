@@ -83,6 +83,7 @@ export default function Admin_Homescreen(props) {
 
 const styles = StyleSheet.create({
   
+  /*This will be the shape that surrounds the year. This can also be reused for the the gallery and story pages.*/
   trapezoidInner: {
     
     fontSize: 25, 

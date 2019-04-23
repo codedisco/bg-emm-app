@@ -9,21 +9,18 @@ import { Col, Row, Grid } from 'react-native-easy-grid';
 export default function Admin_Two_Vehicle(props) {
 
   return(
-    <Container>
-        <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
+    <Container style={{backgroundColor: '#4F5961'}}>
+        <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
             <Left>
                 <TouchableOpacity 
                     onPress = {() =>{props.goBack()}}
                     style={{backgroundColor: '#E5C035', margin: 0}}>
                     <Image
-                        style={{width: 60, height: 60, margin: 20, resizeMode: 'contain',}}
+                        style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
                         source={require('../assets/arrow-left.png')}
                     />
                 </TouchableOpacity>
             </Left>
-            <Body>
-                <Title>Header</Title>
-            </Body>
             <Right>
                 <Image
                     style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
@@ -33,51 +30,43 @@ export default function Admin_Two_Vehicle(props) {
         </Header>
         <Content>
             <Grid>
-                <Row>                
-                    <Col>
-                        <Form>
+                <Row style={{marginTop: 250, marginBottom: 30}}>                
+                    <Col style={{marginLeft: 100, marginRight: 20}}>
+                        <Button light large>
                             <Picker
-                              note
-                              mode="dropdown"
-                              style={{ width: 200 }}
                               onValueChange={props.oneCarChoice}
                             >
-                                <Picker.Item label="SELECT VEHICLE" value="100" />
+                                <Picker.Item label="SELECT LEFT VEHICLE" value="100" />
                                 <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
                                 <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
                                 <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
                                 <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
                             </Picker>
-                        </Form>
-                        <Text>You selcted {props.selectedCar1.model}</Text>
+                        </Button>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar1.model}</Text>
                     </Col>
-                    <Col>
-                        <Form>
+                    <Col style={{marginRight: 100, marginLeft: 20}}>
+                        <Button light large>
                             <Picker
-                              note
-                              mode="dropdown"
-                              style={{ width: 200 }}
                               onValueChange={props.twoCarChoice}
                             >
-                                <Picker.Item label="SELECT VEHICLE" value="100" />
+                                <Picker.Item label="SELECT RIGHT VEHICLE" value="100" />
                                 <Picker.Item label={props.cars[0].model} value={props.cars[0].id} />
                                 <Picker.Item label={props.cars[1].model} value={props.cars[1].id} />
                                 <Picker.Item label={props.cars[2].model} value={props.cars[2].id} />
                                 <Picker.Item label={props.cars[3].model} value={props.cars[3].id} />
                             </Picker>
-                        </Form>
-                        <Text>You selected {props.selectedCar2.model}</Text>
+                        </Button>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar2.model}</Text>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{alignItems: 'center', marginHorizontal: 400}}>
                     <Col>
-                        
-                        <TouchableOpacity 
-                            onPress = {() =>{props.submit()}}
-                            style={{backgroundColor: '#E5C035', margin: 0, width:200}}>
+                        <Button light large block 
+                            onPress = {() =>{props.submit()}}>
                                 <Text>Confirm</Text>
-                        </TouchableOpacity>   
-                    </Col>            
+                        </Button>  
+                    </Col> 
                 </Row>
             </Grid>
         </Content>

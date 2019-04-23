@@ -1,25 +1,13 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Col, Row, Grid } from 'native-base';
 
 import Admin_Nav from './admin_nav.js';
 
 export default function Admin_Homescreen(props) {
   return(
-    <Container>
-        <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
-            <Left>
-                <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
-                    <Image
-                        style={{width: 60, height: 60, margin: 20, resizeMode: 'contain',}}
-                        source={require('../assets/arrow-left.png')}
-                    />
-                </TouchableOpacity>
-            </Left>
-            <Body>
-                <Title>Header</Title>
-            </Body>
+    <Container style={{backgroundColor: '#4F5961'}}>
+        <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}> 
             <Right>
                 <Image
                     style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
@@ -27,21 +15,17 @@ export default function Admin_Homescreen(props) {
                 />
             </Right>
         </Header>
-        <Grid>
-            <Row><Text>SELECT ONE STYLE</Text></Row>                    
-            <Row>
-                <Col>
-                    <Button onPress={props.openOne}>
+        <Grid>                    
+            <Row style={{alignItems: 'center', justify: 'center'}}>
+                <Col style={{alignItems: 'center', justify: 'center', marginHorizontal: 300}}>
+                    <Text style={styles.detail}>SELECT A HOMESCREEN STYLE</Text>
+                    <Button light large block onPress={props.openOne} style={styles.option}>
                         <Text>1 Vehicle</Text>
                     </Button>
-                </Col>
-                <Col>
-                    <Button onPress={props.openTwo}>
+                    <Button light large  block onPress={props.openTwo} style={styles.option}>
                         <Text>2 Vehicle</Text>
                     </Button>
-                </Col>
-                <Col>
-                    <Button onPress={props.openAll}>
+                    <Button light large block onPress={props.openAll} style={styles.option}>
                         <Text>All Vehicle</Text>
                     </Button>
                 </Col>
@@ -50,4 +34,18 @@ export default function Admin_Homescreen(props) {
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  
+    detail: {
+        color: '#ffffff',
+        paddingBottom: 30, 
+        fontSize: 25,
+    },
+    
+    option: {
+        marginBottom: 15,
+    },
+    
+  });
 
