@@ -160,7 +160,7 @@ carList = [
      {"para_id":"4", "para":"On loan from Rob Whitlow."}]
   },
   {"id":"8",
-  "photo":require('./assets/cars-clipped/64.5-mustang.png'),
+  "photo":require('./assets/cars-clipped/64-5-mustang.png'),
   "year":"1964.5", 
   "make":"Ford", 
   "model":"Mustang",
