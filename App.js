@@ -34,7 +34,8 @@ export default class App extends React.Component {
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
-      isReady: false  
+      isReady: false,
+      adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
 
@@ -215,6 +216,12 @@ export default class App extends React.Component {
       ))      
   }
   
+  showHideSecurityModal = () =>{
+    this.setState(previousState => (
+        { adminSecurity:!previousState.adminSecurity }
+    )) 
+  }
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -225,6 +232,8 @@ export default class App extends React.Component {
         {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}
                 openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
