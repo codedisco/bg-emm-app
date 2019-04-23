@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, StyleSheet, ImageBackground } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
 export default function Admin_Homescreen(props) {
@@ -9,8 +9,48 @@ export default function Admin_Homescreen(props) {
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
           {/*This is the button that triggers the admin nav popup*/}
-          <TouchableOpacity style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
+          <TouchableOpacity 
+            onPress = {() =>{props.openCloseSecurityModal()}}
+            style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
           </TouchableOpacity>
+            <Modal
+                animationType="slide"
+                transparent={false}
+                visible={props.isVisibleModal}
+                onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+            }}>
+                <Container style={{backgroundColor: 'lightgrey'}}>
+                    <Grid>
+                        <Row>
+                            <Col style={{alignItems: 'center', justifyContent: 'flex-end'}}>
+                                <Text style={{fontSize: 30, color: '#4F5961'}}>
+                                    ENTER PASSWORD
+                                </Text>
+                                <TextInput
+                                    keyboardType ="numeric"
+                                    disableFullscreenUI={true}
+                                    value={props.userEnterPwd}
+                                    maxLength={4}
+                                    autoFocus = {true}
+                                    secureTextEntry={true}
+                                    style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center', color: '#ffffff'}}
+                                    onChangeText={(text) => {props.login(text)}}
+                                />
+                            </Col>
+                        </Row>
+                        <Row style={{marginTop: 40}}>
+                            <Col style={{alignItems: 'flex-end', marginRight: 40, textAlign:"center"}}>
+                                <TouchableOpacity 
+                                    onPress = {() =>{props.openCloseSecurityModal()}} 
+                                    style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center'}}>
+                                    <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>B A C K</Text>
+                                </TouchableOpacity>                                    
+                            </Col>
+                        </Row>
+                    </Grid>
+                </Container>
+            </Modal>
         </Left>
         <Right>
           <Image
