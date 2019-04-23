@@ -25,7 +25,7 @@ export default function Admin_Homescreen(props) {
                         <Row>
                             <Col style={{alignItems: 'center', justifyContent: 'flex-end'}}>
                                 <Text style={{fontSize: 30, color: '#4F5961'}}>
-                                    ENTER PASSWORDs
+                                    ENTER PASSWORD
                                 </Text>
                                 <TextInput
                                     keyboardType ="numeric"

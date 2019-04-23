@@ -201,11 +201,12 @@ export default class App extends React.Component {
     if(userPwd == this.state.pwd){
         this.openHomescreen();
         this.showHideSecurityModal()
-    }else {
+    }
+      
     this.setState(previousState => (
         { userEnterPassword:"" }
       ))        
-    }      
+          
   }
   
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view
