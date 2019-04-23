@@ -491,6 +491,10 @@ export default class App extends React.Component {
         {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
             <Admin_Homescreen
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}
                 openAll = {this.openShowAll}
                 openOne = {this.openOneVehicle}
                 openTwo = {this.openTwoVehicle}/>
@@ -535,6 +539,10 @@ export default class App extends React.Component {
         {/*allow the user to view all cars and their details*/}
         {this.state.openHomeAll &&
             <Home_View_All 
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
         }         
