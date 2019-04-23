@@ -25,24 +25,28 @@ export default function Admin_Homescreen(props) {
                     onRequestClose={() => {
                     Alert.alert('Modal has been closed.');
                 }}>
-                    <Container>
+                    <Container style={{backgroundColor: 'lightgrey'}}>
                         <Grid>
                             <Row>
-                                <Col><Text>Are you sure you want to Exit the App</Text></Col>
+                                <Col style={{alignItems: 'center', justifyContent: 'flex-end'}}>
+                                    <Text style={{fontSize: 30, color: '#4F5961'}}>
+                                        Would you like to exit the app?
+                                    </Text>
+                                </Col>
                             </Row>
-                            <Row>
-                                <Col>
+                            <Row style={{marginTop: 40}}>
+                                <Col style={{alignItems: 'flex-end', marginRight: 40}}>
                                     <TouchableOpacity 
                                         onPress = {() =>{props.openCloseSecurityModal()}} 
-                                        style={{backgroundColor: '#E5C035', margin: 0, width:200}}>
-                                        <Text>Cancel</Text>
+                                        style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center'}}>
+                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>B A C K</Text>
                                     </TouchableOpacity>                                    
                                 </Col>
-                                <Col>
+                                <Col style={{marginleft: 40}}>
                                     <TouchableOpacity 
                                         onPress = {() =>{props.openCloseSecurityModal()}} 
-                                        style={{backgroundColor: '#E5C035', margin: 0, width:200}}>
-                                        <Text>Exit App</Text>
+                                        style={{backgroundColor: '#E61E1E', margin: 0, width:200, alignItems: 'center'}}>
+                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>E X I T</Text>
                                     </TouchableOpacity>                                    
                                 </Col>
                             </Row>
