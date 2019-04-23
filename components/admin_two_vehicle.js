@@ -58,7 +58,7 @@ export default function Admin_Two_Vehicle(props) {
                             <Picker
                               onValueChange={props.twoCarChoice}
                             >
-                                <Picker.Item label="SELECT LEFT VEHICLE" value="100" />
+                                <Picker.Item label="SELECT RIGHT VEHICLE" value="100" />
                                 <Picker.Item 
                                     label={props.cars[0].year + " " + props.cars[0].make + " " + props.cars[0].model} 
                                     value={props.cars[0].id} />

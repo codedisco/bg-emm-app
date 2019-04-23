@@ -352,8 +352,12 @@ export default class App extends React.Component {
         {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
-                twoPhoto = {this.state.twoVehicleSelection}
-                onePhoto = {this.state.oneVehicleSelection}/>
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}         
+                selectedCar2 = {this.state.twoVehicleSelection}
+                selectedCar1 = {this.state.oneVehicleSelection}/>
         }
         {/*allow the user to view all cars and their details*/}
         {this.state.openHomeAll &&

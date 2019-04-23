@@ -33,13 +33,13 @@ export default function Admin_Homescreen(props) {
               </Col>
               <Col style={{width: '80%',}}>
                 <Text style={styles.titleLeft}>
-                  1965
+                  {props.selectedCar1.year}
                 </Text>
                 <Text style={styles.titleLeft}>
-                  Chevrolet
+                  {props.selectedCar1.make}
                 </Text>
                 <Text style={styles.titleLeft}>
-                  Corvette Stingray
+                  {props.selectedCar1.model}
                 </Text>
               </Col> 
             </Row>
@@ -47,7 +47,7 @@ export default function Admin_Homescreen(props) {
               <TouchableOpacity>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
-                  source={require('../assets/cars-clipped/63-avanti.png')}
+                  source={props.selectedCar1.photo}
                 />
               </TouchableOpacity>
             </Row>
@@ -56,13 +56,13 @@ export default function Admin_Homescreen(props) {
             <Row style={{alignItems: 'center'}}>
               <Col style={{width: '80%',}}>
                 <Text style={styles.titleRight}>
-                  1965
+                  {props.selectedCar2.year}
                 </Text>
                 <Text style={styles.titleRight}>
-                  Chevrolet
+                  {props.selectedCar2.make}
                 </Text>
                 <Text style={styles.titleRight}>
-                  Corvette Stingray
+                  {props.selectedCar2.model}
                 </Text>
               </Col>
               <Col style={{width: '20%',}}>
@@ -70,6 +70,7 @@ export default function Admin_Homescreen(props) {
                   <Image
                     style={{width: 100, height: 70, resizeMode: 'contain'}}
                     source={require('../assets/arrow-right-yellow.png')}
+                    
                   />
                 </TouchableOpacity>
               </Col>
@@ -78,7 +79,7 @@ export default function Admin_Homescreen(props) {
               <TouchableOpacity>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
-                  source={require('../assets/cars-clipped/69-corvette.png')}
+                  source={props.selectedCar2.photo}
                 />
               </TouchableOpacity>
             </Row>
