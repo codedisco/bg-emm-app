@@ -23,41 +23,41 @@ export default function Admin_Homescreen(props) {
         <Grid>
           <Col style={{paddingLeft: 60}}>
             <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
-              <Text style={styles.trapezoidInner}>YEAR</Text>
+              <Text style={styles.trapezoidInner}>{props.selectedCar1.year}</Text>
             </Row>
             <Row style={{height: 55, marginBottom: 5}}>
-              <Text style={styles.titlePage}>Chevrolet</Text>
+              <Text style={styles.titlePage}>{props.selectedCar1.make}</Text>
             </Row>
             <Row style={{height: 65, marginBottom: 100}}>
-              <Text style={styles.titlePage}>Corvette Stingray</Text>
+              <Text style={styles.titlePage}>{props.selectedCar1.model}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Year: Info</Text>
+              <Text style={styles.textDetail}>Year: {props.selectedCar1.year}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Make: Info</Text>
+              <Text style={styles.textDetail}>Make: {props.selectedCar1.make}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Model: Info</Text>
+              <Text style={styles.textDetail}>Model: {props.selectedCar1.model}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine: Info</Text>
+              <Text style={styles.textDetail}>Engine: {props.selectedCar1.engine}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Horsepower: Info</Text>
+              <Text style={styles.textDetail}>Horsepower: {props.selectedCar1.horsepower}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery: Info</Text>
+              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar1.fuelDelivery}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Transmission: Info</Text>
+              <Text style={styles.textDetail}>Transmission: {props.selectedCar1.transmission}</Text>
             </Row>
           </Col>
           <Col style={{paddingRight: 80}}>
             <Row style={{marginTop: 180, marginBottom: 5, justifyContent: 'center'}}>
               <Image
               style={{width: 500, height: 300, resizeMode: 'contain'}}
-              source={require('../assets/cars-clipped/70-mustang.png')}
+              source={props.selectedCar1.photo}
             />
             </Row>
             <Row style={{justifyContent: 'center'}}>
