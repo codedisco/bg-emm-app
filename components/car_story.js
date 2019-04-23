@@ -8,10 +8,16 @@ export default function Admin_Homescreen(props) {
     <ImageBackground source={require('../assets/page-bg/single-car.png')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
-          {/*This is the button that triggers the admin nav popup*/}
-          <TouchableOpacity style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
+          <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
+            <Image
+              style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
+              source={require('../assets/arrow-left.png')}
+            />
           </TouchableOpacity>
         </Left>
+        <Body>
+          <Title>Header</Title>
+        </Body>
         <Right>
           <Image
             style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
@@ -21,7 +27,7 @@ export default function Admin_Homescreen(props) {
       </Header>
       <Content>
         <Grid>
-          <Col style={{paddingLeft: 60}}>
+          <Col style={{paddingLeft: 80}}>
             <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
               <Text style={styles.trapezoidInner}>YEAR</Text>
             </Row>
