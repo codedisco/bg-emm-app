@@ -200,6 +200,7 @@ export default class App extends React.Component {
   passwordChecker = (userPwd) => {
     if(userPwd == this.state.pwd){
         this.openHomescreen();
+        this.showHideSecurityModal()
     }else {
     this.setState(previousState => (
         { userEnterPassword:"" }
