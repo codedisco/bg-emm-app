@@ -51,14 +51,16 @@ export default function Admin_Two_Vehicle(props) {
                                     value={props.cars[3].id} />
                             </Picker>
                         </Button>
-                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar1.model}</Text>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
+                            {props.selectedCar1.year} {props.selectedCar1.make} {props.selectedCar1.model}
+                        </Text>
                     </Col>
                     <Col style={{marginRight: 100, marginLeft: 20}}>
                         <Button light large>
                             <Picker
                               onValueChange={props.twoCarChoice}
                             >
-                                <Picker.Item label="SELECT LEFT VEHICLE" value="100" />
+                                <Picker.Item label="SELECT RIGHT VEHICLE" value="100" />
                                 <Picker.Item 
                                     label={props.cars[0].year + " " + props.cars[0].make + " " + props.cars[0].model} 
                                     value={props.cars[0].id} />
@@ -73,7 +75,9 @@ export default function Admin_Two_Vehicle(props) {
                                     value={props.cars[3].id} />
                             </Picker>
                         </Button>
-                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>{props.selectedCar2.model}</Text>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
+                            {props.selectedCar2.year} {props.selectedCar2.make} {props.selectedCar2.model}
+                        </Text>
                     </Col>
                 </Row>
                 <Row style={{alignItems: 'center', marginHorizontal: 400}}>
