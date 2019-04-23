@@ -34,13 +34,13 @@ export default function Admin_Homescreen(props) {
                                     maxLength={4}
                                     autoFocus = {true}
                                     secureTextEntry={true}
-                                    style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center', color: '#ffffff'}}
+                                    style={{backgroundColor: '#ffffff', borderColor: '#4F5961', borderWidth: 2.5, padding: 20, marginTop: 20, width:200, alignItems: 'center', color: '#4F5961'}}
                                     onChangeText={(text) => {props.login(text)}}
                                 />
                             </Col>
                         </Row>
                         <Row style={{marginTop: 40}}>
-                            <Col style={{alignItems: 'flex-end', marginRight: 40, textAlign:"center"}}>
+                            <Col style={{alignItems: 'flex-end', textAlign:"center"}}>
                                 <TouchableOpacity 
                                     onPress = {() =>{props.openCloseSecurityModal()}} 
                                     style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center'}}>
