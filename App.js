@@ -111,7 +111,8 @@ export default class App extends React.Component {
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
-      isReady: false  
+      isReady: false,
+      adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
 
@@ -206,15 +207,21 @@ export default class App extends React.Component {
     }      
   }
   
-  //IS DEPRECIATED, no more admin_login//
   //Used in the passwordChecker() to change screen to the Admin_Homescreen view
   openHomescreen = () => {
     //Hide this component
     this.setState(previousState => (
-        { openAdminLogin:!previousState.openAdminLogin}
+        { openHomeOneVehicle:false}
       ))
+      
+    this.setState(previousState => (
+        { openHomeTwoVehicle:false}
+      )) 
+      
+    this.setState(previousState => (
+        { openHomeAll:false}
+      ))   
     
-  
     //Show this component
     this.setState(previousState => (
         { openAdminHomescreen:!previousState.openAdminHomescreen }
@@ -292,6 +299,13 @@ export default class App extends React.Component {
       ))      
   }
   
+  //Used in the Home Views to show and hide the hidden exit Modal
+  showHideSecurityModal = () =>{
+    this.setState(previousState => (
+        { adminSecurity:!previousState.adminSecurity }
+    )) 
+  }  
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -327,6 +341,10 @@ export default class App extends React.Component {
         {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}        
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }  
         {/*allow the user to view two car and their details*/}
