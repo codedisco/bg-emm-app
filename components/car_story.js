@@ -4,7 +4,7 @@ import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tex
 
 export default function Admin_Homescreen(props) {
   return(
-  <Container>
+  <Container style={{backgroundColor: '#4F5961'}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
           <TouchableOpacity onPress = {() =>{props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
@@ -25,78 +25,41 @@ export default function Admin_Homescreen(props) {
         </Right>
       </Header>
       <Grid>
-        <Col>
-            <Text>{props.selectedCar.story[0].para}</Text>
-            <Text>{props.selectedCar.story[1].para}</Text>
-            <Text>{props.selectedCar.story[3].para}</Text>
+        <Col style={{paddingLeft: 150, paddingRight: 75, paddingTop: 50}}>
+            <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[1].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[2].para}</Text>
+            <Text style={styles.textStoryCredit}>{props.selectedCar.story[3].para}</Text>
         </Col>
-        <Col>
-            <Row style={{height: 65}}>
-              <Text style={styles.titlePage}>Full Specs</Text>
+        <Col style={{width: '25%', paddingTop: 50}}>
+            <Row style={{height: 50}}>
+              <Text style={styles.colTitle}>Full Specs</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Year: {props.selectedCar.year}</Text>
+              <Text style={styles.textDetail}>
+                Year: {props.selectedCar.year}{"\n"}
+                Make: {props.selectedCar.make}{"\n"}
+                Model: {props.selectedCar.model}{"\n"}
+                Engine: {props.selectedCar.engine}{"\n"}
+                Horsepower: {props.selectedCar.horsepower}{"\n"}
+                Fuel Delivery: {props.selectedCar.fuelDelivery}{"\n"}
+                Transmission: {props.selectedCar.transmission}{"\n"}
+                Brakes: {props.selectedCar.brakes}{"\n"}
+                Color: {props.selectedCar.color}{"\n"}
+                Interior: {props.selectedCar.interior}{"\n"}
+                Options: {props.selectedCar.options}{"\n"}
+                Production: {props.selectedCar.production}{"\n"}
+                Price New: {props.selectedCar.price}{"\n"}
+                Owner: {props.selectedCar.story[3].para}{"\n"}
+              </Text>
             </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Make: {props.selectedCar.make}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Model: {props.selectedCar.model}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine: {props.selectedCar.engine}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Horsepower: {props.selectedCar.horsepower}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar.fuelDelivery}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Transmission: {props.selectedCar.transmission}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Year: {props.selectedCar.brakes}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Make: {props.selectedCar.color}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Model: {props.selectedCar.interior}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine: {props.selectedCar.options}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Horsepower: {props.selectedCar.production}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar.price}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Transmission: {props.selectedCar.story[3].para}</Text>
-            </Row>
-
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Other Models Available: </Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine Lineup/Horsepower:</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery:</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Colors:</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Interiors:</Text>
-            </Row>
-              <TouchableOpacity>
+            <Row style={{height: 160}}>
+              <TouchableOpacity style={{alignItems: "flex-start", marginTop: 30}}>
                 <Text style={styles.btnLg}>
                   G A L L E R Y
                 </Text>
               </TouchableOpacity>
+            </Row>
         </Col>                     
       </Grid>          
   </Container>
@@ -118,26 +81,47 @@ const styles = StyleSheet.create({
   },
 
   titlePage: {
-    fontSize: 20,
+    fontSize: 25,
     color: '#A4ADB7',
   },
 
-  rowDetail: {
-    height: 25,
+  textStory: {
+    color: '#ffffff', 
+    fontSize: 18,
+    lineHeight: 30,
+    paddingBottom: 25,
+  },
+
+  textStoryCredit: {
+    color: '#ffffff', 
+    fontSize: 20,
+  },
+
+  colTitle: {
+    fontSize: 25,
+    color: '#A4ADB7',
+    paddingBottom: 10,
+    paddingRight: 141.5,
+    borderBottomWidth: 5,
+    borderBottomColor: '#E5C035'
   },
 
   textDetail: {
-    fontSize: 10, 
-    color: 'black',
+    fontSize: 13, 
+    color: '#ffffff',
+    marginRight: 20,
+    paddingTop: 15,
+    lineHeight: 22.5,
   },
 
   btnLg: {
-    fontSize: 25,
+    fontSize: 20,
     color: '#A4ADB7',
     borderColor: "#A4ADB7",
     borderWidth: 4,
-    paddingHorizontal: 50,
-    paddingVertical: 20,
+    paddingHorizontal: 30,
+    paddingVertical: 15,
+    textAlign: 'center'
   },
   
 });
