@@ -10,6 +10,7 @@ import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
 import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
+import Story from './components/car_story.js';
 
 carList = [
   {"id":"1",
@@ -285,6 +286,7 @@ export default class App extends React.Component {
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
       isReady: false,
+      openStory:false, //When true, show story component tailer to selected vehicle
       adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
@@ -481,6 +483,32 @@ export default class App extends React.Component {
     )) 
   }  
   
+  //Used in the Home View 1 to open a Story component for a selected car
+  openOneVehicleStory = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      ))       
+  }
+  
+  //Used in the Story component to switch to the home one vehicle presentation screen.
+  goBackHomeOneVehicle = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  } 
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -520,6 +548,7 @@ export default class App extends React.Component {
         {/*allow the user to view one car and its details*/}
         {this.state.openHomeOneVehicle &&
             <Home_View_1
+                goToStory = {this.openOneVehicleStory}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
@@ -545,7 +574,13 @@ export default class App extends React.Component {
                 isVisibleModal = {this.state.adminSecurity}
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
-        }         
+        } 
+        {/*allow the user to view details of a selected car*/}
+        {this.state.openStory &&
+            <Story
+                goBack = {this.goBackHomeOneVehicle}
+                selectedCar={this.state.oneVehicleSelection} />
+        }          
       </Container>
     );
   }

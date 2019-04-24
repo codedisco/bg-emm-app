@@ -5,10 +5,9 @@ import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Tex
 export default function Admin_Homescreen(props) {
   return(
   <Container>
-    <ImageBackground source={require('../assets/page-bg/single-car.png')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
-          <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
+          <TouchableOpacity onPress = {() =>{props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
             <Image
               style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
               source={require('../assets/arrow-left.png')}
@@ -16,7 +15,7 @@ export default function Admin_Homescreen(props) {
           </TouchableOpacity>
         </Left>
         <Body>
-          <Title>Header</Title>
+          <Title>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Title>
         </Body>
         <Right>
           <Image
@@ -25,63 +24,81 @@ export default function Admin_Homescreen(props) {
           />
         </Right>
       </Header>
-      <Content>
-        <Grid>
-          <Col style={{paddingLeft: 80}}>
-            <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
-              <Text style={styles.trapezoidInner}>YEAR</Text>
-            </Row>
-            <Row style={{height: 55, marginBottom: 5}}>
-              <Text style={styles.titlePage}>Chevrolet</Text>
-            </Row>
-            <Row style={{height: 65, marginBottom: 100}}>
-              <Text style={styles.titlePage}>Corvette Stingray</Text>
+      <Grid>
+        <Col>
+            <Text>{props.selectedCar.story[0].para}</Text>
+            <Text>{props.selectedCar.story[1].para}</Text>
+            <Text>{props.selectedCar.story[3].para}</Text>
+        </Col>
+        <Col>
+            <Row style={{height: 65}}>
+              <Text style={styles.titlePage}>Full Specs</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Year: Info</Text>
+              <Text style={styles.textDetail}>Year: {props.selectedCar.year}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Make: Info</Text>
+              <Text style={styles.textDetail}>Make: {props.selectedCar.make}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Model: Info</Text>
+              <Text style={styles.textDetail}>Model: {props.selectedCar.model}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine: Info</Text>
+              <Text style={styles.textDetail}>Engine: {props.selectedCar.engine}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Horsepower: Info</Text>
+              <Text style={styles.textDetail}>Horsepower: {props.selectedCar.horsepower}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery: Info</Text>
+              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar.fuelDelivery}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Transmission: Info</Text>
+              <Text style={styles.textDetail}>Transmission: {props.selectedCar.transmission}</Text>
             </Row>
-          </Col>
-          <Col style={{paddingRight: 80}}>
-            <Row style={{marginTop: 180, marginBottom: 5, justifyContent: 'center'}}>
-              <Image
-              style={{width: 500, height: 300, resizeMode: 'contain'}}
-              source={require('../assets/cars-clipped/70-mustang.png')}
-            />
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Year: {props.selectedCar.brakes}</Text>
             </Row>
-            <Row style={{justifyContent: 'center'}}>
-              <TouchableOpacity style={{marginRight: 30}}>
-                <Text style={styles.btnLg}>
-                  S T O R Y
-                </Text>
-              </TouchableOpacity>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Make: {props.selectedCar.color}</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Model: {props.selectedCar.interior}</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Engine: {props.selectedCar.options}</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Horsepower: {props.selectedCar.production}</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar.price}</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Transmission: {props.selectedCar.story[3].para}</Text>
+            </Row>
+
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Other Models Available: </Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Engine Lineup/Horsepower:</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Fuel Delivery:</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Colors:</Text>
+            </Row>
+            <Row style={styles.rowDetail}>
+              <Text style={styles.textDetail}>Interiors:</Text>
+            </Row>
               <TouchableOpacity>
                 <Text style={styles.btnLg}>
                   G A L L E R Y
                 </Text>
               </TouchableOpacity>
-            </Row>
-          </Col>           
-        </Grid>
-      </Content>
-    </ImageBackground>
+        </Col>                     
+      </Grid>          
   </Container>
 
   );
@@ -101,17 +118,17 @@ const styles = StyleSheet.create({
   },
 
   titlePage: {
-    fontSize: 50,
+    fontSize: 20,
     color: '#A4ADB7',
   },
 
   rowDetail: {
-    height: 35,
+    height: 25,
   },
 
   textDetail: {
-    fontSize: 15, 
-    color: '#ffffff',
+    fontSize: 10, 
+    color: 'black',
   },
 
   btnLg: {
