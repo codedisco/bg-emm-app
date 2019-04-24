@@ -12,6 +12,7 @@ import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
 import Car_Main from './components/car_main.js';
 import Story from './components/car_story.js';
+import Gallery from './components/car_gallery.js';
 
 carList = [
   {"id":"1",
@@ -604,14 +605,8 @@ export default class App extends React.Component {
         <StatusBar hidden/>
         {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
-            <Admin_Homescreen
-                userEnterPwd = {this.state.userEnterPassword}
-                login={this.playerLogin}        
-                openCloseSecurityModal ={this.showHideSecurityModal}
-                isVisibleModal = {this.state.adminSecurity}
-                openAll = {this.openShowAll}
-                openOne = {this.openOneVehicle}
-                openTwo = {this.openTwoVehicle}/>
+            <Gallery
+                cars = {carList}/>
         }
         {/*allow the user to choose one car to be displayed. The "goBack" prop navigate the user to the admin_homescreen. The cars prop gives the component the array of cars to be use. The oneCarChoice prop saves the user car selection to the state(oneVehicleSelection)*/}
         {this.state.openAdminOneVehicle &&
