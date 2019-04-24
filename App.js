@@ -10,6 +10,7 @@ import Admin_Two_Vehicle from './components/admin_two_vehicle.js';
 import Home_View_1 from './components/home_view_1.js';
 import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
+import Home_View_Car2 from './components/home_view_car2.js';
 import Story from './components/car_story.js';
 
 carList = [
@@ -282,11 +283,13 @@ export default class App extends React.Component {
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
+      openHomeCar2:false, //When true, show all the cars and their details for the user 
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
       isReady: false,
-      openStory:false, //When true, show story component tailer to selected vehicle
+      openStory:false, //When true, show story component tailer to the first selected vehicle
+      openStoryCar2:false, //When true, show story component tailer to second selected vehicle
       adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
@@ -393,7 +396,11 @@ export default class App extends React.Component {
       
     this.setState(previousState => (
         { openHomeTwoVehicle:false}
-      )) 
+      ))
+      
+    this.setState(previousState => (
+        { openHomeCar2:false}
+      ))       
       
     this.setState(previousState => (
         { openHomeAll:false}
@@ -496,6 +503,19 @@ export default class App extends React.Component {
       ))       
   }
   
+  //Used in the Home View Car 2 to open a Story component for the selected car
+  openTwoVehicleStory = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeCar2:!previousState.openHomeCar2 }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStoryCar2:!previousState.openStoryCar2 }
+      ))       
+  }  
+  
   //Used in the Story component to switch to the home one vehicle presentation screen.
   goBackHomeOneVehicle = () => {
     //Hide this component
@@ -508,6 +528,45 @@ export default class App extends React.Component {
         { openHomeOneVehicle:!previousState.openHomeOneVehicle }
       ))      
   } 
+  
+  //Used in the Story component to switch to the home two car 2 vehicle presentation screen.
+  goBackHomeTwoCar2 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStoryCar2:!previousState.openStoryCar2 }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeCar2:!previousState.openHomeCar2 }
+      ))      
+  }  
+  
+  //Used in the Home_View_2 component to switch to the home one vehicle presentation screen. 
+  viewCar1 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  }
+  
+  //Used in the Home_View_2 component to switch to the home car 2 vehicle presentation screen. 
+  viewCar2 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeCar2:!previousState.openHomeCar2 }
+      ))      
+  }   
   
   render() {
     if (!this.state.isReady) {
@@ -558,6 +617,8 @@ export default class App extends React.Component {
         {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
+                viewCar1 = {this.viewCar1}
+                viewCar2 = {this.viewCar2}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
@@ -574,12 +635,28 @@ export default class App extends React.Component {
                 isVisibleModal = {this.state.adminSecurity}
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
-        } 
-        {/*allow the user to view details of a selected car*/}
+        }
+        {/*allow the user to view one car and its details*/}
+        {this.state.openHomeCar2 &&
+            <Home_View_Car2
+                goToStory = {this.openTwoVehicleStory}
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}        
+                selectedCar1 = {this.state.twoVehicleSelection}/>
+        }         
+        {/*allow the user to view details of a selected car from home_view_1*/}
         {this.state.openStory &&
             <Story
                 goBack = {this.goBackHomeOneVehicle}
                 selectedCar={this.state.oneVehicleSelection} />
+        }
+        {/*allow the user to view details of the second car from home_view_2*/}
+        {this.state.openStoryCar2 &&
+            <Story
+                goBack = {this.goBackHomeTwoCar2}
+                selectedCar={this.state.twoVehicleSelection} />
         }          
       </Container>
     );

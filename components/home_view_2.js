@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
-export default function Admin_Homescreen(props) {
+export default function Home_View_2(props) {
   return(
   <Container>
     <ImageBackground source={require('../assets/page-bg/double-car.png')} style={{flex: 1}}>
@@ -84,7 +84,7 @@ export default function Admin_Homescreen(props) {
               </Col> 
             </Row>
             <Row style={styles.carRow}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress = {() =>{props.viewCar1()}}>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
                   source={props.selectedCar1.photo}
@@ -116,7 +116,7 @@ export default function Admin_Homescreen(props) {
               </Col>
             </Row>
             <Row style={styles.carRow}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress = {() =>{props.viewCar2()}}>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
                   source={props.selectedCar2.photo}
