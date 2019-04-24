@@ -101,7 +101,7 @@ export default function Admin_Homescreen(props) {
             />
             </Row>
             <Row style={{justifyContent: 'center'}}>
-              <TouchableOpacity style={{marginRight: 30}}>
+              <TouchableOpacity onPress={props.goToStory} style={{marginRight: 30}}>
                 <Text style={styles.btnLg}>
                   S T O R Y
                 </Text>
