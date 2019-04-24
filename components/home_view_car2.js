@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
-export default function Home_View_1(props) {
+export default function Home_View_Car2(props) {
   return(
   <Container>
     <ImageBackground source={require('../assets/page-bg/single-car.png')} style={{flex: 1}}>
