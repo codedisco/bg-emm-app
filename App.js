@@ -288,7 +288,7 @@ export default class App extends React.Component {
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
-      isReady: false,
+      isReady: false,   //use to link in fonts require by NativeBase and call in componentWillMount()
       openStory:false, //When true, show story component for to the first selected vehicle in home_view_1
       openStoryCarMain1: false,//When true, show story component for to the selected vehicle from car_main 1
       openStoryCar2:false, //When true, show story component for to the selected vehicle from car_main 2
@@ -376,11 +376,19 @@ export default class App extends React.Component {
     }      
   }
   
-  //Used in the playerLogin() to check the password. If correct continue to the Admin_homescreen. If incorrect, clear the input in the Admin_login to start over
+  //Used in the playerLogin() to check the password. If correct continue to the Admin_homescreen, hide the security modal, and clear previous selected car data. If incorrect, clear the input in the Admin_login to start over
   passwordChecker = (userPwd) => {
     if(userPwd == this.state.pwd){
         this.openHomescreen();
-        this.showHideSecurityModal()
+        this.showHideSecurityModal();
+        
+    this.setState(previousState => (
+        { oneVehicleSelection:[] }
+      ))
+        
+    this.setState(previousState => (
+        { twoVehicleSelection:[] }
+      ))        
     }
       
     this.setState(previousState => (
