@@ -300,6 +300,10 @@ export default class App extends React.Component {
   await Expo.Font.loadAsync({
     'Roboto': require('native-base/Fonts/Roboto.ttf'),
     'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    'Inter-Black':require('./assets/fonts/Inter-Black.ttf'),
+    'Inter-ExtraBold':require('./assets/fonts/Inter-ExtraBold.ttf'),
+    'Inter-LightItalic-BETA':require('./assets/fonts/Inter-LightItalic-BETA.ttf'),
+    'Inter-SemiBold':require('./assets/fonts/Inter-SemiBold.ttf'),      
   });
   this.setState({isReady:true})
 }
