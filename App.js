@@ -509,6 +509,19 @@ export default class App extends React.Component {
       ))      
   } 
   
+  //Used in the Home_View_2 component to switch to the home one vehicle presentation screen. 
+  viewCar1 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle }
+      ))      
+  }  
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -558,6 +571,7 @@ export default class App extends React.Component {
         {/*allow the user to view two car and their details*/}
         {this.state.openHomeTwoVehicle &&
             <Home_View_2 
+                viewCar1 = {this.viewCar1}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}

@@ -84,7 +84,7 @@ export default function Admin_Homescreen(props) {
               </Col> 
             </Row>
             <Row style={styles.carRow}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress = {() =>{props.viewCar1()}}>
                 <Image
                   style={{width: 450, height: 225, resizeMode: 'contain'}}
                   source={props.selectedCar1.photo}
