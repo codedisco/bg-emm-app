@@ -830,7 +830,8 @@ export default class App extends React.Component {
       ))      
   } 
   
-/* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
+  
+  /* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
   
   //Used in the Home_View_2 component to switch to the car main 1 presentation screen. 
   viewCar1 = () => {
@@ -857,9 +858,11 @@ export default class App extends React.Component {
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
   }   
-/* ################# End of Car Main Navigation to/from Home View 2 ############################ */   
   
-  /* ################# Start of Gallery Navigation ############################ */
+/* ################# End of Car Main Navigation to/from Home View 2 ############################ */  
+  
+  
+/* ################# Start of Gallery Navigation ############################################### */
   
   //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
   openGalleryForHomeOne = () => {
@@ -937,7 +940,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openGalleryCarMain2:!previousState.openGalleryCarMain2 }
       ))      
-  }   
+  }
+  
+  //Navigate between Home_All's Car Main and its Gallery
+  openGalleryForHomeAllCarMain = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryHomeAll:!previousState.openGalleryHomeAll }
+      ))      
+  }  
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
@@ -1031,6 +1047,7 @@ render() {
         {/*############### WIP WIP WIP WIP WIP WIP ############################*/}
         {this.state.openHomeAllCarMain &&
             <Car_Main
+                goToGallery = {this.openGalleryForHomeAllCarMain}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }          
         {/*allow the user to view details of a selected car from home_view_1*/}
@@ -1071,7 +1088,13 @@ render() {
             <Gallery
                 goBack = {this.openGalleryForCarMain2}
                 selectedCar={this.state.twoVehicleSelection} />
-        }           
+        }
+        {/*allow the user to view the gallery of the selected car in Home All*/}
+        {this.state.openGalleryHomeAll &&
+            <Gallery
+                goBack = {this.openGalleryForHomeAllCarMain}
+                selectedCar={this.state.oneVehicleSelection} />
+        }         
       </Container>
     );
   }
