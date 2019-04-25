@@ -97,7 +97,7 @@ export default class Gallery extends React.Component {
             <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
                 <Left>
                   <TouchableOpacity onPress = {() =>{this.props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
-                    <Image
+                    <Image fadeDuration={0}
                       style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
                       source={require('../assets/arrow-left.png')}
                     />
@@ -111,7 +111,7 @@ export default class Gallery extends React.Component {
                   <Title style={styles.titlePage}>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
-                  <Image
+                  <Image fadeDuration={0}
                     style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
                     source={require('../assets/emm-logo-large.png')}
                   />
