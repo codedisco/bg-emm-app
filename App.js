@@ -523,9 +523,11 @@ export default class App extends React.Component {
       openStory:false, //When true, show story component for to the first selected vehicle in home_view_1
       openStoryCarMain1: false,//When true, show story component for to the selected vehicle from car_main 1
       openStoryCar2:false, //When true, show story component for to the selected vehicle from car_main 2
+      openStoryHomeAll: false, //When true show the story of the Home All's Car Main
       openGallery: false, //When true, show the gallery for the home view 1 selected car
       openGalleryCarMain1: false, //When true, show the gallery for the home view 2 selected car from car_main 1
       openGalleryCarMain2: false, //When true, show the gallery for the home view 2 selected car from car_main 2
+      openGalleryHomeAll: false, //When true show the gallery for the car main of Home all
       adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
@@ -789,7 +791,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openStoryCar2:!previousState.openStoryCar2 }
       ))       
-  }  
+  } 
+  
+  //Navigate to and from the Home All's Car Main and its Story
+  openStoryForHomeAllCarMain = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStoryHomeAll:!previousState.openStoryHomeAll }
+      ))       
+  }   
   
   //Used in the Story component to switch to the home one vehicle presentation screen.
   goBackHomeOneVehicle = () => {
@@ -953,6 +968,19 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openGalleryHomeAll:!previousState.openGalleryHomeAll }
       ))      
+  }
+  
+  //Navigate the user from Home_All's CarMain-Story to the Gallery
+  openGalleryForHomeAllStory = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openStoryHomeAll:!previousState.openStoryHomeAll}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryHomeAll:!previousState.openGalleryHomeAll }
+      ))      
   }  
 /* ################# End of Gallery Navigation ############################ */  
   
@@ -1048,6 +1076,7 @@ render() {
         {this.state.openHomeAllCarMain &&
             <Car_Main
                 goBack = {this.openCarMainforHomeAll}
+                goToStory = {this.openStoryForHomeAllCarMain}
                 goToGallery = {this.openGalleryForHomeAllCarMain}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }          
@@ -1072,6 +1101,12 @@ render() {
                 goToGallery = {this.openGalleryForCarMain2Story}
                 selectedCar={this.state.twoVehicleSelection} />
         }
+        {this.state.openStoryHomeAll &&
+            <Story
+                goBack = {this.openStoryForHomeAllCarMain}
+                goToGallery = {this.openGalleryForHomeAllStory}
+                selectedCar={this.state.oneVehicleSelection} />
+        }        
         {/*allow the user to view the gallery of the selected car in Home_view_1*/}
         {this.state.openGallery &&
             <Gallery
