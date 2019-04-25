@@ -71,7 +71,7 @@ export default function Admin_Homescreen(props) {
               <Row style={{height: 50}}>
                 <Text style={styles.colTitle}>Full Specs</Text>
               </Row>
-              <Row style={styles.rowDetail}>
+              <Row style={{height: 400}}>
                 <Text style={styles.textDetail}>
                   Year: {props.selectedCar.year}{"\n"}
                   Make: {props.selectedCar.make}{"\n"}
@@ -88,6 +88,7 @@ export default function Admin_Homescreen(props) {
                   Price New: {props.selectedCar.price}{"\n"}
                   Owner: {props.selectedCar.owner}{"\n"}
                 </Text>
+                
               </Row>
               <Row style={{height: 160}}>
                 <TouchableOpacity onPress={props.goToGallery} style={{alignItems: "flex-start", marginTop: 30}}>
