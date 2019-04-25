@@ -106,7 +106,7 @@ export default function Home_View_1(props) {
                   S T O R Y
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={props.goToGallery}>
                 <Text style={styles.btnLg}>
                   G A L L E R Y
                 </Text>

@@ -29,7 +29,22 @@ carList = [
    "interior":"Red Leather", 
    "options":"Trimmed windshield",
    "production":"752", 
-   "price":"$950", 
+   "price":"$950",
+   "gallery":[
+       require('./assets/49-crosley/1.jpg'),
+       require('./assets/49-crosley/2.gif'),
+       require('./assets/49-crosley/3.jpg'),
+       require('./assets/49-crosley/4.jpg'),
+       require('./assets/49-crosley/5.jpg'),
+       require('./assets/49-crosley/6.jpg'),
+       require('./assets/49-crosley/7.jpg'),
+       require('./assets/49-crosley/8.jpg'),
+       require('./assets/49-crosley/9.jpg'),
+       require('./assets/49-crosley/10.jpg'),
+       require('./assets/49-crosley/11.jpg'),
+       require('./assets/49-crosley/12.jpg'),
+       require('./assets/49-crosley/13.jpg'),       
+   ],
    "story":[
       {"para_id":"1", "para":"Among American sports cars, the Crosley Hot Shot can be considered the first. The engine was remarkable: a single overhead camshaft, a capacity of only 726cc, and a whopping 26 horsepower. It was originally developed as a small sedan, but its sporting capabilities won out by production in 1949 as a two-seat sports car. The Hot Shot wasn’t pretty — it was sometimes called a bathtub on wheels — but it could hit 75 MPH and was rather quick for its specs."}, 
       {"para_id":"2", "para":"The Hot Shot here is race-ready with a trimmed windshield, hand-painted numbers, and all badging removed for track safety. In 1950, this exact car in front of you won the prestigious Twelve Hours of Sebring race by the “index of performance,” achieved by averaging the best speed for its displacement. Hot Shots were raced all over the US until production ceased in 1952, just a few years after its release."}, 
@@ -293,6 +308,9 @@ export default class App extends React.Component {
       openStory:false, //When true, show story component for to the first selected vehicle in home_view_1
       openStoryCarMain1: false,//When true, show story component for to the selected vehicle from car_main 1
       openStoryCar2:false, //When true, show story component for to the selected vehicle from car_main 2
+      openGallery: false, //When true, show the gallery for the home view 1 selected car
+      openGalleryCarMain1: false, //When true, show the gallery for the home view 2 selected car from car_main 1
+      openGalleryCarMain2: false, //When true, show the gallery for the home view 2 selected car from car_main 2
       adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
@@ -596,6 +614,21 @@ export default class App extends React.Component {
       ))      
   }   
   
+  /* ################# Gallery Navigation ############################ */
+  
+  //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForHomeOne = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGallery:!previousState.openGallery }
+      ))      
+  }
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -605,8 +638,14 @@ export default class App extends React.Component {
         <StatusBar hidden/>
         {/*First page of the app, allow the user to choose how many cars to be displayed*/}
         {this.state.openAdminHomescreen &&
-            <Gallery
-                cars = {carList}/>
+            <Admin_Homescreen
+                userEnterPwd = {this.state.userEnterPassword}
+                login={this.playerLogin}        
+                openCloseSecurityModal ={this.showHideSecurityModal}
+                isVisibleModal = {this.state.adminSecurity}
+                openAll = {this.openShowAll}
+                openOne = {this.openOneVehicle}
+                openTwo = {this.openTwoVehicle}/>
         }
         {/*allow the user to choose one car to be displayed. The "goBack" prop navigate the user to the admin_homescreen. The cars prop gives the component the array of cars to be use. The oneCarChoice prop saves the user car selection to the state(oneVehicleSelection)*/}
         {this.state.openAdminOneVehicle &&
@@ -630,6 +669,7 @@ export default class App extends React.Component {
         {this.state.openHomeOneVehicle &&
             <Home_View_1
                 goToStory = {this.openOneVehicleStory}
+                goToGallery = {this.openGalleryForHomeOne}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
@@ -689,6 +729,12 @@ export default class App extends React.Component {
             <Story
                 goBack = {this.goBackHomeTwoCar2}
                 selectedCar={this.state.twoVehicleSelection} />
+        }
+        {/*allow the user to view the gallery of the selected car in Home_view_1*/}
+        {this.state.openGallery &&
+            <Gallery
+                goBack = {this.openGalleryForHomeOne}
+                selectedCar={this.state.oneVehicleSelection} />
         }          
       </Container>
     );

@@ -22,17 +22,17 @@ export default class Gallery extends React.Component {
             imageHeight={200}>
             <Image
                 style={{width:200, height:200}}
-                source={item.photo}
+                source={item}
             />
         </ImageZoom>
       </View>
   );}  
     
     get pagination () {
-        const { entries, activeSlide } = this.props.cars;
+        const { entries, activeSlide } = this.props.selectedCar.gallery;
         return (
             <Pagination
-              dotsLength={this.props.cars.length}
+              dotsLength={this.props.selectedCar.gallery.length}
               activeDotIndex={this.state.activeSlide}
               containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
               dotStyle={{
@@ -64,7 +64,7 @@ export default class Gallery extends React.Component {
                   </TouchableOpacity>
                 </Left>
                 <Body>
-                  <Title>{this.props.cars[this.state.activeSlide].year + " " + this.props.cars[this.state.activeSlide].make + " " + this.props.cars[this.state.activeSlide].model} </Title>
+                  <Title>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
                   <Image
@@ -78,7 +78,7 @@ export default class Gallery extends React.Component {
                     <Col>
                       <Carousel
                         ref={(c) => { this._carousel = c; }}
-                        data={this.props.cars}
+                        data={this.props.selectedCar.gallery}
                         renderItem={this._renderItem}
                         onSnapToItem={(index) => this.setState({ activeSlide: index }) }
                         sliderWidth={600}
