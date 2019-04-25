@@ -670,6 +670,19 @@ export default class App extends React.Component {
       ))      
   }
   
+  //Used in the Car Main 1's Story to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForCarMain1Story = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStoryCarMain1:!previousState.openStoryCarMain1}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGalleryCarMain1:!previousState.openGalleryCarMain1 }
+      ))      
+  }  
+  
   //Used in the Car Main 2 to navigate to and from the Gallery with the twoVehicleselection car object
   openGalleryForCarMain2 = () => {
     //Hide this component state
@@ -765,7 +778,7 @@ export default class App extends React.Component {
             <Car_Main
                 goBack = {this.viewCar1}
                 goToStory = {this.goBackFromStoryToCarMain1}
-                goToGallery = {this.openGalleryForCarMain1}
+                goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }         
         {/*allow the user to view details of a selected car from home_view_1*/}
@@ -779,6 +792,7 @@ export default class App extends React.Component {
         {this.state.openStoryCarMain1 &&
             <Story
                 goBack = {this.goBackFromStoryToCarMain1}
+                goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar={this.state.oneVehicleSelection} />
         }         
         {/*allow the user to view the story of the second car in home_view_2 from Car Main*/}
