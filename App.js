@@ -598,7 +598,9 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
-  }  
+  } 
+  
+/* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
   
   //Used in the Home_View_2 component to switch to the car main 1 presentation screen. 
   viewCar1 = () => {
@@ -625,8 +627,9 @@ export default class App extends React.Component {
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
   }   
+/* ################# End of Car Main Navigation to/from Home View 2 ############################ */   
   
-  /* ################# Gallery Navigation ############################ */
+  /* ################# Start of Gallery Navigation ############################ */
   
   //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
   openGalleryForHomeOne = () => {
@@ -640,6 +643,19 @@ export default class App extends React.Component {
         { openGallery:!previousState.openGallery }
       ))      
   }
+  
+  //Used in the Home_View_1's Story to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForHomeOneStory = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGallery:!previousState.openGallery }
+      ))      
+  }  
   
   //Used in the Car Main 1 to navigate to and from the Gallery with the oneVehicleselection car object
   openGalleryForCarMain1 = () => {
@@ -666,7 +682,7 @@ export default class App extends React.Component {
         { openGalleryCarMain2:!previousState.openGalleryCarMain2 }
       ))      
   }   
-  
+/* ################# End of Gallery Navigation ############################ */  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -756,6 +772,7 @@ export default class App extends React.Component {
         {this.state.openStory &&
             <Story
                 goBack = {this.goBackHomeOneVehicle}
+                goToGallery = {this.openGalleryForHomeOneStory}
                 selectedCar={this.state.oneVehicleSelection} />
         }
         {/*allow the user to view the story of the second car in home_view_2 from Car Main*/}
