@@ -10,7 +10,7 @@ export default function Home_View_1(props) {
       <Header noShadow style={{height: 100, backgroundColor: '#505050', paddingLeft: 0}}>
         <Left>
           <TouchableOpacity style={{backgroundColor: '#E5C035', margin: 0}}>
-            <Image
+            <Image fadeDuration={0}
               style={{width: 60, height: 60, margin: 20, resizeMode: 'contain',}}
               source={require('../assets/arrow-left.png')}
             />
@@ -20,7 +20,7 @@ export default function Home_View_1(props) {
           <Title>Header</Title>
         </Body>
         <Right>
-          <Image
+          <Image fadeDuration={0}
             style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
             source={require('../assets/emm-logo-large.png')}
           />

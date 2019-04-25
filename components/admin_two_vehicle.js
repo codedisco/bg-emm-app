@@ -15,14 +15,14 @@ export default function Admin_Two_Vehicle(props) {
                 <TouchableOpacity 
                     onPress = {() =>{props.goBack()}}
                     style={{backgroundColor: '#E5C035', margin: 0}}>
-                    <Image
+                    <Image fadeDuration={0}
                         style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
                         source={require('../assets/arrow-left.png')}
                     />
                 </TouchableOpacity>
             </Left>
             <Right>
-                <Image
+                <Image fadeDuration={0}
                     style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
                     source={require('../assets/emm-logo-large.png')}
                 />

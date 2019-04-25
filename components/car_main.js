@@ -47,7 +47,7 @@ export default function Car_Main(props) {
           </TouchableOpacity>
         </Left>
         <Right>
-          <Image fadeDuration={100}
+          <Image fadeDuration={0}
             style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
             source={require('../assets/emm-logo-large.png')}
           />
