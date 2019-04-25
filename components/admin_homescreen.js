@@ -12,7 +12,7 @@ export default function Admin_Homescreen(props) {
                 <TouchableOpacity 
                     onPress = {() =>{props.openCloseSecurityModal()}} 
                     style={{backgroundColor: '#E5C035'}}>
-                    <Text style={{fontSize: 20, color: '#4F5961', paddingHorizontal: 40, paddingVertical: 26}}>
+                    <Text style={{fontSize: 20, color: '#4F5961', paddingHorizontal: 40, paddingVertical: 26, fontFamily: 'Inter-Black'}}>
                         E X I T
                     </Text>
                 </TouchableOpacity>
@@ -27,7 +27,7 @@ export default function Admin_Homescreen(props) {
                         <Grid>
                             <Row>
                                 <Col style={{alignItems: 'center', justifyContent: 'flex-end'}}>
-                                    <Text style={{fontSize: 30, color: '#4F5961'}}>
+                                    <Text style={{fontSize: 25, color: '#4F5961', fontFamily: 'Inter-Black'}}>
                                         Would you like to exit the app?
                                     </Text>
                                 </Col>
@@ -37,14 +37,14 @@ export default function Admin_Homescreen(props) {
                                     <TouchableOpacity 
                                         onPress = {() =>{props.openCloseSecurityModal()}} 
                                         style={{backgroundColor: '#4F5961', margin: 0, width:200, alignItems: 'center'}}>
-                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>B A C K</Text>
+                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20, fontFamily: 'Inter-Black'}}>B A C K</Text>
                                     </TouchableOpacity>                                    
                                 </Col>
                                 <Col style={{marginleft: 40}}>
                                     <TouchableOpacity 
                                         onPress = {() =>{props.openCloseSecurityModal()}} 
                                         style={{backgroundColor: '#E61E1E', margin: 0, width:200, alignItems: 'center'}}>
-                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20}}>E X I T</Text>
+                                        <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20, fontFamily: 'Inter-Black'}}>E X I T</Text>
                                     </TouchableOpacity>                                    
                                 </Col>
                             </Row>
@@ -61,16 +61,16 @@ export default function Admin_Homescreen(props) {
         </Header>
         <Grid>                    
             <Row style={{alignItems: 'center', justify: 'center'}}>
-                <Col style={{alignItems: 'center', justify: 'center', marginHorizontal: 300}}>
-                    <Text style={styles.detail}>SELECT A HOMESCREEN STYLE</Text>
+                <Col style={{alignItems: 'center', justify: 'center', marginHorizontal: 250}}>
+                    <Text style={styles.detail}>S E L E C T    A    H O M E S C R E E N    S T Y L E</Text>
                     <Button light large block onPress={props.openOne} style={styles.option}>
-                        <Text>1 Vehicle</Text>
+                        <Text style={styles.textButton}>1 Vehicle</Text>
                     </Button>
                     <Button light large  block onPress={props.openTwo} style={styles.option}>
-                        <Text>2 Vehicle</Text>
+                        <Text style={styles.textButton}>2 Vehicle</Text>
                     </Button>
                     <Button light large block onPress={props.openAll} style={styles.option}>
-                        <Text>All Vehicle</Text>
+                        <Text style={styles.textButton}>All Vehicle</Text>
                     </Button>
                 </Col>
             </Row>
@@ -84,7 +84,12 @@ const styles = StyleSheet.create({
     detail: {
         color: '#ffffff',
         paddingBottom: 30, 
-        fontSize: 25,
+        fontSize: 20,
+        fontFamily: 'Inter-Black'
+    },
+
+    textButton: {
+        fontFamily: 'Inter-SemiBold'
     },
     
     option: {

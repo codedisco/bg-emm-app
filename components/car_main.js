@@ -24,9 +24,12 @@ export default function Car_Main(props) {
       </Header>
       <Content>
         <Grid>
-          <Col style={{paddingLeft: 60}}>
+          <Col style={{paddingLeft: 70}}>
             <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
-              <Text style={styles.trapezoidInner}>{props.selectedCar1.year}</Text>
+              <View style={{width: 120, height: 40, justifyContent: 'center', alignItems: 'center'}}>
+                <Image source={require('../assets/section-shape.png')} style={{width: 120, height: 40, resizeMode: 'stretch'}}/>
+                <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>{props.selectedCar1.year}</Text>
+              </View>
             </Row>
             <Row style={{height: 55, marginBottom: 5}}>
               <Text style={styles.titlePage}>{props.selectedCar1.make}</Text>
@@ -35,25 +38,15 @@ export default function Car_Main(props) {
               <Text style={styles.titlePage}>{props.selectedCar1.model}</Text>
             </Row>
             <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Year: {props.selectedCar1.year}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Make: {props.selectedCar1.make}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Model: {props.selectedCar1.model}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Engine: {props.selectedCar1.engine}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Horsepower: {props.selectedCar1.horsepower}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Fuel Delivery: {props.selectedCar1.fuelDelivery}</Text>
-            </Row>
-            <Row style={styles.rowDetail}>
-              <Text style={styles.textDetail}>Transmission: {props.selectedCar1.transmission}</Text>
+              <Text style={styles.textDetail}>
+                Year: {props.selectedCar1.year}{"\n"}
+                Make: {props.selectedCar1.make}{"\n"}
+                Model: {props.selectedCar1.model}{"\n"}
+                Engine: {props.selectedCar1.engine}{"\n"}
+                Horsepower: {props.selectedCar1.horsepower}{"\n"}
+                Fuel Delivery: {props.selectedCar1.fuelDelivery}{"\n"}
+                Transmission: {props.selectedCar1.transmission}{"\n"}
+              </Text>
             </Row>
           </Col>
           <Col style={{paddingRight: 80}}>
@@ -96,29 +89,36 @@ const styles = StyleSheet.create({
     paddingVertical: 3.5,
     width: 75,
     height: 40,
+    fontFamily: 'Inter-Black',
   },
 
   titlePage: {
     fontSize: 50,
     color: '#A4ADB7',
+    fontFamily: 'Inter-LightItalic-BETA',
   },
 
   rowDetail: {
-    height: 35,
+    marginRight: 75,
   },
 
   textDetail: {
     fontSize: 15, 
     color: '#ffffff',
+    lineHeight: 30,
+    fontFamily: 'Inter-SemiBold'
   },
 
   btnLg: {
-    fontSize: 25,
+    fontSize: 20,
     color: '#A4ADB7',
     borderColor: "#A4ADB7",
     borderWidth: 4,
     paddingHorizontal: 50,
-    paddingVertical: 20,
+    paddingTop: 25,
+    paddingBottom: 15,
+    fontFamily: 'Inter-Black',
+    textAlign: 'center'
   },
   
 });
