@@ -515,6 +515,7 @@ export default class App extends React.Component {
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
       openHomeCarMain1: false, //When true, show the first clickable car in home_main_2 details similar to home_view_1
       openHomeCar2:false, //When true, show the second clickable car in home_main_2 details similar to home_view_1 
+      openHomeAllCarMain:false, //When true, show selected car in a Car Main with onevehicleselected object
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
@@ -598,6 +599,17 @@ export default class App extends React.Component {
         { oneVehicleSelection:selection }
       ))  
   }
+  
+  //saves the selected car from Home_view_all and open a car main when the user click on a car in home_view_all    
+  homeAllVehicleChoice = (id) => {
+    let selection = this.getCar(id); //method to get the photo of the selected car  
+    this.setState(previousState => (
+        { oneVehicleSelection:car }
+      )) 
+      
+    this.openCarMainforHomeAll();
+
+  }  
 
 
   //check if the player entered a password correctly after four digits. This method is passed as a prop into the Admin_login component and used in its input button
@@ -729,6 +741,19 @@ export default class App extends React.Component {
         { openHomeTwoVehicle:!previousState.openHomeTwoVehicle }
       ))      
   }
+  
+  //Used in the Home_All screen to navigate user to and from a selected's car Car Main page
+  openCarMainforHomeAll = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeAll:!previousState.openHomeAll }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain }
+      ))      
+  }  
   
   //Used in the Home Views to show and hide the hidden exit Modal
   showHideSecurityModal = () =>{
@@ -973,6 +998,7 @@ export default class App extends React.Component {
         {/*allow the user to view all cars and their details*/}
         {this.state.openHomeAll &&
             <Home_View_All 
+                showCarDetails = {this.homeAllVehicleChoice}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
@@ -995,7 +1021,15 @@ export default class App extends React.Component {
                 goToStory = {this.goBackFromStoryToCarMain1}
                 goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
-        }         
+        } 
+        {/*allow the user to view the selected car in home_view_all and its details*/}
+        {this.state.openHomeAllCarMain &&
+            <Car_Main
+                goBack = {this.openCarMainforHomeAll}
+                goToStory = {this.goBackFromStoryToCarMain1}
+                goToGallery = {this.openGalleryForCarMain1Story}
+                selectedCar1 = {this.state.oneVehicleSelection}/>
+        }        
         {/*allow the user to view details of a selected car from home_view_1*/}
         {this.state.openStory &&
             <Story

@@ -8,6 +8,7 @@ import Admin_Nav from './admin_nav.js';
 function Car(props) {
   return(
     <View style={styles.row}>
+        <TouchableOpacity onPress = {() =>{props.showCarDetails}}>  
         <View>
             <View><Image style={styles.imageStyle} source={props.photo} /></View>
         </View>
@@ -16,6 +17,7 @@ function Car(props) {
             <Text style={styles.details}>{props.make} </Text>
             <Text style={styles.details}>{props.model} </Text>      
         </View>
+        </TouchableOpacity>
     </View>
   );    
 }
@@ -33,6 +35,7 @@ function Car_show(props){
             make = {item.make}
             model = {item.model}    
             photo = {item.photo}
+            showCarDetails = {props.showCarDetails(item.id)}
           />
         }
         keyExtractor={item => item.id}
