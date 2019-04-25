@@ -56,7 +56,7 @@ export default class Gallery extends React.Component {
         <Container>
             <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
                 <Left>
-                  <TouchableOpacity onPress = {() =>{props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
+                  <TouchableOpacity onPress = {() =>{this.props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
                     <Image
                       style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
                       source={require('../assets/arrow-left.png')}
