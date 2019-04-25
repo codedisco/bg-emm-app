@@ -15,7 +15,7 @@ class FadeInView extends React.Component {
       this.state.fadeAnim,            // The animated value to drive
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 300,              // Make it take a while
+        duration: 305,              // Make it take a while
       }
     ).start();                        // Starts the animation
   }
@@ -53,7 +53,10 @@ export default class Gallery extends React.Component {
           swipeToDismiss={false}
           renderHeader={close => (
             <TouchableOpacity onPress={close}>
-              <Text style={{color: 'white'}}>X</Text>
+              <Image
+                style={{width: '100%', height:30, resizeMode: 'contain', left: 475, top: 15}}
+                source={ require('../assets/exit.png')}
+              />
             </TouchableOpacity>
           )}
         >
@@ -76,7 +79,7 @@ export default class Gallery extends React.Component {
                   width: 10,
                   height: 10,
                   borderRadius: 5,
-                  marginHorizontal: 3,
+                  marginHorizontal: 2,
                   backgroundColor: 'rgba(255, 255, 255, 0.92)'
               }}
               inactiveDotStyle={{
