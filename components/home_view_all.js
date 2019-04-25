@@ -37,14 +37,16 @@ class FadeInView extends React.Component {
 function Car(props) {
   return(
     <View style={styles.row}>
-        <View>
-            <View><Image style={styles.imageStyle} source={props.photo} /></View>
-        </View>
-        <View>
-            <Text style={styles.details}>{props.year} </Text>
-            <Text style={styles.details}>{props.make} </Text>
-            <Text style={styles.details}>{props.model} </Text>      
-        </View>
+        <TouchableOpacity  onPress = {props.displayCar} >
+            <View>
+                <View><Image style={styles.imageStyle} source={props.photo} /></View>
+            </View>
+            <View>
+                <Text style={styles.details}>{props.year} </Text>
+                <Text style={styles.details}>{props.make} </Text>
+                <Text style={styles.details}>{props.model} </Text>      
+            </View>
+        </TouchableOpacity>
     </View>
   );    
 }
@@ -62,6 +64,7 @@ function Car_show(props){
             make = {item.make}
             model = {item.model}    
             photo = {item.photo}
+            displayCar = {() => {props.displayCar(item.id)}}
           />
         }
         keyExtractor={item => item.id}
@@ -133,12 +136,12 @@ export default function Home_View_All(props) {
         <ScrollView horizontal= {true}>
           <View style={styles.twoRows}>
             <View>
-              <Car_show displayOfCars={props.topDisplayOfCars}/>
+              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.topDisplayOfCars}/>
             </View>
             <View style={styles.yellowLineTop}></View>
             <View style={styles.yellowLineBottom}></View>
             <View style={styles.row}>
-              <Car_show displayOfCars={props.bottomDisplayOfCars}/>
+              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.bottomDisplayOfCars}/>
             </View>
           </View>
         </ScrollView>
