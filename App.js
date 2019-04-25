@@ -911,11 +911,13 @@ export default class App extends React.Component {
       ))      
   }   
 /* ################# End of Gallery Navigation ############################ */  
-  render() {
+  
+render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
     return (
+
       <Container>
         <StatusBar hidden/>
         {/*First page of the app, allow the user to choose how many cars to be displayed*/}

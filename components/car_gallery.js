@@ -1,8 +1,39 @@
 import React, { Component } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import ImageZoom from 'react-native-image-pan-zoom';
-import {ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { Animated, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
+
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 200,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
 
 export default class Gallery extends React.Component {
     constructor(props){
@@ -14,17 +45,11 @@ export default class Gallery extends React.Component {
     
   _renderItem ({item, index}) {
     return (
-      <View >
-        <ImageZoom 
-            cropWidth={300}
-            cropHeight={300}
-            imageWidth={200}
-            imageHeight={200}>
-            <Image
-                style={{width:200, height:200}}
-                source={item}
-            />
-        </ImageZoom>
+      <View style={{}}>
+        <Image
+            style={{width: '100%', height:600, resizeMode: 'contain'}}
+            source={item}
+        />
       </View>
   );}  
     
@@ -34,7 +59,7 @@ export default class Gallery extends React.Component {
             <Pagination
               dotsLength={this.props.selectedCar.gallery.length}
               activeDotIndex={this.state.activeSlide}
-              containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
+              containerStyle={{ backgroundColor: 'rgba(79, 89, 97, 1)' }}
               dotStyle={{
                   width: 10,
                   height: 10,
@@ -73,20 +98,23 @@ export default class Gallery extends React.Component {
                   />
                 </Right>
             </Header>        
-            <Content>
+            <Content style={{backgroundColor: '#4F5961',}}>
+              <FadeInView>
                 <Grid>
-                    <Col>
+                    <Col style={{height: 670}}>
                       <Carousel
                         ref={(c) => { this._carousel = c; }}
                         data={this.props.selectedCar.gallery}
                         renderItem={this._renderItem}
                         onSnapToItem={(index) => this.setState({ activeSlide: index }) }
-                        sliderWidth={600}
+                        sliderWidth={1025}
+                        sliderHeight={980}
                         itemWidth={400}
                       /> 
                     { this.pagination }
                     </Col>
                 </Grid>
+              </FadeInView>
             </Content>
         </Container>
 

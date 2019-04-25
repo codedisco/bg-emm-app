@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
-import { TouchableWithoutFeedback, TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
+import { Animated, TouchableWithoutFeedback, TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 200,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
+    
+
 export default function Home_View_2(props) {
+
+
   return(
-  <Container>
-    <ImageBackground source={require('../assets/page-bg/double-car.png')} style={{flex: 1}}>
+  <Container style={{backgroundColor: '#4F5961'}}>
+    <ImageBackground fadeDuration={0} source={require('../assets/page-bg/double-car.png')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
           {/*This is the button that triggers the admin nav popup*/}
@@ -60,6 +94,7 @@ export default function Home_View_2(props) {
         </Right>
       </Header>
       <Content style={{paddingTop: 175}}>
+        <FadeInView>
         <Grid>
           <Col>
             <Row style={{alignItems: 'center'}}>
@@ -140,6 +175,7 @@ export default function Home_View_2(props) {
             </Row>
           </Col>           
         </Grid>
+        </FadeInView>
       </Content>
     </ImageBackground>
   </Container>

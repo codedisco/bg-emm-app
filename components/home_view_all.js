@@ -1,8 +1,37 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Image, ScrollView, FlatList, Modal, TextInput } from 'react-native';
+import { Animated, StyleSheet, TouchableOpacity, Image, ScrollView, FlatList, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
-import Admin_Nav from './admin_nav.js';
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 200,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
 
 //Show one car and its details 
 function Car(props) {
@@ -100,7 +129,7 @@ export default function Home_View_All(props) {
       </Header>
       
       {/*Body of the page*/}
-      <View style={styles.homeViewContainer}>
+      <FadeInView style={styles.homeViewContainer}>
         <ScrollView horizontal= {true}>
           <View style={styles.twoRows}>
             <View>
@@ -113,7 +142,7 @@ export default function Home_View_All(props) {
             </View>
           </View>
         </ScrollView>
-      </View>
+      </FadeInView>
     </View>
   );
 }
@@ -121,6 +150,7 @@ export default function Home_View_All(props) {
 const styles = StyleSheet.create({      
   container: {
       flex: 1, 
+      backgroundColor: '#4F5961',
   },
   //styles for the overall component    
   homeViewContainer: {
@@ -134,6 +164,7 @@ const styles = StyleSheet.create({
       flexDirection:"row",
       justifyContent: "space-around",
       alignItems: 'center',
+      backgroundColor: '#4F5961',
   },
   details: {
       color: "lightgrey",

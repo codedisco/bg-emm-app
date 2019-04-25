@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Image, StyleSheet, Modal, TextInput } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Col, Row, Grid } from 'native-base';
 
-import Admin_Nav from './admin_nav.js';
-
 export default function Admin_Homescreen(props) {
   return(
     <Container style={{backgroundColor: '#4F5961'}}>

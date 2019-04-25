@@ -1,33 +1,65 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
+import { Animated, TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
+
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 200,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
 
 export default function Car_Main(props) {
   return(
-  <Container>
-    <ImageBackground source={require('../assets/page-bg/single-car.png')} style={{flex: 1}}>
+  <Container style={{bacgkroundColor: '#4F5961',}}>
+    <ImageBackground source={require('../assets/page-bg/single-car.jpg')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
           <TouchableOpacity onPress = {() =>{props.goBack()}} style={{backgroundColor: '#E5C035', margin: 0}}>
-            <Image
+            <Image fadeDuration={0}
               style={{width: 40, height: 40, margin: 20, resizeMode: 'contain',}}
               source={require('../assets/arrow-left.png')}
             />
           </TouchableOpacity>
         </Left>
         <Right>
-          <Image
+          <Image fadeDuration={100}
             style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
             source={require('../assets/emm-logo-large.png')}
           />
         </Right>
       </Header>
-      <Content>
-        <Grid>
+      <Content style={{bacgkroundColor: '#4F5961'}}>
+        <FadeInView>
+        <Grid style={{bacgkroundColor: '#4F5961'}}>
           <Col style={{paddingLeft: 70}}>
             <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
               <View style={{width: 120, height: 40, justifyContent: 'center', alignItems: 'center'}}>
-                <Image source={require('../assets/section-shape.png')} style={{width: 120, height: 40, resizeMode: 'stretch'}}/>
+                <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 120, height: 40, resizeMode: 'stretch'}}/>
                 <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>{props.selectedCar1.year}</Text>
               </View>
             </Row>
@@ -51,7 +83,7 @@ export default function Car_Main(props) {
           </Col>
           <Col style={{paddingRight: 80}}>
             <Row style={{marginTop: 180, marginBottom: 5, justifyContent: 'center'}}>
-              <Image
+              <Image fadeDuration={0}
               style={{width: 500, height: 300, resizeMode: 'contain'}}
               source={props.selectedCar1.photo}
             />
@@ -70,6 +102,7 @@ export default function Car_Main(props) {
             </Row>
           </Col>           
         </Grid>
+        </FadeInView>
       </Content>
     </ImageBackground>
   </Container>
