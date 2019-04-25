@@ -54,7 +54,7 @@ export default function Admin_Homescreen(props) {
                 Options: {props.selectedCar.options}{"\n"}
                 Production: {props.selectedCar.production}{"\n"}
                 Price New: {props.selectedCar.price}{"\n"}
-                Owner: {props.selectedCar.story[3].para}{"\n"}
+                Owner: {props.selectedCar.owner}{"\n"}
               </Text>
             </Row>
             <Row style={{height: 160}}>
