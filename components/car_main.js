@@ -12,7 +12,7 @@ class FadeInView extends React.Component {
       this.state.fadeAnim,            // The animated value to drive
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 200,              // Make it take a while
+        duration: 275,              // Make it take a while
       }
     ).start();                        // Starts the animation
   }
@@ -35,7 +35,7 @@ class FadeInView extends React.Component {
 
 export default function Car_Main(props) {
   return(
-  <Container style={{bacgkroundColor: '#4F5961',}}>
+  <Container style={{backgroundColor: '#4F5961',}}>
     <ImageBackground source={require('../assets/page-bg/single-car.jpg')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
@@ -53,9 +53,9 @@ export default function Car_Main(props) {
           />
         </Right>
       </Header>
-      <Content style={{bacgkroundColor: '#4F5961'}}>
+      <Content>
         <FadeInView>
-        <Grid style={{bacgkroundColor: '#4F5961'}}>
+        <Grid>
           <Col style={{paddingLeft: 70}}>
             <Row style={{height: 35, marginTop: 100, alignContent: 'center', marginBottom: 10,}}>
               <View style={{width: 120, height: 40, justifyContent: 'center', alignItems: 'center'}}>

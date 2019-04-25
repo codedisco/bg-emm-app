@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import ImageZoom from 'react-native-image-pan-zoom';
-import { Animated, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, ScrollView, Animated, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
+import Lightbox from 'react-native-lightbox';
+import PhotoView from 'react-native-photo-view';
 
 class FadeInView extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class FadeInView extends React.Component {
       this.state.fadeAnim,            // The animated value to drive
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 200,              // Make it take a while
+        duration: 275,              // Make it take a while
       }
     ).start();                        // Starts the animation
   }
@@ -46,10 +47,21 @@ export default class Gallery extends React.Component {
   _renderItem ({item, index}) {
     return (
       <View style={{}}>
-        <Image
+        <Lightbox
+          springConfig={{tension: 15, friction: 7}}
+          underlayColor="#4F5961"
+          swipeToDismiss={false}
+          renderHeader={close => (
+            <TouchableOpacity onPress={close}>
+              <Text style={{color: 'white'}}>X</Text>
+            </TouchableOpacity>
+          )}
+        >
+          <Image
             style={{width: '100%', height:600, resizeMode: 'contain'}}
             source={item}
-        />
+          />
+        </Lightbox>
       </View>
   );}  
     
@@ -89,7 +101,11 @@ export default class Gallery extends React.Component {
                   </TouchableOpacity>
                 </Left>
                 <Body>
-                  <Title>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
+                  <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 55}}>
+                    <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 150, height: 40, resizeMode: 'stretch'}}/>
+                    <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>G A L L E R Y</Text>
+                  </View>
+                  <Title style={styles.titlePage}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
                   <Image
@@ -120,3 +136,14 @@ export default class Gallery extends React.Component {
 
  ); 
 }}
+
+const styles = StyleSheet.create({
+
+  titlePage: {
+    paddingLeft: 240,
+    fontSize: 25,
+    color: '#A4ADB7',
+    fontFamily: 'Inter-SemiBold'
+  },
+  
+});
