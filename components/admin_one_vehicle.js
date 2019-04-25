@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Content, Picker, Form } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 
 
