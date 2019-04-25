@@ -198,7 +198,7 @@ carList = [
   "options":"None",
   "production":"8,825 of 9,670", 
   "price":"$4,017",
-   "gallery":[
+  "gallery":[
        require('./assets/59-corvette/1.jpg'),
        require('./assets/59-corvette/2.jpg'),
        require('./assets/59-corvette/3.jpg'),
@@ -264,7 +264,7 @@ carList = [
   "photo":require('./assets/cars-clipped/64-dart.png'),
   "year":"1964", 
   "make":"Dodge", 
-  "model":"Dart GT (coupe)",
+  "model":"Dart GT",
   "engine":"273ci V8 Chrysler LA Series",
   "horsepower":"180",
   "fuelDelivery":"2-barrel carburetor", 
@@ -380,7 +380,7 @@ carList = [
   {"id":"10",
   "photo":require('./assets/cars-clipped/67-shelby.png'),
   "year":"1967", 
-  "make":"Shelby American", 
+  "make":"Shelby", 
   "model":"GT500",
   "engine":"427cu V8 “side oiler” (1 of only 6 built)",
   "horsepower":"485",
@@ -515,6 +515,7 @@ export default class App extends React.Component {
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
       openHomeCarMain1: false, //When true, show the first clickable car in home_main_2 details similar to home_view_1
       openHomeCar2:false, //When true, show the second clickable car in home_main_2 details similar to home_view_1 
+      openHomeAllCarMain:false, //When true, show selected car in a Car Main with onevehicleselected object    
       openHomeAll:false, //When true, show all the cars and their details for the user    
       topdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on top row. Create with the getDisplayOfCars()
       bottomdisplayOfCars:[], //list of car with a even index displayed in the all cars home selection on bottom row. Create with the getDisplayOfCars()
@@ -543,24 +544,24 @@ export default class App extends React.Component {
     
   //method to create two list of cars to be displayed in the Home_View_All component. This is called in when the user choose to present all cars in the admin_homescreen component    
   getDisplayOfCars = () => {
-      let bottomList =[];
-      let topList = [];
+      let topList =[];
+      let bottomList = [];
       carList.forEach(function (item,index){
           if(index%2 == 0){
-            topList.push(item);//all odd index car objects is saved here
+            bottomList.push(item);//all odd index car objects is saved here
           }else {
-            bottomList.push(item);//all even index car objects is saved here              
+            topList.push(item);//all even index car objects is saved here              
           }
       });
     
     //save the top list of the car list to the state  
     this.setState(previousState => (
-        { bottomdisplayOfCars:bottomList }
+        { topdisplayOfCars:bottomList }
       ))
       
     //save the bottom index of the car list to the state  
     this.setState(previousState => (
-        { topdisplayOfCars:topList }
+        { bottomdisplayOfCars:topList }
       ))       
   }
     
@@ -730,6 +731,33 @@ export default class App extends React.Component {
       ))      
   }
   
+/* ################# Start of Home_All to Car Main ############################ */   
+  
+  //Used in the Home_All screen to navigate user to and from a selected's car Car Main page
+  openCarMainforHomeAll = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeAll:!previousState.openHomeAll }
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain }
+      ))        
+  }
+  
+  //saves the selected car from Home_view_all and open a car main when the user click on a car in home_view_all    
+  homeAllVehicleChoice = (id) => {
+    let selection = this.getCar(id); //method to get the photo of the selected car  
+    this.setState(previousState => (
+        { oneVehicleSelection:selection }
+      )) 
+      
+    this.openCarMainforHomeAll();
+  } 
+  
+/* ################# End of Home_All to Car Main ################################### */ 
+  
   //Used in the Home Views to show and hide the hidden exit Modal
   showHideSecurityModal = () =>{
     this.setState(previousState => (
@@ -802,7 +830,8 @@ export default class App extends React.Component {
       ))      
   } 
   
-/* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
+  
+  /* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
   
   //Used in the Home_View_2 component to switch to the car main 1 presentation screen. 
   viewCar1 = () => {
@@ -829,9 +858,11 @@ export default class App extends React.Component {
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
   }   
-/* ################# End of Car Main Navigation to/from Home View 2 ############################ */   
   
-  /* ################# Start of Gallery Navigation ############################ */
+/* ################# End of Car Main Navigation to/from Home View 2 ############################ */  
+  
+  
+/* ################# Start of Gallery Navigation ############################################### */
   
   //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
   openGalleryForHomeOne = () => {
@@ -909,7 +940,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openGalleryCarMain2:!previousState.openGalleryCarMain2 }
       ))      
-  }   
+  }
+  
+  //Navigate between Home_All's Car Main and its Gallery
+  openGalleryForHomeAllCarMain = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryHomeAll:!previousState.openGalleryHomeAll }
+      ))      
+  }  
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
@@ -979,6 +1023,7 @@ render() {
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
                 isVisibleModal = {this.state.adminSecurity}
+                displaySelectedCar = {this.homeAllVehicleChoice}
                 topDisplayOfCars = {this.state.topdisplayOfCars}
                 bottomDisplayOfCars = {this.state.bottomdisplayOfCars}/>
         }
@@ -997,7 +1042,15 @@ render() {
                 goToStory = {this.goBackFromStoryToCarMain1}
                 goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
-        }         
+        }
+        {/*allow the user to view the selected car in home_view_all and its details*/}
+        {/*############### WIP WIP WIP WIP WIP WIP ############################*/}
+        {this.state.openHomeAllCarMain &&
+            <Car_Main
+                goBack = {this.openCarMainforHomeAll}
+                goToGallery = {this.openGalleryForHomeAllCarMain}
+                selectedCar1 = {this.state.oneVehicleSelection}/>
+        }          
         {/*allow the user to view details of a selected car from home_view_1*/}
         {this.state.openStory &&
             <Story
@@ -1036,7 +1089,13 @@ render() {
             <Gallery
                 goBack = {this.openGalleryForCarMain2}
                 selectedCar={this.state.twoVehicleSelection} />
-        }           
+        }
+        {/*allow the user to view the gallery of the selected car in Home All*/}
+        {this.state.openGalleryHomeAll &&
+            <Gallery
+                goBack = {this.openGalleryForHomeAllCarMain}
+                selectedCar={this.state.oneVehicleSelection} />
+        }         
       </Container>
     );
   }

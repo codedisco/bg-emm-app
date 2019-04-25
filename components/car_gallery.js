@@ -15,7 +15,7 @@ class FadeInView extends React.Component {
       this.state.fadeAnim,            // The animated value to drive
       {
         toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 275,              // Make it take a while
+        duration: 290,              // Make it take a while
       }
     ).start();                        // Starts the animation
   }
@@ -76,7 +76,7 @@ export default class Gallery extends React.Component {
                   width: 10,
                   height: 10,
                   borderRadius: 5,
-                  marginHorizontal: 8,
+                  marginHorizontal: 3,
                   backgroundColor: 'rgba(255, 255, 255, 0.92)'
               }}
               inactiveDotStyle={{
@@ -101,11 +101,11 @@ export default class Gallery extends React.Component {
                   </TouchableOpacity>
                 </Left>
                 <Body>
-                  <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 55}}>
-                    <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 150, height: 40, resizeMode: 'stretch'}}/>
+                  <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 70}}>
+                    <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 200, height: 40, resizeMode: 'stretch'}}/>
                     <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>G A L L E R Y</Text>
                   </View>
-                  <Title style={styles.titlePage}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Title>
+                  <Title style={styles.titlePage}>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
                   <Image
@@ -127,7 +127,9 @@ export default class Gallery extends React.Component {
                         sliderHeight={980}
                         itemWidth={400}
                       /> 
-                    { this.pagination }
+                    { this.pagination 
+                      
+                    }
                     </Col>
                 </Grid>
               </FadeInView>
@@ -140,7 +142,7 @@ export default class Gallery extends React.Component {
 const styles = StyleSheet.create({
 
   titlePage: {
-    paddingLeft: 240,
+    paddingLeft: 260,
     fontSize: 25,
     color: '#A4ADB7',
     fontFamily: 'Inter-SemiBold'
