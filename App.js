@@ -641,6 +641,19 @@ export default class App extends React.Component {
       ))      
   }
   
+  //Used in the Car Main 1 to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForCarMain1 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeCarMain1:!previousState.openHomeCarMain1}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGalleryCarMain1:!previousState.openGalleryCarMain1 }
+      ))      
+  }  
+  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -721,7 +734,8 @@ export default class App extends React.Component {
         {this.state.openHomeCarMain1 &&
             <Car_Main
                 goBack = {this.viewCar1}
-                goToStory = {this.goBackFromStoryToCarMain1}       
+                goToStory = {this.goBackFromStoryToCarMain1}
+                goToGallery = {this.openGalleryForCarMain1}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }         
         {/*allow the user to view details of a selected car from home_view_1*/}
@@ -746,6 +760,12 @@ export default class App extends React.Component {
         {this.state.openGallery &&
             <Gallery
                 goBack = {this.openGalleryForHomeOne}
+                selectedCar={this.state.oneVehicleSelection} />
+        }
+        {/*allow the user to view the gallery of the selected car in Car_Main 1*/}
+        {this.state.openGalleryCarMain1 &&
+            <Gallery
+                goBack = {this.openGalleryForCarMain1}
                 selectedCar={this.state.oneVehicleSelection} />
         }          
       </Container>
