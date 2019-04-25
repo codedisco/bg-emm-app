@@ -1054,7 +1054,7 @@ render() {
             <Car_Main
                 goBack = {this.viewCar1}
                 goToStory = {this.goBackFromStoryToCarMain1}
-                goToGallery = {this.openGalleryForCarMain1Story}
+                goToGallery = {this.openGalleryForCarMain1}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }
         {/*allow the user to view the selected car in home_view_all and its details*/}
