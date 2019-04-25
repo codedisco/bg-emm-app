@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import Carousel from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import {ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
 export default class Gallery extends React.Component {
+    constructor(props){
+        super();
+        this.state = {
+            activeSlide: 0,
+        }
+    }
     
   _renderItem ({item, index}) {
     return (
@@ -15,7 +21,28 @@ export default class Gallery extends React.Component {
       </View>
   );}  
     
-  
+    get pagination () {
+        const { entries, activeSlide } = this.props.cars;
+        return (
+            <Pagination
+              dotsLength={this.props.cars.length}
+              activeDotIndex={this.state.activeSlide}
+              containerStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
+              dotStyle={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: 5,
+                  marginHorizontal: 8,
+                  backgroundColor: 'rgba(255, 255, 255, 0.92)'
+              }}
+              inactiveDotStyle={{
+                  // Define styles for inactive dots here
+              }}
+              inactiveDotOpacity={0.4}
+              inactiveDotScale={0.6}
+            />
+        );
+    }  
 
   render () {
     return (
@@ -43,9 +70,11 @@ export default class Gallery extends React.Component {
                         ref={(c) => { this._carousel = c; }}
                         data={this.props.cars}
                         renderItem={this._renderItem}
+                        onSnapToItem={(index) => this.setState({ activeSlide: index }) }
                         sliderWidth={600}
                         itemWidth={400}
-                      />        
+                      /> 
+                    { this.pagination }
                     </Col>
                 </Grid>
             </Content>
