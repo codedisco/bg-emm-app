@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import {ImageBackground, Image, TouchableOpacity } from 'react-native';
+import ImageZoom from 'react-native-image-pan-zoom';
+import {ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
 export default class Gallery extends React.Component {
@@ -14,10 +15,16 @@ export default class Gallery extends React.Component {
   _renderItem ({item, index}) {
     return (
       <View >
-          <Image
-            style={{width: 300, height: 300, resizeMode: 'contain', marginRight: 20}}
-            source={item.photo}
-          />
+        <ImageZoom 
+            cropWidth={300}
+            cropHeight={300}
+            imageWidth={200}
+            imageHeight={200}>
+            <Image
+                style={{width:200, height:200}}
+                source={item.photo}
+            />
+        </ImageZoom>
       </View>
   );}  
     
