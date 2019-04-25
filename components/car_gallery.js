@@ -63,6 +63,9 @@ export default class Gallery extends React.Component {
                     />
                   </TouchableOpacity>
                 </Left>
+                <Body>
+                  <Title>{this.props.cars[this.state.activeSlide].year + " " + this.props.cars[this.state.activeSlide].make + " " + this.props.cars[this.state.activeSlide].model} </Title>
+                </Body>                              
                 <Right>
                   <Image
                     style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
