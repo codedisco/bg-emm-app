@@ -105,7 +105,7 @@ export default class Gallery extends React.Component {
                     <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 150, height: 40, resizeMode: 'stretch'}}/>
                     <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>G A L L E R Y</Text>
                   </View>
-                  <Title style={styles.titlePage}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Title>
+                  <Title style={styles.titlePage}>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
                   <Image
