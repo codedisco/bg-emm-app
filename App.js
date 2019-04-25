@@ -30,6 +30,7 @@ carList = [
    "options":"Trimmed windshield",
    "production":"752", 
    "price":"$950",
+   "owner":"William H. Cunningham, Jr", 
    "gallery":[
        require('./assets/49-crosley/1.jpg'),
        require('./assets/49-crosley/2.gif'),
@@ -66,6 +67,7 @@ carList = [
    "options":"Wire wheels, Brooklands steering wheel, Arnolt heater",
    "production":"2,495 built in U.K. and exported to U.S", 
    "price":"$1850",
+   "owner": "Hiram Shepard", 
    "gallery":[
        require('./assets/50-mg/1.jpg'),
        require('./assets/50-mg/2.jpg'),
@@ -123,11 +125,12 @@ carList = [
        require('./assets/54-corvette/21.jpg'),
        require('./assets/54-corvette/22.png'),       
    ],    
+   "owner":"Vining family", 
    "story":[
       {"para_id":"1", "para":"As foriegn-made cars like the MG TD and the Jaguar XK120 crept into America’s field of view in the late 1940s, U.S. automakers decided to try their hand at building small, svelte roadsters that were as fun to drive as they were to look at. Chevrolet was the first major manufacturer to roll a sports car off the line, and it did so to great fanfare at the company’s 1953 Motorama showcase."}, 
       {"para_id":"2", "para":"Officially “released” in December of 1953, only 300 were initially made, distributed only to select, high-profile individuals. The car you’re looking at is the 318th Corvette built in its first full production year of 1954. Note the sleek fiberglass body with its toothy grille, “jet-pod” tail lamps, and lack of exterior door handles. The car’s design was stunning, but it masked some mechanical quirks and an underpowered engine. Because of this, Chevrolet only sold two-thirds of the initial batch of 1954 models. Later models would be faster and better-built, encouraged by some fierce competition from the Ford Thunderbird."}, 
       {"para_id":"3", "para":""},
-      {"para_id":"4", "para":"On loan from Vining family."}]
+      {"para_id":"4", "para":"On loan from the Vining family."}]
   },
   {"id":"4",
    "photo":require('./assets/cars-clipped/57-thunderbird.png'),
@@ -173,11 +176,12 @@ carList = [
        require('./assets/57-thunderbird/26.jpg'),
        require('./assets/57-thunderbird/27.jpg'),       
    ],    
+   "owner":"the Vining family",
    "story":[
       {"para_id":"1", "para":"First introduced in 1955 as a response to Chevrolet’s new sporty offering, the Thunderbird was fast, well-built, and beautiful. It massively outsold the Corvette, as Ford had learned from some of Chevy’s mistakes. It had glass windows, a sturdy steel frame, and boasted a burly Mercury V8 engine that outpaced the ‘Vette’s sluggish inline 6-cylinder."}, 
       {"para_id":"2", "para":"While 1955 and 1956 models were fairly similar, Ford reimagined the Thunderbird for 1957, the model you see here. With a new grille, restyled bumpers, larger tail lights, and a redesigned dashboard, the ‘57 T-bird improved on an already staggering success of a car. Many regard the 1957 Thunderbird as the best version of the car Ford ever made. It’s also considered to be the last true Thunderbird, as the company only produced larger, four-seat versions of the car in 1958 and beyond. But Ford had proven that a two-seater could be a commercial success."}, 
       {"para_id":"3", "para":""},
-      {"para_id":"4", "para":"On loan from Vining family."}]
+      {"para_id":"4", "para":"On loan from the Vining family."}]
   },
   {"id":"5",
   "photo":require('./assets/cars-clipped/59-corvette.png'),
@@ -207,7 +211,8 @@ carList = [
        require('./assets/59-corvette/10.jpg'),
        require('./assets/59-corvette/11.jpg'),
        require('./assets/59-corvette/12.jpg'),      
-   ],   
+   ],  
+  "owner":"the Vining family",
   "story":[
      {"para_id":"1", "para":"Though Ford had proven it had a stronger public appeal with the Thunderbird, by 1958 it strayed from its sports car roots and became more of a personal luxury vehicle. Chevrolet, on the other hand, only dug in deeper with third redesign of the Corvette. They were committed to building America’s only true sports car."}, 
      {"para_id":"2", "para":"Some claimed the 1958 Corvette was “over-designed” with too much chrome and exaggerated styling (possibly an overreaction to the Thunderbird). Chevrolet would address this issue in the 1959 model you see here by removing some of the excessive glitz like washboard ridges on the hood and chrome “tusks” that ran down the trunk. The car also now had a proper overhead V8 (introduced in 1956), giving it real race-ready power and a top speed of 128 MPH."}, 
@@ -248,6 +253,7 @@ carList = [
        require('./assets/63-avanti/16.jpg'),
        require('./assets/63-avanti/17.jpg'),        
    ],   
+  "owner":"the Burgin and Ann Clairborne Collection",  
   "story":[
      {"para_id":"1", "para":"The Avanti was supposed to save Studebaker. Unique styling, a powerful engine, and an aircraft-inspired interior aimed to reverse the company’s recent rapid decline in sales. They unveiled a prototype of the car in 1962, but stumbled over production problems for more than a year. The car was selected to pace the 1962 Indy 500, but it wasn’t ready in time, and Studebaker lost out on a major promotional push for the Avanti. The car’s eventual release in 1963 came too late to save the company. The plant that built the Avanti was closed in December of ‘63, and Studebaker would build its last car less than three years later."}, 
      {"para_id":"2", "para":"The Avanti was influential, nonetheless. Notice the seat belts, a novel addition at the time. Studebaker began installing seat belts on all their cars in March of 1963, and were one of the first American automakers to blend safety and style. Other companies began following suit, and seat belts were mandated by law in 1966."}, 
@@ -286,6 +292,7 @@ carList = [
        require('./assets/64-dart/14.jpg'),
        require('./assets/64-dart/15.jpg'),       
    ],     
+  "owner":"Rob Whitlow",
   "story":[
      {"para_id":"1", "para":"The Dart was a massively popular car for Dodge in the 1060s — almost too popular. At the beginning of the decade, Dart models made up 87% of the company’s sales. But that didn’t seem to phase Dodge. By 1964, the Dart was available in four different styles: convertible, sedan, station wagon, and hard-top coupe. While many were built with Chrysler’s standard Slant-Six engine, Dodge introduced a compact, lightweight 273ci V8 engine specifically for the GT coupe and convertible, with which the model you see here is equipped."}, 
      {"para_id":"2", "para":"A truly unique feature of the ‘64 Dart is its push-button automatic transmission (see image in gallery). To shift from park to drive, the driver plunges a cylindrical button into the dashboard to the left of the steering wheel, which would redirect the transmission’s fluid path. The system (which lacked a “Park” button), proved to be more of a hurdle than a convenience, and 1964 was the last year Dodge implemented push-button transmission."}, 
@@ -324,7 +331,8 @@ carList = [
        require('./assets/64-5-mustang/14.jpg'),
        require('./assets/64-5-mustang/15.jpg'),
        require('./assets/64-5-mustang/16.jpg'),        
-   ],     
+   ], 
+  "owner":"the Vining family",
   "story":[
      {"para_id":"1", "para":"Introduced in the spring of 1964 (and subsequently dubbed the “1964.5”), the first-ever Ford Mustang broke records with more than 680,000 sold in its 18-month inaugural model year. The car was fast, fun, and affordable. Storied Ford executive Lee Iacocca had done his homework and hit the demographic nail on the head when he set out to build a “youthful” sports car."}, 
      {"para_id":"2", "para":"Since Ford was targeting a younger buyer with the Mustang, the car had to be relatively inexpensive. Developing it from scratch would have pushed the project beyond the desired profitability mark, so Iacocca repurposed the chassis and many parts from the existing (and dreary) Ford Falcon. (In fact, Car and Driver famously called the Falcon “a piece of machinery about as exciting as a dish of baby food.”) "}, 
@@ -361,7 +369,8 @@ carList = [
        require('./assets/67-corvette/12.jpg'),
        require('./assets/67-corvette/13.jpg'),
        require('./assets/67-corvette/14.jpg'),      
-   ],       
+   ],  
+  "owner":"the Vining family", 
   "story":[
      {"para_id":"1", "para":"The 1967 Corvette Sting Ray was the last Corvette of the second generation (“C2”). Five years of refinements made it the best of the C2 line, and quite possibly the best Corvette ever built. The car was phenomenal, lauded for its handling, road adhesion, and sheer power. Dubbed the Sting Ray (and ever since 1968, “Stingray”), the name calls attention to the lines of the car that come to a point on both the hood and the trunk."}, 
      {"para_id":"2", "para":"Because Chevy would completely redesign the Corvette the following year, the changes to the ‘67 were minimal: restyled fender vents, less ornamentation, and a lower, less chunky appearance. There was also now a single backup light, mounted above the license plate. Even though these design updates made for a better car, many buyers knew a fully revamped Corvette was coming their way, and sales dipped in 1967 by nearly 20% — making this Corvette one of the rarer models of the era."}, 
@@ -399,7 +408,8 @@ carList = [
        require('./assets/67-shelby/13.jpg'),
        require('./assets/67-shelby/14.jpg'),
        require('./assets/67-shelby/15.png'),         
-   ],          
+   ],   
+  "owner":"Cofer’s Classics", 
   "story":[
      {"para_id":"1", "para":"Carroll Shelby was a flight instructor in World War II before entering the world of car racing as a driver. After retiring from racing due to health problems, Shelby partnered with Ford to start creating performance versions of their cars through his company, Shelby American. The first Shelby-built vehicles appeared in 1965, but the Mustang variants really started to shine in 1967."}, 
      {"para_id":"2", "para":"Built with the same engine Shelby’s racing team used to claim the top three places in the 1966 24 Hours of Le Mans race, the ‘67 Shelby GT500 was the most powerful Mustang to-date. It blended sheer brute force with true racing-inspired design. The fiberglass hood sports a functional air scoop and the trunk lid joins seamlessly with the tailpiece to form a spoiler lip. When reflecting on the ‘67 GT500, Carroll Shelby said, “This is the first car I’m really proud of.” Coincidentally, it would be the last Shelby Mustang actually built at a Shelby American factory. Ford continued to work with Shelby, but they consolidated production in 1968 and beyond."}, 
@@ -439,7 +449,8 @@ carList = [
        require('./assets/69-corvette/15.jpg'),
        require('./assets/69-corvette/16.jpg'),
        require('./assets/69-corvette/17.jpg'),     
-   ],   
+   ],  
+  "owner": "the Vining family",
   "story":[
      {"para_id":"1", "para":"By 1968, the Corvette had entered a new era, noted most by a dramatic change in styling. The “C3” generation cars had a lower stance, higher fenders, and an overall more extreme look. The “Stingray” designation had also returned after a year absent (and no longer “Sting Ray” as seen on the 1967 model)."}, 
      {"para_id":"2", "para":"Perhaps most notably, the hard-top coupes were also now equipped with a T-top, added in part for rigidity. Without it, and when equipped with the powerful 427ci V8 option, the car would twist its own chassis under strain from the massive amounts of torque the engine was capable of. About this C3 Corvettes, Car and Driver magazine wrote, “The small-engine Corvettes are marginally faster and extraordinarily civilized. The large-engine Corvettes are extraordinarily fast and marginally civilized.”"}, 
@@ -477,7 +488,8 @@ carList = [
        require('./assets/70-mustang/13.jpg'),
        require('./assets/70-mustang/14.jpg'),
        require('./assets/70-mustang/15.jpg'),     
-   ],      
+   ],     
+  "owner":"Cofer’s Classics", 
   "story":[
      {"para_id":"1", "para":"In early 1968, Semon “Bunkie” Knudsen, who had saved Pontiac with the Trans Am, defected from GM to become president of Ford. He brought with him stylist Larry Shinoda, who had lead the 1968 redesign of the Corvette. Together, they aimed to take the Mustang from Pony Car to muscle car, and they started with the BOSS 302."}, 
      {"para_id":"2", "para":"Like he had at Pontiac, Knudsen wanted to pack the Mustang full of as much power as possible. So Shinoda designed a 1969 Mustang variant around a lightweight 302 cubic-inch engine — because it’s what the boss wanted. Ford built 1,628 BOSS 302s in '69, and more than quadrupled production in 1970. Knudsen would last less than two years at Ford, and so would the BOSS 302. This 1970 was the last model produced of the performance-forward Mustang. The car in front of you sports a unique upgrade: a hood-mounted tachometer."}, 
@@ -531,24 +543,24 @@ export default class App extends React.Component {
     
   //method to create two list of cars to be displayed in the Home_View_All component. This is called in when the user choose to present all cars in the admin_homescreen component    
   getDisplayOfCars = () => {
-      let topList =[];
-      let bottomList = [];
+      let bottomList =[];
+      let topList = [];
       carList.forEach(function (item,index){
           if(index%2 == 0){
-            bottomList.push(item);//all odd index car objects is saved here
+            topList.push(item);//all odd index car objects is saved here
           }else {
-            topList.push(item);//all even index car objects is saved here              
+            bottomList.push(item);//all even index car objects is saved here              
           }
       });
     
     //save the top list of the car list to the state  
     this.setState(previousState => (
-        { topdisplayOfCars:topList }
+        { bottomdisplayOfCars:bottomList }
       ))
       
     //save the bottom index of the car list to the state  
     this.setState(previousState => (
-        { bottomdisplayOfCars:bottomList }
+        { topdisplayOfCars:topList }
       ))       
   }
     

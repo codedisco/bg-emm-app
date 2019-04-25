@@ -70,7 +70,7 @@ export default function Admin_Homescreen(props) {
                         <Text style={styles.textButton}>2 Vehicle</Text>
                     </Button>
                     <Button light large block onPress={props.openAll} style={styles.option}>
-                        <Text style={styles.textButton}>All Vehicle</Text>
+                        <Text style={styles.textButton}>All Vehicles</Text>
                     </Button>
                 </Col>
             </Row>
