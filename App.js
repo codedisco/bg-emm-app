@@ -756,7 +756,7 @@ export default class App extends React.Component {
     this.openCarMainforHomeAll();
   } 
   
-  /* ################# End of Home_All to Car Main ############################ */ 
+/* ################# End of Home_All to Car Main ################################### */ 
   
   //Used in the Home Views to show and hide the hidden exit Modal
   showHideSecurityModal = () =>{
@@ -1047,6 +1047,7 @@ render() {
         {/*############### WIP WIP WIP WIP WIP WIP ############################*/}
         {this.state.openHomeAllCarMain &&
             <Car_Main
+                goBack = {this.openCarMainforHomeAll}
                 goToGallery = {this.openGalleryForHomeAllCarMain}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }          
