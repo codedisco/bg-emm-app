@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, StyleSheet, Modal, TextInput } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet, Modal, TextInput, BackHandler } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Col, Row, Grid } from 'native-base';
 
 export default function Admin_Homescreen(props) {
@@ -40,7 +40,7 @@ export default function Admin_Homescreen(props) {
                                 </Col>
                                 <Col style={{marginleft: 40}}>
                                     <TouchableOpacity 
-                                        onPress = {() =>{props.openCloseSecurityModal()}} 
+                                        onPress = {() =>{BackHandler.exitApp()}} 
                                         style={{backgroundColor: '#E61E1E', margin: 0, width:200, alignItems: 'center'}}>
                                         <Text style={{color: '#ffffff', paddingHorizontal: 40, paddingVertical: 20, fontFamily: 'Inter-Black'}}>E X I T</Text>
                                     </TouchableOpacity>                                    
