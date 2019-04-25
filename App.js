@@ -523,6 +523,7 @@ export default class App extends React.Component {
       openStory:false, //When true, show story component for to the first selected vehicle in home_view_1
       openStoryCarMain1: false,//When true, show story component for to the selected vehicle from car_main 1
       openStoryCar2:false, //When true, show story component for to the selected vehicle from car_main 2
+      openStoryHomeAll: false, //When true show the story of the Home All's Car Main
       openGallery: false, //When true, show the gallery for the home view 1 selected car
       openGalleryCarMain1: false, //When true, show the gallery for the home view 2 selected car from car_main 1
       openGalleryCarMain2: false, //When true, show the gallery for the home view 2 selected car from car_main 2
@@ -754,7 +755,20 @@ export default class App extends React.Component {
       )) 
       
     this.openCarMainforHomeAll();
-  } 
+  }
+  
+  //Navigate to and from the Home All's Car Main and its Story
+  openStoryForHomeAllCarMain = () => {    
+    //Hide this component      
+    this.setState(previousState => (
+        { openHomeAllCarMain:!previousState.openHomeAllCarMain }
+      ))      
+      
+    //Show this component
+    this.setState(previousState => (
+        { openStoryHomeAll:!previousState.openStoryHomeAll }
+      ))       
+  }     
   
 /* ################# End of Home_All to Car Main ################################### */ 
   
@@ -1048,6 +1062,7 @@ render() {
         {this.state.openHomeAllCarMain &&
             <Car_Main
                 goBack = {this.openCarMainforHomeAll}
+                goToStory = {this.openStoryForHomeAllCarMain}
                 goToGallery = {this.openGalleryForHomeAllCarMain}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }          
@@ -1072,6 +1087,14 @@ render() {
                 goToGallery = {this.openGalleryForCarMain2Story}
                 selectedCar={this.state.twoVehicleSelection} />
         }
+        
+        {this.state.openStoryHomeAll &&
+            <Story
+                goBack = {this.openStoryForHomeAllCarMain}
+                //goToGallery = {this.openGalleryForHomeAllStory}
+                selectedCar={this.state.oneVehicleSelection} />
+        }
+        
         {/*allow the user to view the gallery of the selected car in Home_view_1*/}
         {this.state.openGallery &&
             <Gallery
