@@ -75,7 +75,7 @@ export default function Admin_Two_Vehicle(props) {
                                     value={props.cars[11].id} />
                             </Picker>
                         </Button>
-                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20, fontFamily: 'Inter-SemiBold'}}>
                             {props.selectedCar1.year} {props.selectedCar1.make} {props.selectedCar1.model}
                         </Text>
                     </Col>
@@ -123,7 +123,7 @@ export default function Admin_Two_Vehicle(props) {
                                     value={props.cars[11].id} />
                             </Picker>
                         </Button>
-                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20}}>
+                        <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20, fontFamily: 'Inter-SemiBold'}}>
                             {props.selectedCar2.year} {props.selectedCar2.make} {props.selectedCar2.model}
                         </Text>
                     </Col>
@@ -132,7 +132,7 @@ export default function Admin_Two_Vehicle(props) {
                     <Col>
                         <Button light large block 
                             onPress = {() =>{props.submit()}}>
-                                <Text>Confirm</Text>
+                                <Text style={{fontFamily: 'Inter-SemiBold'}}>Confirm</Text>
                         </Button>  
                     </Col> 
                 </Row>

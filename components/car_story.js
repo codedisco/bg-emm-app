@@ -15,7 +15,11 @@ export default function Admin_Homescreen(props) {
           </TouchableOpacity>
         </Left>
         <Body>
-          <Title>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Title>
+            <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 55}}>
+              <Image source={require('../assets/section-shape.png')} style={{width: 150, height: 40, resizeMode: 'stretch'}}/>
+              <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>S T O R Y</Text>
+            </View>
+          <Text style={styles.titlePage}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Text>
         </Body>
         <Right>
           <Image
@@ -81,29 +85,34 @@ const styles = StyleSheet.create({
   },
 
   titlePage: {
+    paddingLeft: 240,
     fontSize: 25,
     color: '#A4ADB7',
+    fontFamily: 'Inter-SemiBold'
   },
 
   textStory: {
     color: '#ffffff', 
-    fontSize: 18,
-    lineHeight: 30,
+    fontSize: 17,
+    lineHeight: 27,
     paddingBottom: 25,
+    fontFamily: 'Inter-SemiBold'
   },
 
   textStoryCredit: {
     color: '#ffffff', 
-    fontSize: 20,
+    fontSize: 17,
+    fontFamily: 'Inter-SemiBold'
   },
 
   colTitle: {
-    fontSize: 25,
+    fontSize: 22.5,
     color: '#A4ADB7',
     paddingBottom: 10,
     paddingRight: 141.5,
     borderBottomWidth: 5,
-    borderBottomColor: '#E5C035'
+    borderBottomColor: '#E5C035',
+    fontFamily: 'Inter-ExtraBold',
   },
 
   textDetail: {
@@ -112,6 +121,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     paddingTop: 15,
     lineHeight: 22.5,
+    fontFamily: 'Inter-SemiBold',
   },
 
   btnLg: {
@@ -120,8 +130,10 @@ const styles = StyleSheet.create({
     borderColor: "#A4ADB7",
     borderWidth: 4,
     paddingHorizontal: 30,
-    paddingVertical: 15,
-    textAlign: 'center'
+    paddingTop: 15,
+    paddingBottom: 10,
+    fontFamily: 'Inter-Black',
+    textAlign: 'center'  
   },
   
 });
