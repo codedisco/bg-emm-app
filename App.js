@@ -198,7 +198,7 @@ carList = [
   "options":"None",
   "production":"8,825 of 9,670", 
   "price":"$4,017",
-   "gallery":[
+  "gallery":[
        require('./assets/59-corvette/1.jpg'),
        require('./assets/59-corvette/2.jpg'),
        require('./assets/59-corvette/3.jpg'),
@@ -264,7 +264,7 @@ carList = [
   "photo":require('./assets/cars-clipped/64-dart.png'),
   "year":"1964", 
   "make":"Dodge", 
-  "model":"Dart GT (coupe)",
+  "model":"Dart GT",
   "engine":"273ci V8 Chrysler LA Series",
   "horsepower":"180",
   "fuelDelivery":"2-barrel carburetor", 
@@ -380,7 +380,7 @@ carList = [
   {"id":"10",
   "photo":require('./assets/cars-clipped/67-shelby.png'),
   "year":"1967", 
-  "make":"Shelby American", 
+  "make":"Shelby", 
   "model":"GT500",
   "engine":"427cu V8 “side oiler” (1 of only 6 built)",
   "horsepower":"485",
@@ -544,24 +544,24 @@ export default class App extends React.Component {
     
   //method to create two list of cars to be displayed in the Home_View_All component. This is called in when the user choose to present all cars in the admin_homescreen component    
   getDisplayOfCars = () => {
-      let bottomList =[];
-      let topList = [];
+      let topList =[];
+      let bottomList = [];
       carList.forEach(function (item,index){
           if(index%2 == 0){
-            topList.push(item);//all odd index car objects is saved here
+            bottomList.push(item);//all odd index car objects is saved here
           }else {
-            bottomList.push(item);//all even index car objects is saved here              
+            topList.push(item);//all even index car objects is saved here              
           }
       });
     
     //save the top list of the car list to the state  
     this.setState(previousState => (
-        { bottomdisplayOfCars:bottomList }
+        { topdisplayOfCars:bottomList }
       ))
       
     //save the bottom index of the car list to the state  
     this.setState(previousState => (
-        { topdisplayOfCars:topList }
+        { bottomdisplayOfCars:topList }
       ))       
   }
     

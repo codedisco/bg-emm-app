@@ -37,7 +37,7 @@ class FadeInView extends React.Component {
 function Car(props) {
   return(
     <View style={styles.row}>
-        <TouchableOpacity  onPress = {props.displayCar} >
+        <TouchableOpacity  onPress = {props.displayCar} style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
             <View>
                 <View><Image style={styles.imageStyle} source={props.photo} /></View>
             </View>
@@ -135,13 +135,13 @@ export default function Home_View_All(props) {
       <FadeInView style={styles.homeViewContainer}>
         <ScrollView horizontal= {true}>
           <View style={styles.twoRows}>
-            <View>
-              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.topDisplayOfCars}/>
+            <View style={{left: 200}}>
+              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.bottomDisplayOfCars}/>
             </View>
             <View style={styles.yellowLineTop}></View>
             <View style={styles.yellowLineBottom}></View>
             <View style={styles.row}>
-              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.bottomDisplayOfCars}/>
+              <Car_show displayCar = {props.displaySelectedCar} displayOfCars={props.topDisplayOfCars}/>
             </View>
           </View>
         </ScrollView>

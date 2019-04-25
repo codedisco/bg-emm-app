@@ -63,7 +63,7 @@ export default function Car_Main(props) {
                 <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>{props.selectedCar1.year}</Text>
               </View>
             </Row>
-            <Row style={{height: 55, marginBottom: 5}}>
+            <Row style={{height: 65}}>
               <Text style={styles.titlePage}>{props.selectedCar1.make}</Text>
             </Row>
             <Row style={{height: 65, marginBottom: 100}}>
