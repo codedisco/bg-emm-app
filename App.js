@@ -874,10 +874,11 @@ export default class App extends React.Component {
       ))      
   }   
   
-/* ################# End of Car Main Navigation to/from Home View 2 ############################ */  
+/* ################# End of Car Main Navigation to/from Home View 2 ####### */  
+/* ######################################################################## */
   
-  
-/* ################# Start of Gallery Navigation ############################################### */
+/* ######################################################################## */  
+/* ################# Start of Gallery Navigation ########################## */
   
   //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
   openGalleryForHomeOne = () => {
@@ -981,8 +982,11 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openGalleryHomeAll:!previousState.openGalleryHomeAll }
       ))      
-  }  
-/* ################# End of Gallery Navigation ############################ */  
+  }
+
+/* ################# End of Gallery Navigation ############################ */ 
+/* ######################################################################## */ 
+ 
   
 render() {
     if (!this.state.isReady) {
