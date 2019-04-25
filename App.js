@@ -12,6 +12,7 @@ import Home_View_2 from './components/home_view_2.js';
 import Home_View_All from './components/home_view_all.js';
 import Car_Main from './components/car_main.js';
 import Story from './components/car_story.js';
+import Gallery from './components/car_gallery.js';
 
 carList = [
   {"id":"1",
@@ -28,7 +29,22 @@ carList = [
    "interior":"Red Leather", 
    "options":"Trimmed windshield",
    "production":"752", 
-   "price":"$950", 
+   "price":"$950",
+   "gallery":[
+       require('./assets/49-crosley/1.jpg'),
+       require('./assets/49-crosley/2.gif'),
+       require('./assets/49-crosley/3.jpg'),
+       require('./assets/49-crosley/4.jpg'),
+       require('./assets/49-crosley/5.jpg'),
+       require('./assets/49-crosley/6.jpg'),
+       require('./assets/49-crosley/7.jpg'),
+       require('./assets/49-crosley/8.jpg'),
+       require('./assets/49-crosley/9.jpg'),
+       require('./assets/49-crosley/10.jpg'),
+       require('./assets/49-crosley/11.jpg'),
+       require('./assets/49-crosley/12.jpg'),
+       require('./assets/49-crosley/13.jpg'),       
+   ],
    "story":[
       {"para_id":"1", "para":"Among American sports cars, the Crosley Hot Shot can be considered the first. The engine was remarkable: a single overhead camshaft, a capacity of only 726cc, and a whopping 26 horsepower. It was originally developed as a small sedan, but its sporting capabilities won out by production in 1949 as a two-seat sports car. The Hot Shot wasn’t pretty — it was sometimes called a bathtub on wheels — but it could hit 75 MPH and was rather quick for its specs."}, 
       {"para_id":"2", "para":"The Hot Shot here is race-ready with a trimmed windshield, hand-painted numbers, and all badging removed for track safety. In 1950, this exact car in front of you won the prestigious Twelve Hours of Sebring race by the “index of performance,” achieved by averaging the best speed for its displacement. Hot Shots were raced all over the US until production ceased in 1952, just a few years after its release."}, 
@@ -49,7 +65,19 @@ carList = [
    "interior":"Red Leather", 
    "options":"Wire wheels, Brooklands steering wheel, Arnolt heater",
    "production":"2,495 built in U.K. and exported to U.S", 
-   "price":"$1850", 
+   "price":"$1850",
+   "gallery":[
+       require('./assets/50-mg/1.jpg'),
+       require('./assets/50-mg/2.jpg'),
+       require('./assets/50-mg/3.jpg'),
+       require('./assets/50-mg/4.jpg'),
+       require('./assets/50-mg/5.jpg'),
+       require('./assets/50-mg/6.jpg'),
+       require('./assets/50-mg/7.jpg'),
+       require('./assets/50-mg/8.jpg'),
+       require('./assets/50-mg/9.jpg'),
+       require('./assets/50-mg/10.jpg'),     
+   ],   
    "story":[
       {"para_id":"1", "para":"This MG is the only non-American vehicle in our exhibit, but it’s just as influential on the American auto as any other car on display. By the late 1940s, Americans were catching sports car fever, and MG knew it. The British-built TD was designed to capture more of the American market as they made the car wider, longer, and heavier than its predecessor, the TC. They even offered a left-hand drive version specifically for the U.S., as seen here."}, 
       {"para_id":"2", "para":"This car, along with other European roadsters like the Jaguar XK120, heavily influenced early American-made sports cars. While stationed abroad during WWII, many Americans fell in love with the small, sleek roadsters built for winding European roads. Many foreign producers noticed the interest in their cars, and began exporting models for the American market. MG produced nearly 30,000 standard TD models, but the car in front of you is one of only about 2,500 TDs built for the U.S. in 1950."}, 
@@ -292,6 +320,9 @@ export default class App extends React.Component {
       openStory:false, //When true, show story component for to the first selected vehicle in home_view_1
       openStoryCarMain1: false,//When true, show story component for to the selected vehicle from car_main 1
       openStoryCar2:false, //When true, show story component for to the selected vehicle from car_main 2
+      openGallery: false, //When true, show the gallery for the home view 1 selected car
+      openGalleryCarMain1: false, //When true, show the gallery for the home view 2 selected car from car_main 1
+      openGalleryCarMain2: false, //When true, show the gallery for the home view 2 selected car from car_main 2
       adminSecurity:false, //used to deter guests from loggin off by show and hide modal inside hidden button on Home views.
     }
   }
@@ -567,7 +598,9 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
-  }  
+  } 
+  
+/* ################# Start of Car Main Navigation to/from Home View 2 ############################ */  
   
   //Used in the Home_View_2 component to switch to the car main 1 presentation screen. 
   viewCar1 = () => {
@@ -594,7 +627,88 @@ export default class App extends React.Component {
         { openHomeCar2:!previousState.openHomeCar2 }
       ))      
   }   
+/* ################# End of Car Main Navigation to/from Home View 2 ############################ */   
   
+  /* ################# Start of Gallery Navigation ############################ */
+  
+  //Used in the Home_View_1 to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForHomeOne = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeOneVehicle:!previousState.openHomeOneVehicle}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGallery:!previousState.openGallery }
+      ))      
+  }
+  
+  //Used in the Home_View_1's Story to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForHomeOneStory = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStory:!previousState.openStory}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGallery:!previousState.openGallery }
+      ))      
+  }  
+  
+  //Used in the Car Main 1 to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForCarMain1 = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openHomeCarMain1:!previousState.openHomeCarMain1}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGalleryCarMain1:!previousState.openGalleryCarMain1 }
+      ))      
+  }
+  
+  //Used in the Car Main 1's Story to navigate to and from the Gallery with the oneVehicleselection car object
+  openGalleryForCarMain1Story = () => {
+    //Hide this component
+    this.setState(previousState => (
+        { openStoryCarMain1:!previousState.openStoryCarMain1}
+      )) 
+    
+    //Show this component      
+    this.setState(previousState => (
+        { openGalleryCarMain1:!previousState.openGalleryCarMain1 }
+      ))      
+  }  
+  
+  //Used in the Car Main 2 to navigate to and from the Gallery with the twoVehicleselection car object
+  openGalleryForCarMain2 = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openHomeCar2:!previousState.openHomeCar2}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryCarMain2:!previousState.openGalleryCarMain2 }
+      ))      
+  }
+  
+  //Used in the Car Main 2's story to navigate to and from the Gallery with the twoVehicleselection car object
+  openGalleryForCarMain2Story = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openStoryCar2:!previousState.openStoryCar2}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryCarMain2:!previousState.openGalleryCarMain2 }
+      ))      
+  }   
+/* ################# End of Gallery Navigation ############################ */  
   render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
@@ -635,6 +749,7 @@ export default class App extends React.Component {
         {this.state.openHomeOneVehicle &&
             <Home_View_1
                 goToStory = {this.openOneVehicleStory}
+                goToGallery = {this.openGalleryForHomeOne}
                 userEnterPwd = {this.state.userEnterPassword}
                 login={this.playerLogin}        
                 openCloseSecurityModal ={this.showHideSecurityModal}
@@ -667,34 +782,57 @@ export default class App extends React.Component {
         {this.state.openHomeCar2 &&
             <Car_Main
                 goBack = {this.viewCar2}
-                goToStory = {this.openTwoVehicleStory}       
+                goToStory = {this.openTwoVehicleStory}
+                goToGallery = {this.openGalleryForCarMain2}
                 selectedCar1 = {this.state.twoVehicleSelection}/>
         }
         {/*allow the user to view the first selected car in home_view_2 and its details*/}
         {this.state.openHomeCarMain1 &&
             <Car_Main
                 goBack = {this.viewCar1}
-                goToStory = {this.goBackFromStoryToCarMain1}       
+                goToStory = {this.goBackFromStoryToCarMain1}
+                goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar1 = {this.state.oneVehicleSelection}/>
         }         
         {/*allow the user to view details of a selected car from home_view_1*/}
         {this.state.openStory &&
             <Story
                 goBack = {this.goBackHomeOneVehicle}
+                goToGallery = {this.openGalleryForHomeOneStory}
                 selectedCar={this.state.oneVehicleSelection} />
         }
         {/*allow the user to view the story of the second car in home_view_2 from Car Main*/}
         {this.state.openStoryCarMain1 &&
             <Story
                 goBack = {this.goBackFromStoryToCarMain1}
+                goToGallery = {this.openGalleryForCarMain1Story}
                 selectedCar={this.state.oneVehicleSelection} />
         }         
         {/*allow the user to view the story of the second car in home_view_2 from Car Main*/}
         {this.state.openStoryCar2 &&
             <Story
                 goBack = {this.goBackHomeTwoCar2}
+                goToGallery = {this.openGalleryForCarMain2Story}
                 selectedCar={this.state.twoVehicleSelection} />
-        }          
+        }
+        {/*allow the user to view the gallery of the selected car in Home_view_1*/}
+        {this.state.openGallery &&
+            <Gallery
+                goBack = {this.openGalleryForHomeOne}
+                selectedCar={this.state.oneVehicleSelection} />
+        }
+        {/*allow the user to view the gallery of the selected car in Car_Main 1*/}
+        {this.state.openGalleryCarMain1 &&
+            <Gallery
+                goBack = {this.openGalleryForCarMain1}
+                selectedCar={this.state.oneVehicleSelection} />
+        }
+        {/*allow the user to view the gallery of the selected car in Car_Main 2*/}
+        {this.state.openGalleryCarMain2 &&
+            <Gallery
+                goBack = {this.openGalleryForCarMain2}
+                selectedCar={this.state.twoVehicleSelection} />
+        }           
       </Container>
     );
   }

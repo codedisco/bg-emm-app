@@ -54,7 +54,7 @@ export default function Admin_Homescreen(props) {
               </Text>
             </Row>
             <Row style={{height: 160}}>
-              <TouchableOpacity style={{alignItems: "flex-start", marginTop: 30}}>
+              <TouchableOpacity onPress={props.goToGallery} style={{alignItems: "flex-start", marginTop: 30}}>
                 <Text style={styles.btnLg}>
                   G A L L E R Y
                 </Text>

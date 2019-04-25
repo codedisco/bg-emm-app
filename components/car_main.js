@@ -69,7 +69,7 @@ export default function Car_Main(props) {
                   S T O R Y
                 </Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={props.goToGallery}>
                 <Text style={styles.btnLg}>
                   G A L L E R Y
                 </Text>
