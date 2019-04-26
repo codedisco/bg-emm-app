@@ -3,7 +3,6 @@ import Carousel, { Pagination } from 'react-native-snap-carousel';
 import { StyleSheet, ScrollView, Animated, ImageBackground, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 import Lightbox from 'react-native-lightbox';
-import PhotoView from 'react-native-photo-view';
 
 class FadeInView extends React.Component {
   state = {
@@ -46,11 +45,11 @@ export default class Gallery extends React.Component {
     
   _renderItem ({item, index}) {
     return (
-      <View style={{}}>
+      <View style={{width: '100%'}}>
         <Lightbox
           springConfig={{tension: 15, friction: 7}}
           underlayColor="#4F5961"
-          swipeToDismiss={false}
+          swipeToDismiss={true}
           renderHeader={close => (
             <TouchableOpacity onPress={close}>
               <Image
@@ -120,7 +119,7 @@ export default class Gallery extends React.Component {
             <Content style={{backgroundColor: '#4F5961',}}>
               <FadeInView>
                 <Grid>
-                    <Col style={{height: 670}}>
+                    <Col>
                       <Carousel
                         ref={(c) => { this._carousel = c; }}
                         data={this.props.selectedCar.gallery}
