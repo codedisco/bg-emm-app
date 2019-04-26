@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Animated, TouchableWithoutFeedback, TouchableOpacity, Image, StyleSheet, ImageBackground, Modal, TextInput } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
+import DoubleClick from 'react-native-double-click';
 
 class FadeInView extends React.Component {
   state = {
@@ -42,11 +43,12 @@ export default function Home_View_2(props) {
     <ImageBackground fadeDuration={0} source={require('../assets/page-bg/double-car.png')} style={{flex: 1}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
         <Left>
-          {/*This is the button that triggers the admin nav popup*/}
-          <TouchableOpacity 
-            onPress = {() =>{props.openCloseSecurityModal()}}
-            style={{backgroundColor: 'transparent', height: 80, width: 80,}}>
-          </TouchableOpacity>
+           {/*This is the button that triggers the admin nav popup*/}
+           <DoubleClick 
+                style={{backgroundColor: 'transparent', height: 80, width: 80,}}
+                radius={50} 
+                onClick={()=>{props.openCloseSecurityModal()}}>                   
+            </DoubleClick>
             <Modal
               animationType="slide"
               transparent={false}
