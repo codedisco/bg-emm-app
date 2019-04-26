@@ -54,7 +54,6 @@ export default function Story(props) {
                   Options: {props.selectedCar.options}{"\n"}
                   Production: {props.selectedCar.production}{"\n"}
                   Price New: {props.selectedCar.price}{"\n"}
-                  Owner: {props.selectedCar.owner}{"\n"}
                 </Text>
                 
               </Row>

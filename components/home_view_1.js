@@ -59,7 +59,7 @@ export default function Home_View_1(props) {
                               E N T E R    P A S S W O R D
                             </Text>
                             <TextInput
-                              keyboardType ="numeric"
+                              keyboardType ="visible-password"
                               disableFullscreenUI={true}
                               value={props.userEnterPwd}
                               maxLength={4}

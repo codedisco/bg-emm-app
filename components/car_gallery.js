@@ -54,7 +54,7 @@ export default class Gallery extends React.Component {
           renderHeader={close => (
             <TouchableOpacity onPress={close}>
               <Image
-                style={{width: '100%', height:30, resizeMode: 'contain', left: 475, top: 15}}
+                style={{width: '100%', height:55, resizeMode: 'contain', left: 485}}
                 source={ require('../assets/exit.png')}
               />
             </TouchableOpacity>

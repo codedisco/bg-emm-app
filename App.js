@@ -19,7 +19,7 @@ export default class App extends React.Component {
   constructor(props){
     super();
     this.state = {
-      pwd:"1111",//password for the admin_Login component's input
+      pwd:"645mar",//password for the admin_Login component's input
       userEnterPassword:"",//used to clear the user incorrectly enter password by first saving it
       openAdminLogin:false,//When true, show the login screen
       openAdminHomescreen:true, //When true, show the admin home screen
@@ -126,7 +126,7 @@ export default class App extends React.Component {
       )) 
     
     //if four numbers is entered, check if the password is correct with passwordChecker()
-    if(userPwd.length == 4){
+    if(userPwd.length == 6){
         this.passwordChecker(userPwd);
     }      
   }
