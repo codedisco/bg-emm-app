@@ -2,38 +2,7 @@ import React, { Component } from 'react';
 import { Animated, TouchableOpacity, Image, StyleSheet, ImageBackground } from 'react-native';
 import { Container, Content, Header, Left, Body, Right, Button, Icon, Title, Text, View, Col, Row, Grid } from 'native-base';
 
-class FadeInView extends React.Component {
-  state = {
-    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
-  }
-
-  componentDidMount() {
-    Animated.timing(                  // Animate over time
-      this.state.fadeAnim,            // The animated value to drive
-      {
-        toValue: 1,                   // Animate to opacity: 1 (opaque)
-        duration: 400,              // Make it take a while
-      }
-    ).start();                        // Starts the animation
-  }
-
-  render() {
-    let { fadeAnim } = this.state;
-
-    return (
-      <Animated.View                 // Special animatable View
-        style={{
-          ...this.props.style,
-          opacity: fadeAnim,         // Bind opacity to animated value
-        }}
-      >
-        {this.props.children}
-      </Animated.View>
-    );
-  }
-}
-
-export default function Admin_Homescreen(props) {
+export default function Story(props) {
   return(
   <Container style={{backgroundColor: '#4F5961'}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
@@ -59,7 +28,6 @@ export default function Admin_Homescreen(props) {
           />
         </Right>
       </Header>
-      <FadeInView>
         <Grid>
           <Col style={{paddingLeft: 150, paddingRight: 75, paddingTop: 50}}>
               <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
@@ -98,8 +66,7 @@ export default function Admin_Homescreen(props) {
                 </TouchableOpacity>
               </Row>
           </Col>                     
-        </Grid>          
-      </FadeInView>
+        </Grid>    
   </Container>
 
   );
