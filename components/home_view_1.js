@@ -64,7 +64,7 @@ export default function Home_View_1(props) {
                               keyboardType ="visible-password"
                               disableFullscreenUI={true}
                               value={props.userEnterPwd}
-                              maxLength={4}
+                              maxLength={6}
                               autoFocus = {true}
                               secureTextEntry={true}
                               style={{fontSize: 25, backgroundColor: '#ffffff', borderColor: '#4F5961', borderWidth: 2.5, padding: 20, marginTop: 20 , width:300, alignItems: 'center', color: '#4F5961'}}
