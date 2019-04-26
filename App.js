@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { ScreenOrientation } from 'expo';
 
 import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
@@ -487,6 +487,7 @@ export default class App extends React.Component {
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
+    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE);
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
