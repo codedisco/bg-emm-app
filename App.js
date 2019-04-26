@@ -589,7 +589,7 @@ render() {
                 goToGallery = {this.openGalleryForHomeOneStory}
                 selectedCar={this.state.oneVehicleSelection} />
         }
-        {/*allow the user to view the story of the second car in home_view_2 from Car Main*/}
+        {/*allow the user to view the story of the first car in home_view_2 from Car Main*/}
         {this.state.openStoryCarMain1 &&
             <Story
                 goBack = {this.goBackFromStoryToCarMain1}
@@ -607,7 +607,7 @@ render() {
         {this.state.openStoryHomeAll &&
             <Story
                 goBack = {this.openStoryForHomeAllCarMain}
-                //goToGallery = {this.openGalleryForHomeAllStory}
+                goToGallery = {this.openGalleryForHomeAllStory}
                 selectedCar={this.state.oneVehicleSelection} />
         }
         
