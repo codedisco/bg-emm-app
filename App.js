@@ -483,7 +483,20 @@ export default class App extends React.Component {
     this.setState(previousState => (
         { openGalleryHomeAll:!previousState.openGalleryHomeAll }
       ))      
-  }  
+  }
+  
+  //Navigate between Home_All's Car Main Story to its Gallery
+  openGalleryForHomeAllStory = () => {
+    //Hide this component state
+    this.setState(previousState => (
+        { openStoryHomeAll:!previousState.openStoryHomeAll}
+      )) 
+    
+    //Show this component state     
+    this.setState(previousState => (
+        { openGalleryHomeAll:!previousState.openGalleryHomeAll }
+      ))      
+  }    
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
