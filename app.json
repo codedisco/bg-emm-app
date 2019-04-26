@@ -15,7 +15,7 @@
       "backgroundColor": "#4F5961"
     },
     "android": {
-      "package": "edgemotormuseum.cars"
+      "package": "com.edgemotormuseum.cars"
     },
     "description": "The official app for Edge Motor Museum in Memphis, Tennessee."
   }
