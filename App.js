@@ -504,6 +504,7 @@ render() {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
+    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE_LEFT);
     return (
 
       <Container>

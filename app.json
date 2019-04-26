@@ -14,18 +14,9 @@
       "image": "./assets/splash.png",
       "backgroundColor": "#4F5961"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
     "android": {
       "package": "edgemotormuseum.cars"
-    }
-      
+    },
+    "description": "The official app for Edge Motor Museum in Memphis, Tennessee."
   }
 }
