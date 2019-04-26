@@ -33,7 +33,7 @@ class FadeInView extends React.Component {
   }
 }
 
-export default function Admin_Homescreen(props) {
+export default function Story(props) {
   return(
   <Container style={{backgroundColor: '#4F5961'}}>
       <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
