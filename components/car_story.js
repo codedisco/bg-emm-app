@@ -15,11 +15,11 @@ export default function Story(props) {
           </TouchableOpacity>
         </Left>
         <Body>
-            <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 55}}>
+            <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center'}}>
               <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 150, height: 40, resizeMode: 'stretch'}}/>
               <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>S T O R Y</Text>
             </View>
-          <Text style={styles.titlePage}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Text>
+          <Text style={{position: 'absolute', left:190, bottom:2, fontFamily: 'Inter-SemiBold', color: '#A4ADB7', fontSize:20}}>{props.selectedCar.year + " " + props.selectedCar.make + " " + props.selectedCar.model} </Text>
         </Body>
         <Right>
           <Image fadeDuration={0}

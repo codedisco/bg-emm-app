@@ -103,11 +103,11 @@ export default class Gallery extends React.Component {
                   </TouchableOpacity>
                 </Left>
                 <Body>
-                  <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', position: 'absolute', left: 70}}>
+                  <View style={{width: 150, height: 40, justifyContent: 'center', alignItems: 'center', left: 5, top:2}}>
                     <Image fadeDuration={0} source={require('../assets/section-shape.png')} style={{width: 200, height: 40, resizeMode: 'stretch'}}/>
                     <Text style={{position: 'absolute', fontFamily: 'Inter-Black', color: '#4F5961', fontSize: 20}}>G A L L E R Y</Text>
                   </View>
-                  <Title style={styles.titlePage}>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
+                  <Title style={{position: 'absolute', left:230, bottom:2, fontFamily: 'Inter-SemiBold', color: '#A4ADB7',fontSize:20}}>{this.props.selectedCar.year + " " + this.props.selectedCar.make + " " + this.props.selectedCar.model} </Title>
                 </Body>                              
                 <Right>
                   <Image fadeDuration={0}
