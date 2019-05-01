@@ -15,8 +15,8 @@ export const carList = [
    "production":"752", 
    "price":"$950",
    "gallery":[
-       require('./assets/49-crosley/1.jpg'),
-       require('./assets/49-crosley/2.gif'),
+       require('./assets/49-crosley/1.gif'),
+       require('./assets/49-crosley/2.jpg'),
        require('./assets/49-crosley/3.jpg'),
        require('./assets/49-crosley/4.jpg'),
        require('./assets/49-crosley/5.jpg'),
@@ -26,14 +26,12 @@ export const carList = [
        require('./assets/49-crosley/9.jpg'),
        require('./assets/49-crosley/10.jpg'),
        require('./assets/49-crosley/11.jpg'),
-       require('./assets/49-crosley/12.jpg'),
-       require('./assets/49-crosley/13.jpg'),       
    ],
    "story":[
       {"para_id":"1", "para":"Among American sports cars, the Crosley Hot Shot can be considered the first. The engine was remarkable: a single overhead camshaft, a capacity of only 726cc, and a whopping 26 horsepower. It was originally developed as a small sedan, but its sporting capabilities won out by production in 1949 as a two-seat sports car. The Hot Shot wasn’t pretty — it was sometimes called a bathtub on wheels — but it could hit 75 MPH and was rather quick for its specs."}, 
       {"para_id":"2", "para":"The Hot Shot here is race-ready with a trimmed windshield, hand-painted numbers, and all badging removed for track safety. In 1950, this exact car in front of you won the prestigious Twelve Hours of Sebring race by the “index of performance,” achieved by averaging the best speed for its displacement. Hot Shots were raced all over the US until production ceased in 1952, just a few years after its release."}, 
       {"para_id":"3", "para":""},
-      {"para_id":"4", "para":"On loan from William H. Cunningham, Jr."}]
+      {"para_id":"4", "para":"On loan from Bill & Laurie Cunningham."}]
   },
   {"id":"2",
    "photo":require('./assets/cars-clipped/50-mg.png'),
@@ -271,7 +269,7 @@ export const carList = [
        require('./assets/64-dart/15.jpg'),       
    ],     
   "story":[
-     {"para_id":"1", "para":"The Dart was a massively popular car for Dodge in the 1060s — almost too popular. At the beginning of the decade, Dart models made up 87% of the company’s sales. But that didn’t seem to phase Dodge. By 1964, the Dart was available in four different styles: convertible, sedan, station wagon, and hard-top coupe. While many were built with Chrysler’s standard Slant-Six engine, Dodge introduced a compact, lightweight 273ci V8 engine specifically for the GT coupe and convertible, with which the model you see here is equipped."}, 
+     {"para_id":"1", "para":"The Dart was a massively popular car for Dodge in the 1960s — almost too popular. At the beginning of the decade, Dart models made up 87% of the company’s sales. But that didn’t seem to phase Dodge. By 1964, the Dart was available in four different styles: convertible, sedan, station wagon, and hard-top coupe. While many were built with Chrysler’s standard Slant-Six engine, Dodge introduced a compact, lightweight 273ci V8 engine specifically for the GT coupe and convertible, with which the model you see here is equipped."}, 
      {"para_id":"2", "para":"A truly unique feature of the ‘64 Dart is its push-button automatic transmission (see image in gallery). To shift from park to drive, the driver plunges a cylindrical button into the dashboard to the left of the steering wheel, which would redirect the transmission’s fluid path. The system (which lacked a “Park” button), proved to be more of a hurdle than a convenience, and 1964 was the last year Dodge implemented push-button transmission."}, 
      {"para_id":"3", "para":""},
      {"para_id":"4", "para":"On loan from Rob Whitlow."}]
