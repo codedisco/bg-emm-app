@@ -8,7 +8,7 @@ export const carList = [
    "horsepower":"26",
    "fuelDelivery":"Single-barrel carburetor", 
    "transmission":"3 Speed-Manual", 
-   "brakes":"Drum", 
+   "brakes":"Disc", 
    "color":"Jonquil Yellow", 
    "interior":"Red Leather", 
    "options":"Trimmed windshield",
