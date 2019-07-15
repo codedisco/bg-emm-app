@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Edge Motor Museum",
+    "slug": "edge-motor-museum",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#4F5961"
+    },
+    "assetBundlePatterns": [
+      "assets/*",
+      "assets/49-crosley/*",
+      "assets/50-mg/*",  
+      "assets/54-corvette/*", 
+      "assets/57-thunderbird/*", 
+      "assets/59-corvette/*", 
+      "assets/63-avanti/*",
+      "assets/64-5-mustang/*", 
+      "assets/64-dart/*", 
+      "assets/67-corvette/*", 
+      "assets/67-shelby/*",
+      "assets/69-corvette/*",
+      "assets/70-mustang/*",
+      "assets/cars-clipped/*", 
+      "assets/page-bg/*"        
+    ],
+    "android": {
+      "package": "com.edgemotormuseum.cars"
+    },
+    "description": "The official app for Edge Motor Museum in Memphis, Tennessee."
+  }
+}
