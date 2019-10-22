@@ -3,7 +3,7 @@
     "name": "Edge Motor Museum",
     "slug": "edge-motor-museum",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
+    "sdkVersion": "30.0.0",
     "platforms": [
       "ios",
       "android"
@@ -37,7 +37,7 @@
       "assets/page-bg/*"        
     ],
     "android": {
-      "package": "com.edgemotormuseum.cars",
+      "package": "com.edgemotormuseum.cars"
     }
   }
 }
