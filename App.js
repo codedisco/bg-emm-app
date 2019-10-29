@@ -500,11 +500,11 @@ export default class App extends React.Component {
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
-    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE);
+    ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE);
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE_LEFT);
+    ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE_LEFT);
     return (
 
       <Container>

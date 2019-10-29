@@ -33,7 +33,10 @@ export default function Story(props) {
               <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
               <Text style={styles.textStory}>{props.selectedCar.story[1].para}</Text>
               <Text style={styles.textStory}>{props.selectedCar.story[2].para}</Text>
-              <Text style={styles.textStoryCredit}>{props.selectedCar.story[3].para}</Text>
+              <Text style={styles.textStory}>{props.selectedCar.story[3].para}</Text>
+              <Text style={styles.textStory}>{props.selectedCar.story[4].para}</Text>
+              <Text style={styles.textStory}>{props.selectedCar.story[5].para}</Text>
+              <Text style={styles.textStory}>{props.selectedCar.story[6].para}</Text>
           </Col>
           <Col style={{width: '25%', paddingTop: 50}}>
               <Row style={{height: 50}}>

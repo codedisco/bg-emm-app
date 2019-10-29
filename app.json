@@ -37,7 +37,7 @@
       "assets/page-bg/*"        
     ],
     "android": {
-      "package": "com.edgemotormuseum.cars",
+      "package": "com.edgemotormuseum.cars"
     }
   }
 }

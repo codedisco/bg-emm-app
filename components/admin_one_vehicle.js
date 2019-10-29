@@ -4,8 +4,6 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Conten
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-
-
 //Display a list of vehicles, from carList, as radio options
 export default function Admin_One_Vehicle(props) {
 
