@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
-import { ScreenOrientation } from 'expo';
+import { AppLoading, ScreenOrientation } from 'expo';
 
 import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
@@ -502,7 +502,7 @@ export default class App extends React.Component {
 render() {
     ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE);
     if (!this.state.isReady) {
-      return <Expo.AppLoading />;
+      return <AppLoading />;
     }
     ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE_LEFT);
     return (
