@@ -40,7 +40,8 @@ export const carList = [
             {"para_id":"2", "para":"The idea of a Speedster was nothing new as, for years, early speed demons had been building street cars that copied the looks and performance of early open wheel racers. Many were based on the Ford Model T, where one would lighten the car by removing the fenders and most of the body, then modify the engine for more horsepower. The end result was a dangerously exciting vehicle that could perform way beyond its original capabilities."},
             {"para_id":"3", "para":"The Ford Model A was a much better starting point for a Speedster. It had a stiffer frame, which could handle all sorts of engine conversions, and four-wheel mechanical brakes, which, while marginal at best, were a huge improvement over the Model T. The aftermarket was flooded with Model A speed equipment, so it was the perfect foundation for an adrenaline junkie on a budget."},
             {"para_id":"4", "para":"The Speedster presented here features a highly modified 1932 Ford flathead four-cylinder powerplant, commonly known as a “Model B” engine. Being at least 400 pounds lighter and with twice the horsepower of an original Model A, it is perfectly capable of keeping up with modern highway traffic."},
-            {"para_id":"5", "para":"On loan from Dick Moore"}]
+            {"para_id":"5", "para":"On loan from Dick Moore"},
+            {"para_id":"6", "para":""}],
     },
     {
         "id":"2",
@@ -72,7 +73,10 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"Among American sports cars, the Crosley Hot Shot can be considered the first. The engine was remarkable: a single overhead camshaft, a capacity of only 726cc, and a whopping 26 horsepower. It was originally developed as a small sedan, but its sporting capabilities won out by production in 1949 as a two-seat sports car. The Hot Shot wasn’t pretty — it was sometimes called a bathtub on wheels — but it could hit 75 MPH and was rather quick for its specs."}, 
             {"para_id":"2", "para":"The Hot Shot here is race-ready with a trimmed windshield, hand-painted numbers, and all badging removed for track safety. In 1950, this exact car in front of you won the prestigious Twelve Hours of Sebring race by the “index of performance,” achieved by averaging the best speed for its displacement. Hot Shots were raced all over the US until production ceased in 1952, just a few years after its release."},
-            {"para_id":"3", "para":"On loan from Bill & Laurie Cunningham"}]
+            {"para_id":"3", "para":"On loan from Bill & Laurie Cunningham"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
         "id":"3",
@@ -105,7 +109,10 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"This MG is the only non-American vehicle in our exhibit, but it’s just as influential on the American auto as any other car on display. By the late 1940s, Americans were catching sports car fever, and MG knew it. The British-built TD was designed to capture more of the American market as they made the car wider, longer, and heavier than its predecessor, the TC. They even offered a left-hand drive version specifically for the U.S., as seen here."}, 
             {"para_id":"2", "para":"This car, along with other European roadsters like the Jaguar XK120, heavily influenced early American-made sports cars. While stationed abroad during WWII, many Americans fell in love with the small, sleek roadsters built for winding European roads. Many foreign producers noticed the interest in their cars, and began exporting models for the American market. MG produced nearly 30,000 standard TD models, but the car in front of you is one of only about 2,500 TDs built for the U.S. in 1950."},
-            {"para_id":"3", "para":"On loan from Hiram Shepard"}]
+            {"para_id":"3", "para":"On loan from Hiram Shepard"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
         "id":"4",
@@ -138,10 +145,54 @@ export const carList = [
             {"para_id":"1", "para":"It’s not surprising that there’s a natural link between the beginnings of rock & roll music and the 1950s automobile — both symbolized the soundtrack of new-found freedoms of American youth, and both genres were considered dangerous for the times."}, 
             {"para_id":"2", "para":"It’s only fitting that Ike Turner’s 1951 recording of “Rocket 88,” which is considered to be the milestone where rhythm & blues became rock & roll, be centered around an automobile, or more specifically an automobile engine, the Oldsmobile Rocket V8. Introduced in 1949, this powerplant was one of the first and most powerful overhead valve V8s found in American autos in the early 1950s. It was the tire-burning terror of drag racing, NASCAR, and thousands of impromptu street races. Oldsmobile adopted the “Rocket” logo in 1950 and continued its use on high performance V8s through the 1970s."},
             {"para_id":"3", "para":"The 1950 “Futuramic” Oldsmobile 88 Coupe on display here is the only non-original vehicle at the museum. It’s decked out with typical 1950s modifications like dual exhaust, lowered suspension, dechromed hood (“nosed”), trunk lid (“decked”), and a tuck ‘n rolled interior — the perfect 50s rock & roll cruiser. In fact, it might be just rock & roll enough to inspire a song..."},
-            {"para_id":"4", "para":"On loan from the Burgin and Ann Claiborne Collection"}]
+            {"para_id":"4", "para":"On loan from the Burgin and Ann Claiborne Collection"},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
         "id":"5",
+        "photo":require('./assets/cars-clipped/53-glasspar.png'),
+        "year":"1953", 
+        "make":"Glasspar", 
+        "model":"G2",
+        "engine":"239ci Ford “Y-Block” 8 Cylinder",
+        "horsepower":"200",
+        "fuelDelivery":"Three 2-Barrel Carburetors", 
+        "transmission":"3-Speed Manual", 
+        "brakes":"4-Wheel Hydraulic Drum", 
+        "color":"Metallic Gold", 
+        "interior":"Red",
+        "options":"Hardtop (1 of 5)",
+        "production":"Approximately 100 from 1951-1954", 
+        "price":"$2,950",
+        "gallery":[
+            require('./assets/53-glasspar/1.jpg'),
+            require('./assets/53-glasspar/2.jpg'),
+            require('./assets/53-glasspar/3.jpg'),
+            require('./assets/53-glasspar/4.jpg'),
+            require('./assets/53-glasspar/5.jpg'),
+            require('./assets/53-glasspar/6.jpg'),
+            require('./assets/53-glasspar/7.jpg'),
+            require('./assets/53-glasspar/8.jpg'),
+            require('./assets/53-glasspar/9.jpg'),
+            require('./assets/53-glasspar/10.jpg'),
+            require('./assets/53-glasspar/11.jpg'),
+            require('./assets/53-glasspar/12.jpg'),
+            require('./assets/53-glasspar/13.jpg'),
+            require('./assets/53-glasspar/14.jpg'),
+            require('./assets/53-glasspar/15.jpg'),
+            require('./assets/53-glasspar/16.jpg'),
+        ],
+        "story":[
+            {"para_id":"1", "para":"After World War II, no one was more knowledgeable with properties of a new material called fiberglass than Californian marine architect William Tritt. In 1947, he founded Glasspar with the purpose of building the world’s finest fiberglass boats. Tritt quickly established a reputation as a master of fiberglass, and by the early fifties, 15 to 20 percent of fiberglass boats sold were made by Glasspar."}, 
+            {"para_id":"2", "para":"The Glasspar automobile was born in 1949 when Tritt helped design a body for a sports roadster a friend was building and suggested fiberglass as a perfect material for its construction. After much trial and error, the car was finished a year and a half later, and its sleek low design was quite a hit at the 1951 Los Angeles Motorama. Tritt modified the original mold slightly and in 1951 produced the first American car body made of fiberglass, the Glasspar G2."},
+            {"para_id":"3", "para":"Between 1951 and 1954, approximately 100 G2s were produced in Tritt’s Santa Ana, California plant. Most were sold as kits, but at least 10 were sold as completed production turn-key vehicles. The chassis was specifically designed to accommodate nearly any V8 engine available, and G2s were quite successful at racing events. The cars were also popular in Hollywood with owners that included Humphrey Bogart, Gary Cooper, and Rosemary Clooney."},
+            {"para_id":"4", "para":"Bill Tritt’s expertise in fiberglass did not go unnoticed in Detroit as he was hired as a consultant to General Motors when the Corvette was introduced. Besides his own G2 model, Glasspar also made bodies for the Kaiser Darrin as well as fiberglass parts for Volvo and Willys. Similar to the G2, the rare Woodhill Wildfire sports car body was also a product of Glasspar."},
+            {"para_id":"5", "para":"Only 29 Glasspar G2s are known to exist. The example here features a Ford 239 cubic inch “Y-block” V8 engine with three two barrel carburetors. It is one of the ten factory-built roadsters, and one of a handful built with a removable fiberglass hardtop. The G2 has been referred to as “a distinctly American combination of hot rodding and sports car.” It was such a significant step in automotive history that the Smithsonian has one in its permanent collection as well."},
+            {"para_id":"6", "para":""}],
+    },
+    {
+        "id":"6",
         "photo":require('./assets/cars-clipped/53-champion.png'),
         "year":"1953", 
         "make":"Studebaker", 
@@ -171,10 +222,10 @@ export const carList = [
             {"para_id":"2", "para":"Commonly referred to as the “Loewy coupe,” the car was originally conceived as a sports car concept vehicle by industrial designer Bob Bourke, chief of design for Raymond Loewy Associates, a firm already with history in Studebaker design. A last-minute decision by management rushed the car into production, which proved to be part of its undoing."},
             {"para_id":"3", "para":"Studebaker initially envisioned 1953 production to be around 75% sedans and 25% coupes and hardtops. In actuality, the new body style was so well-received that these figures were actually reversed. Build quality suffered as production ramped up to meet demand, and people waiting for months for new cars would finally withdraw their orders. This, combined with Studebaker having the highest production costs in the industry (and a cut-throat price war in 1953 between Ford and General Motors), contributed to the failure of the coupes and hardtops. The spectacular styling implied a promise that couldn’t be delivered."},
             {"para_id":"4", "para":"Studebaker’s “Family Sports Car” was offered in coupe or hardtop form, with both six-cylinder and V8 engines. For years, the Champion’s Flathead-6 had been tops in Mobil’s annual Fuel Economy Run. As a testimony to its design, its basic body shell was used by Studebaker in its Hawk series through 1964."},
-            {"para_id":"5", "para":"On loan from the Burgin and Ann Claiborne Collection"}]
+            {"para_id":"5", "para":"On loan from the Burgin and Ann Claiborne Collection"},
+            {"para_id":"6", "para":""}],
     },
-    {
-        "id":"6",
+    {"id":"7",
         "photo":require('./assets/cars-clipped/54-corvette.png'),
         "year":"1954", 
         "make":"Chevrolet", 
@@ -195,6 +246,7 @@ export const carList = [
             require('./assets/54-corvette/3.jpg'),
             require('./assets/54-corvette/4.jpg'),
             require('./assets/54-corvette/5.jpg'),
+            require('./assets/54-corvette/6.jpg'),
             require('./assets/54-corvette/7.png'),
             require('./assets/54-corvette/8.jpg'),
             require('./assets/54-corvette/9.jpg'),
@@ -215,10 +267,14 @@ export const carList = [
         ],    
         "story":[
             {"para_id":"1", "para":"As foreign-made cars like the MG TD and the Jaguar XK120 crept into America’s field of view in the late 1940s, U.S. automakers decided to try their hand at building small, svelte roadsters that were as fun to drive as they were to look at. Chevrolet was the first major manufacturer to roll a sports car off the line, and it did so to great fanfare at the company’s 1953 Motorama showcase."}, 
-            {"para_id":"2", "para":"Officially released in December of 1953, only 300 were initially made and distributed to select, high-profile individuals. The car you’re looking at is the 318th Corvette built in its first full production year of 1954. Note the sleek fiberglass body with its toothy grille, “jet-pod” tail lamps, and lack of exterior door handles. The car’s design was stunning, but it masked some mechanical quirks and an underpowered engine. Because of this, Chevrolet only sold two-thirds of the initial batch of 1954 models. Later models would be faster and better-built, encouraged by some fierce competition from the Ford Thunderbird."}]
+            {"para_id":"2", "para":"Officially released in December of 1953, only 300 were initially made and distributed to select, high-profile individuals. The car you’re looking at is the 318th Corvette built in its first full production year of 1954. Note the sleek fiberglass body with its toothy grille, “jet-pod” tail lamps, and lack of exterior door handles. The car’s design was stunning, but it masked some mechanical quirks and an underpowered engine. Because of this, Chevrolet only sold two-thirds of the initial batch of 1954 models. Later models would be faster and better-built, encouraged by some fierce competition from the Ford Thunderbird."},
+            {"para_id":"3", "para":""},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"7",
+        "id":"8",
         "photo":require('./assets/cars-clipped/57-thunderbird.png'),
         "year":"1957", 
         "make":"Ford", 
@@ -254,10 +310,13 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"First introduced in 1955 as a response to Chevrolet’s new sporty offering, the Thunderbird was fast, well-built, and beautiful. It massively outsold the Corvette, as Ford had learned from some of Chevy’s mistakes. It had glass windows, a sturdy steel frame, and boasted a burly Mercury V8 engine that outpaced the ‘Vette’s sluggish inline 6-cylinder."}, 
             {"para_id":"2", "para":"While 1955 and 1956 models were fairly similar, Ford reimagined the Thunderbird for 1957, the model you see here. With a new grille, restyled bumpers, larger tail lights, and a redesigned dashboard, the ‘57 T-bird improved on an already staggering success of a car. Many regard the 1957 Thunderbird as the best version of the car Ford ever made. It’s also considered to be the last true Thunderbird, as the company only produced larger, four-seat versions of the car in 1958 and beyond. But Ford had proven that a two-seater could be a commercial success."}, 
-            {"para_id":"3", "para":"On loan from the Vining family"}]
+            {"para_id":"3", "para":"On loan from the Vining family"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"8",
+        "id":"9",
         "photo":require('./assets/cars-clipped/59-corvette.png'),
         "year":"1959", 
         "make":"Chevrolet", 
@@ -289,10 +348,14 @@ export const carList = [
         ],  
         "story":[
             {"para_id":"1", "para":"Though Ford had proven it had a stronger public appeal with the Thunderbird, by 1958 it strayed from its sports car roots and became more of a personal luxury vehicle. Chevrolet, on the other hand, only dug in deeper with third redesign of the Corvette. They were committed to building America’s only true sports car."}, 
-            {"para_id":"2", "para":"Some claimed the 1958 Corvette was “over-designed” with too much chrome and exaggerated styling (possibly an overreaction to the Thunderbird). Chevrolet would address this issue in the 1959 model you see here by removing some of the excessive glitz like washboard ridges on the hood and chrome “tusks” that ran down the trunk. The car also now had a proper overhead V8 (introduced in 1956), giving it real race-ready power and a top speed of 128 MPH."}]
+            {"para_id":"2", "para":"Some claimed the 1958 Corvette was “over-designed” with too much chrome and exaggerated styling (possibly an overreaction to the Thunderbird). Chevrolet would address this issue in the 1959 model you see here by removing some of the excessive glitz like washboard ridges on the hood and chrome “tusks” that ran down the trunk. The car also now had a proper overhead V8 (introduced in 1956), giving it real race-ready power and a top speed of 128 MPH."},
+            {"para_id":"3", "para":""},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"9",
+        "id":"10",
         "photo":require('./assets/cars-clipped/63-avanti.png'),
         "year":"1963", 
         "make":"Studebaker", 
@@ -331,10 +394,13 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"The Avanti was supposed to save Studebaker. Unique styling, a powerful engine, and an aircraft-inspired interior aimed to reverse the company’s recent rapid decline in sales. They unveiled a prototype of the car in 1962, but stumbled over production problems for more than a year. The car was selected to pace the 1962 Indy-500 but it wasn’t ready in time and Studebaker lost out on a major promotional push for the Avanti. The car’s eventual release in 1963 came too late to save the company. The plant that built the Avanti was closed in December of 1963, and Studebaker would build its last car less than three years later."}, 
             {"para_id":"2", "para":"The Avanti was influential, nonetheless. Notice the rear seat belts, a novel addition at the time. Studebaker began installing seat belts on all their cars in March of 1963, and were one of the first American automakers to blend safety and style. Other safety innovations include a fully integral roll cage, door safety latches, and a fully protected fuel tank. It also offered disc brakes as standard equipment. Other companies began following suit and seat belts, along with head rests and other safety measures, were mandated by law in 1968."}, 
-            {"para_id":"3", "para":"On loan from the Burgin and Ann Claiborne Collection"}]
+            {"para_id":"3", "para":"On loan from the Burgin and Ann Claiborne Collection"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"10",
+        "id":"11",
         "photo":require('./assets/cars-clipped/64-5-mustang.png'),
         "year":"1964.5", 
         "make":"Ford", 
@@ -372,10 +438,13 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"Introduced in the spring of 1964 (and subsequently dubbed the “1964.5”), the first-ever Ford Mustang broke records with more than 680,000 sold in its 18-month inaugural model year. The car was fast, fun, and affordable. Storied Ford executive Lee Iacocca had done his homework and hit the demographic nail on the head when he set out to build a “youthful” sports car."}, 
             {"para_id":"2", "para":"Since Ford was targeting a younger buyer with the Mustang, the car had to be relatively inexpensive. Developing it from scratch would have pushed the project beyond the desired profitability mark, so Iacocca repurposed the chassis and many parts from the existing (and dreary) Ford Falcon. (In fact, Car and Driver famously called the Falcon “a piece of machinery about as exciting as a dish of baby food.”) "}, 
-            {"para_id":"3", "para":"Like Iacocca himself, the Mustang has since become an American automotive icon, and remains one of the best bang-for-your-buck sports cars on the market. It was so popular upon its release that it created a new sub-market of sports cars: the Pony Car."}]
+            {"para_id":"3", "para":"Like Iacocca himself, the Mustang has since become an American automotive icon, and remains one of the best bang-for-your-buck sports cars on the market. It was so popular upon its release that it created a new sub-market of sports cars: the Pony Car."},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"11",
+        "id":"12",
         "photo":require('./assets/cars-clipped/64-dart.png'),
         "year":"1964", 
         "make":"Dodge", 
@@ -408,10 +477,13 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"The Dart was a massively popular car for Dodge in the 1960s — almost too popular. At the beginning of the decade, Dart models made up 87% of the company’s sales. But that didn’t seem to phase Dodge. By 1964, the Dart was available in four different styles: convertible, sedan, station wagon, and hard-top coupe. While many were built with Chrysler’s standard Slant-Six engine, Dodge introduced a compact, lightweight 273ci V8 engine specifically for the GT coupe and convertible, with which the model you see here is equipped."}, 
             {"para_id":"2", "para":"A truly unique feature of the 1964 Dart is its push-button automatic transmission (see image in gallery). To shift, the driver plunges a cylindrical button into the dashboard to the left of the steering wheel, which would redirect the transmission’s fluid path. The system (which lacked a “Park” button in favor of a lever located beside the push-buttons) proved to be more of a hurdle than a convenience and 1964 was the last year Dodge implemented push-button transmission. Legend has it, however, that left-handed saxophone players everywhere love to drive and shift this car!"}, 
-            {"para_id":"3", "para":"On loan from Rob Whitlow"}]
+            {"para_id":"3", "para":"On loan from Rob Whitlow"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"12",
+        "id":"13",
         "photo":require('./assets/cars-clipped/67-chevelle.png'),
         "year":"1967", 
         "make":"Chevrolet", 
@@ -446,10 +518,11 @@ export const carList = [
             {"para_id":"2", "para":"With the introduction of the big block 396 in 1965, a limited run of 201 Chevelle SS396 “Z-16” models were produced between mid-March and mid-April, serving as a test bed for a new high-performance model. The introduction of Pontiac’s GTO in 1964 certainly established that a market existed for such an automobile."},
             {"para_id":"3", "para":"The Chevelle SS396 became a series of its own in 1966, featuring a complete restyle of the body, a broad new grille and bumper treatment, curved side windows, a bulging rear fender line, and, for hardtops, a “flying buttress” roofline, with the rear window tucked into the “C” pillar. Three engine options were available for the 396: a base model with 325 horsepower, a 360-horsepower version, and the L78, a solid lifter version conservatively rated at 375 horsepower (probably for insurance purposes) even though the exact same engine was rated at 425 horsepower in the Impala. Independent dyno tests of L78s have shown closer to 450 horsepower."},
             {"para_id":"4", "para":"1967 showed a subtle refinement of the 1966 styling with a new grille and wraparound tail lights. Improved safety features included a collapsible steering column, dual reservoir master cylinder with warning light, and available front disc brakes. More importantly for the enthusiast, low profile “wide oval” tires were available on the SS396. The L78 engine was dropped from the options list at the beginning of the model year, only to return late in production. The 1967 SS396 on display is only one of 612 built that year with this engine option. Its sales brochure claimed, “…what you’ll see inside will probably bring on a severe compulsion to go driving.” Well said."},
-            {"para_id":"5", "para":"On loan from Rich Miller"}]
+            {"para_id":"5", "para":"On loan from Rich Miller"},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"13",
+        "id":"14",
         "photo":require('./assets/cars-clipped/67-corvette.png'),
         "year":"1967", 
         "make":"Chevrolet", 
@@ -485,19 +558,22 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"The 1967 Corvette Sting Ray was the last Corvette of the second generation (“C2”). Five years of refinements made it the best of the C2 line, and quite possibly the best Corvette ever built. The car was phenomenal, lauded for its handling, road adhesion, and sheer power. Dubbed the Sting Ray (and ever since 1968, “Stingray”), the name calls attention to the lines of the car that come to a point on both the hood and the trunk."}, 
             {"para_id":"2", "para":"Because Chevy would completely redesign the Corvette the following year, the changes to the 1967 were minimal: restyled fender vents, less ornamentation, and a lower, less chunky appearance. There was also now a single backup light, mounted above the license plate. Even though these design updates made for a better car, many buyers knew a fully revamped Corvette was coming their way, and sales dipped in 1967 by nearly 20% — making this Corvette one of the rarer models of the era."}, 
-            {"para_id":"3", "para":"The vehicle in front of you is Bloomington Gold certified achieving a score of 99.3."}]
+            {"para_id":"3", "para":"The vehicle in front of you is Bloomington Gold certified achieving a score of 99.3."},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"14",
+        "id":"15",
         "photo":require('./assets/cars-clipped/67-shelby.png'),
         "year":"1967", 
         "make":"Shelby", 
         "model":"GT500",
         "engine":"427cu V8 “Side Oiler” (1 of only 6 built)",
         "horsepower":"485",
-        "fuelDelivery":"Two Holley 4-Barrel Barburetors", 
+        "fuelDelivery":"Two Holley 4-Barrel Carburetors", 
         "transmission":"C6 “Police Special” Automatic", 
-        "brakes":"Power Disc", 
+        "brakes":"4-Wheel Power Disk", 
         "color":"Brittany Blue Metallic", 
         "interior":"White", 
         "options":"Autographed and driven by Carroll Shelby as part of his race team",
@@ -522,10 +598,13 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"Carroll Shelby was a flight instructor in World War II before entering the world of car racing as a driver. After retiring from racing due to health problems, Shelby partnered with Ford to start creating performance versions of their cars through his company, Shelby American. The first Shelby-built vehicles appeared in 1965, but the Mustang variants really started to shine in 1967."}, 
             {"para_id":"2", "para":"Built with the same engine Shelby’s racing team used to claim the top three places in the 1966 24 Hours of Le Mans race, this 1967 Shelby GT500 was the most powerful Mustang to-date. It blended sheer brute force with true racing-inspired design. The fiberglass hood sports a functional air scoop and the trunk lid joins seamlessly with the tailpiece to form a spoiler lip. When reflecting on the 1967 GT500, Carroll Shelby said, “This is the first car I’m really proud of.” Coincidentally, it would be the last Shelby Mustang actually built at a Shelby American factory. Ford continued to work with Shelby, but they consolidated production in 1968 and beyond."}, 
-            {"para_id":"3", "para":"On loan from Cofer’s Classics"}]
+            {"para_id":"3", "para":"On loan from Cofer’s Classics"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"15",
+        "id":"16",
         "photo":require('./assets/cars-clipped/69-camaro.png'),
         "year":"1969", 
         "make":"Chevrolet", 
@@ -559,10 +638,10 @@ export const carList = [
             {"para_id":"3", "para":"The 1969 Camaro carried over the previous year's drivetrain and major mechanical components, but all-new sheet metal, except the hood and trunk lid, gave the car a substantially sportier look. The grille was redesigned with a heavy “V” cant and deeply inset headlights. The rear fenders were pulled out, and character lines trailing the rear wheel openings gave Camaro an aura of speed. Simulated grilles forward of the rear fenders provided accent detail while wide tail lights exaggerated the car’s width. In short, every effort was made to make the 1969 Camaro wider, sleeker, and more muscular without borrowing from any previous designs. It worked, as this body style is considered an automotive landmark. When the Camaro was reintroduced in 2010, its inspiration and many of its styling cues came straight from the 1969 model."},
             {"para_id":"4", "para":"There was plenty of performance to go along with this one-year-only styling as no less than 12 engines were available ranging from an entry level six-cylinder to a fire-breathing big block V8. Numerous option packages, along with almost an unlimited number of performance and trim levels, allowed Chevrolet to blanket Camaro’s end of the personal car market. There was practically a Camaro available for everyone’s taste, but for gear-headed Baby Boomers (and their children and grandchildren), performance versions of the 1969 Camaro are the closest thing to a full-sized Hot Wheels car."},
             {"para_id":"5", "para":"The 1969 Camaro on display here features the performance SS option, including the L78 solid lifter 396 cubic inch power plant. Conservatively rated at 375 horsepower, it is one of 3,823 built with this engine."},
-            {"para_id":"6", "para":"On loan from Dr. Robin Campassi"}]
+            {"para_id":"6", "para":"On loan from Dr. Robin Campassi"}],
     },
     {
-        "id":"16",
+        "id":"17",
         "photo":require('./assets/cars-clipped/69-corvette.png'),
         "year":"1969", 
         "make":"Chevrolet", 
@@ -597,10 +676,14 @@ export const carList = [
         ],  
         "story":[
             {"para_id":"1", "para":"By 1968, the Corvette had entered a new era, noted most by a dramatic change in styling. The “C3” generation cars had a lower stance, higher fenders, and an overall more extreme look. The “Stingray” designation had also returned after a year absent (and no longer “Sting Ray” as seen on the 1967 model)."}, 
-            {"para_id":"2", "para":"Perhaps most notably, the hard-top coupes were also now equipped with a T-top, added in part for rigidity. Without it, and when equipped with the powerful 427ci V8 option, the car would twist its own chassis under strain from the massive amounts of torque the engine was capable of. About this C3 Corvette, Car and Driver magazine wrote, “The small-engine Corvettes are marginally faster and extraordinarily civilized. The large-engine Corvettes are extraordinarily fast and marginally civilized.” We agree."}]
+            {"para_id":"2", "para":"Perhaps most notably, the hard-top coupes were also now equipped with a T-top, added in part for rigidity. Without it, and when equipped with the powerful 427ci V8 option, the car would twist its own chassis under strain from the massive amounts of torque the engine was capable of. About this C3 Corvette, Car and Driver magazine wrote, “The small-engine Corvettes are marginally faster and extraordinarily civilized. The large-engine Corvettes are extraordinarily fast and marginally civilized.” We agree."},
+            {"para_id":"3", "para":""},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
     {
-        "id":"17",
+        "id":"18",
         "photo":require('./assets/cars-clipped/70-challenger.png'),
         "year":"1970", 
         "make":"Dodge", 
@@ -633,10 +716,10 @@ export const carList = [
             {"para_id":"3", "para":"All this power came with a price, and the Hemi engine’s hefty premium meant few buyers could justify such a vehicle, making any authentic Hemi car a rarity today."},
             {"para_id":"4", "para":"This example is one of the rarest — a 1970 Challenger R/T convertible with a 426 Hemi engine. Convertible versions of the R/T were a one-year-only body style, and convertibles were not available as R/Ts in 1971. They were totally discontinued by 1972. Along with the 426 Hemi engine, this vehicle is equipped with a heavy duty Torqueflite transmission and the Super Track Pak, which includes front disc brakes and a severe duty Dana 60 rear axle."},
             {"para_id":"5", "para":"This 1970 Challenger R/T convertible is one of only 12 produced. Seven were automatics, and five were 4-speeds. Of the 12, nine were sold in the USA, three went to Canada, and one was shipped to Europe. It is a car combining the best styling cues of the early seventies with ultimate horsepower and supreme rarity."},
-            {"para_id":"6", "para":"On loan from Hines Racing"}]
+            {"para_id":"6", "para":"On loan from Hines Racing"}],
     },
     {
-        "id":"18",
+        "id":"19",
         "photo":require('./assets/cars-clipped/70-mustang.png'),
         "year":"1970", 
         "make":"Ford", 
@@ -667,7 +750,10 @@ export const carList = [
         "story":[
             {"para_id":"1", "para":"In early 1968, Semon “Bunkie” Knudsen, who had come from Pontiac where he helped create the Trans-Am, defected from GM to become president of Ford. He brought with him stylist Larry Shinoda, who led the 1968 redesign of the Corvette. Together, they aimed to take the Mustang from Pony Car to muscle car, and they started with the BOSS 302."}, 
             {"para_id":"2", "para":"Like he had at Pontiac, Knudsen wanted to pack the Mustang full of as much power as possible. So Shinoda designed a 1969 Mustang variant around a lightweight 302 cubic-inch engine — because it’s what the boss wanted. Ford built 1,628 BOSS 302s in 1969, and more than quadrupled production in 1970. Knudsen would last less than two years at Ford, and so would the BOSS 302. This 1970 was the last model produced of the performance-forward Mustang. The car in front of you sports a unique upgrade: a factory hood-mounted tachometer."}, 
-            {"para_id":"3", "para":"On loan from Cofer’s Classics"}]
+            {"para_id":"3", "para":"On loan from Cofer’s Classics"},
+            {"para_id":"4", "para":""},
+            {"para_id":"5", "para":""},
+            {"para_id":"6", "para":""}],
     },
 
 ];

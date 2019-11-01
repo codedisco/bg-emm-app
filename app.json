@@ -20,24 +20,25 @@
       "assets/50-mg/*",
       "assets/50-rocket88/*",
       "assets/53-champion/*",
-      "assets/54-corvette/*", 
-      "assets/57-thunderbird/*", 
-      "assets/59-corvette/*", 
+      "assets/54-corvette/*",
+      "assets/57-thunderbird/*",
+      "assets/59-corvette/*",
       "assets/63-avanti/*",
-      "assets/64-5-mustang/*", 
+      "assets/64-5-mustang/*",
       "assets/64-dart/*",
       "assets/49-chevelle/*",
-      "assets/67-corvette/*", 
+      "assets/67-corvette/*",
       "assets/67-shelby/*",
       "assets/69-camaro/*",
       "assets/69-corvette/*",
       "assets/49-challenger/*",
       "assets/70-mustang/*",
-      "assets/cars-clipped/*", 
-      "assets/page-bg/*"        
+      "assets/cars-clipped/*",
+      "assets/page-bg/*"
     ],
     "android": {
       "package": "com.edgemotormuseum.cars"
-    }
+    },
+    "description": ""
   }
 }
