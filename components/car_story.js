@@ -29,8 +29,8 @@ export default function Story(props) {
         </Right>
       </Header>
       <Grid>
-        <Col style={{paddingLeft: 150, paddingRight: 75, marginRight: 20, paddingTop: 50}}>
-          <Content>
+        <Col style={{paddingLeft: 150, marginRight: 57}}>
+          <Content style={{paddingTop: 55}}>
             <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
             <Text style={styles.textStory}>{props.selectedCar.story[1].para}</Text>
             <Text style={styles.textStory}>{props.selectedCar.story[2].para}</Text>
@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
     color: '#ffffff', 
     fontSize: 17,
     lineHeight: 27,
-    paddingBottom: 25,
+    paddingBottom: 37,
+    paddingRight: 50,
     fontFamily: 'Inter-SemiBold'
   },
 
