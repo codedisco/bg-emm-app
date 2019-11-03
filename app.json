@@ -6,13 +6,19 @@
     "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "web"
     ],
-    "version": "2.0.0",
+    "version": "1.0.0",
+    "orientation": "landscape",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
+      "resizeMode": "contain",
       "backgroundColor": "#4F5961"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "assets/*",
@@ -36,6 +42,9 @@
       "assets/cars-clipped/*",
       "assets/page-bg/*"
     ],
+    "ios": {
+      "supportsTablet": true
+    },
     "android": {
       "package": "com.edgemotormuseum.cars"
     },

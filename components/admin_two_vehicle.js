@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Content, Picker, Form } from 'native-base';
+import { Container, Header, Left, Right, Button, Text, Content, Picker } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 //Display a list of vehicles, from carList, as radio options
@@ -90,7 +90,7 @@ export default function Admin_Two_Vehicle(props) {
                                     label={props.cars[17].year + " " + props.cars[17].make + " " + props.cars[17].model} 
                                     value={props.cars[17].id} />
                                 <Picker.Item 
-                                    label={props.cars[18].year + " " + props.cars[17].make + " " + props.cars[17].model} 
+                                    label={props.cars[18].year + " " + props.cars[18].make + " " + props.cars[18].model} 
                                     value={props.cars[18].id} />
                             </Picker>
                         </Button>
@@ -159,7 +159,7 @@ export default function Admin_Two_Vehicle(props) {
                                     label={props.cars[17].year + " " + props.cars[17].make + " " + props.cars[17].model} 
                                     value={props.cars[17].id} />
                                 <Picker.Item 
-                                    label={props.cars[18].year + " " + props.cars[17].make + " " + props.cars[17].model} 
+                                    label={props.cars[18].year + " " + props.cars[18].make + " " + props.cars[18].model} 
                                     value={props.cars[18].id} />
                             </Picker>
                         </Button>
