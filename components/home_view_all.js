@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       lineHeight: 45,
       paddingLeft: 40,
-      paddingRight: 150,
+      paddingRight: 185,
       fontFamily: 'Inter-Black'
   },
   twoRows: {

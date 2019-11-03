@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text, Content, Picker, Form } from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-
-
+import { Container, Header, Left, Right, Button, Content, Picker } from 'native-base';
+import { Col, Grid } from 'react-native-easy-grid';
 
 //Display a list of vehicles, from carList, as radio options
 export default function Admin_One_Vehicle(props) {
-
   return(
     <Container style={{backgroundColor: '#4F5961'}}>
         <Header noShadow style={{height: 80, backgroundColor: '#4F5961', paddingLeft: 0}}>
@@ -24,8 +20,8 @@ export default function Admin_One_Vehicle(props) {
             </Left>
             <Right>
                 <Image
-                    style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
-                    source={require('../assets/emm-logo-large.png')}
+                  style={{width: 120, height: 70, resizeMode: 'contain', marginRight: 20}}
+                  source={require('../assets/emm-logo-large.png')}
                 />
             </Right>
         </Header>
@@ -73,6 +69,27 @@ export default function Admin_One_Vehicle(props) {
                   <Picker.Item 
                     label={props.cars[11].year + " " + props.cars[11].make + " " + props.cars[11].model} 
                     value={props.cars[11].id} />
+                  <Picker.Item 
+                    label={props.cars[12].year + " " + props.cars[12].make + " " + props.cars[12].model} 
+                    value={props.cars[12].id} />
+                  <Picker.Item 
+                    label={props.cars[13].year + " " + props.cars[13].make + " " + props.cars[13].model} 
+                    value={props.cars[13].id} />
+                  <Picker.Item 
+                    label={props.cars[14].year + " " + props.cars[14].make + " " + props.cars[14].model} 
+                    value={props.cars[14].id} />
+                  <Picker.Item 
+                    label={props.cars[15].year + " " + props.cars[15].make + " " + props.cars[15].model} 
+                    value={props.cars[15].id} />
+                  <Picker.Item 
+                    label={props.cars[16].year + " " + props.cars[16].make + " " + props.cars[16].model} 
+                    value={props.cars[16].id} />
+                  <Picker.Item 
+                    label={props.cars[17].year + " " + props.cars[17].make + " " + props.cars[17].model} 
+                    value={props.cars[17].id} />
+                  <Picker.Item 
+                    label={props.cars[18].year + " " + props.cars[18].make + " " + props.cars[18].model} 
+                    value={props.cars[18].id} />
                 </Picker>
               </Button>
             </Col>

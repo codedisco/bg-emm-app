@@ -28,44 +28,48 @@ export default function Story(props) {
           />
         </Right>
       </Header>
-        <Grid>
-          <Col style={{paddingLeft: 150, paddingRight: 75, paddingTop: 50}}>
-              <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
-              <Text style={styles.textStory}>{props.selectedCar.story[1].para}</Text>
-              <Text style={styles.textStory}>{props.selectedCar.story[2].para}</Text>
-              <Text style={styles.textStoryCredit}>{props.selectedCar.story[3].para}</Text>
-          </Col>
-          <Col style={{width: '25%', paddingTop: 50}}>
-              <Row style={{height: 50}}>
-                <Text style={styles.colTitle}>Full Specs</Text>
-              </Row>
-              <Row style={{height: 400}}>
-                <Text style={styles.textDetail}>
-                  Year: {props.selectedCar.year}{"\n"}
-                  Make: {props.selectedCar.make}{"\n"}
-                  Model: {props.selectedCar.model}{"\n"}
-                  Engine: {props.selectedCar.engine}{"\n"}
-                  Horsepower: {props.selectedCar.horsepower}{"\n"}
-                  Fuel Delivery: {props.selectedCar.fuelDelivery}{"\n"}
-                  Transmission: {props.selectedCar.transmission}{"\n"}
-                  Brakes: {props.selectedCar.brakes}{"\n"}
-                  Color: {props.selectedCar.color}{"\n"}
-                  Interior: {props.selectedCar.interior}{"\n"}
-                  Options: {props.selectedCar.options}{"\n"}
-                  Production: {props.selectedCar.production}{"\n"}
-                  Price New: {props.selectedCar.price}{"\n"}
+      <Grid>
+        <Col style={{paddingLeft: 150, marginRight: 57}}>
+          <Content style={{paddingTop: 55}}>
+            <Text style={styles.textStory}>{props.selectedCar.story[0].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[1].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[2].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[3].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[4].para}</Text>
+            <Text style={styles.textStory}>{props.selectedCar.story[5].para}</Text>
+          </Content>
+        </Col>
+        <Col style={{width: '25%', paddingTop: 50}}>
+            <Row style={{height: 50}}>
+              <Text style={styles.colTitle}>Full Specs</Text>
+            </Row>
+            <Row style={{height: 400}}>
+              <Text style={styles.textDetail}>
+                Year: {props.selectedCar.year}{"\n"}
+                Make: {props.selectedCar.make}{"\n"}
+                Model: {props.selectedCar.model}{"\n"}
+                Engine: {props.selectedCar.engine}{"\n"}
+                Horsepower: {props.selectedCar.horsepower}{"\n"}
+                Fuel Delivery: {props.selectedCar.fuelDelivery}{"\n"}
+                Transmission: {props.selectedCar.transmission}{"\n"}
+                Brakes: {props.selectedCar.brakes}{"\n"}
+                Color: {props.selectedCar.color}{"\n"}
+                Interior: {props.selectedCar.interior}{"\n"}
+                Options: {props.selectedCar.options}{"\n"}
+                Production: {props.selectedCar.production}{"\n"}
+                Price New: {props.selectedCar.price}{"\n"}
+              </Text>
+              
+            </Row>
+            <Row style={{height: 160}}>
+              <TouchableOpacity onPress={props.goToGallery} style={{alignItems: "flex-start", marginTop: 30}}>
+                <Text style={styles.btnLg}>
+                  G A L L E R Y
                 </Text>
-                
-              </Row>
-              <Row style={{height: 160}}>
-                <TouchableOpacity onPress={props.goToGallery} style={{alignItems: "flex-start", marginTop: 30}}>
-                  <Text style={styles.btnLg}>
-                    G A L L E R Y
-                  </Text>
-                </TouchableOpacity>
-              </Row>
-          </Col>                     
-        </Grid>    
+              </TouchableOpacity>
+            </Row>
+        </Col>                     
+      </Grid> 
   </Container>
 
   );
@@ -95,7 +99,8 @@ const styles = StyleSheet.create({
     color: '#ffffff', 
     fontSize: 17,
     lineHeight: 27,
-    paddingBottom: 25,
+    paddingBottom: 37,
+    paddingRight: 50,
     fontFamily: 'Inter-SemiBold'
   },
 

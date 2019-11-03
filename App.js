@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
-import { ScreenOrientation } from 'expo';
+import { AppLoading, ScreenOrientation } from 'expo';
 
 import Admin_Homescreen from './components/admin_homescreen.js';
 import Admin_One_Vehicle from './components/admin_one_vehicle.js';
@@ -24,8 +24,8 @@ export default class App extends React.Component {
       openAdminLogin:false,//When true, show the login screen
       openAdminHomescreen:true, //When true, show the admin home screen
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
-      oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
-      twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
+      oneVehicleSelection:[{"year": "", "make": "", "model": ""}],//vehicle chosen by by the user in the car selection components
+      twoVehicleSelection:[{"year": "", "make": "", "model": ""}],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
@@ -500,11 +500,11 @@ export default class App extends React.Component {
 /* ################# End of Gallery Navigation ############################ */  
   
 render() {
-    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE);
+    ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE);
     if (!this.state.isReady) {
-      return <Expo.AppLoading />;
+      return <AppLoading />;
     }
-    Expo.ScreenOrientation.allowAsync(Expo.ScreenOrientation.Orientation.LANDSCAPE_LEFT);
+    ScreenOrientation.lockAsync(ScreenOrientation.Orientation.LANDSCAPE_LEFT);
     return (
 
       <Container>
