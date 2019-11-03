@@ -165,7 +165,7 @@ export default function Admin_Two_Vehicle(props) {
                                     value={props.cars[18].id} />
                             </Picker>
                         </Button>
-                        {props.selectedCar1 !== undefined &&
+                        {props.selectedCar2 !== undefined &&
                             <Text style={{textAlign: 'center', fontSize: 20, color: '#ffffff', marginTop: 20, fontFamily: 'Inter-SemiBold'}}>
                                 {props.selectedCar2.year} {props.selectedCar2.make} {props.selectedCar2.model}
                             </Text>
