@@ -24,8 +24,8 @@ export default class App extends React.Component {
       openAdminLogin:false,//When true, show the login screen
       openAdminHomescreen:true, //When true, show the admin home screen
       openAdminOneVehicle:false, //When true, show the admin one vehicle screen
-      oneVehicleSelection:[],//vehicle chosen by by the user in the car selection components
-      twoVehicleSelection:[],//vehicle chosen by by the user in the car selection components
+      oneVehicleSelection:carList[0],//vehicle chosen by by the user in the car selection components
+      twoVehicleSelection:carList[1],//vehicle chosen by by the user in the car selection components
       openAdminTwoVehicle:false, //When true, show the admin two vehicle screen
       openHomeOneVehicle:false, //When true, show single car and its details for the user
       openHomeTwoVehicle:false, //When true, show two cars and their details for the user
